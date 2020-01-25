@@ -5,4 +5,6 @@
     <string name="password">Hasło</string>
     <string name="logIn">Zaloguj</string>
     <string name="register">Zarejestruj</string>
+    <string name="emailRequest">Wprowadź e-mail</string>
+    <string name="passwordRequest">Wprowadź hasło</string>
 </resources>
