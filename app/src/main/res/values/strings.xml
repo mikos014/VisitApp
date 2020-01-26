@@ -1,10 +1,25 @@
 <resources>
     <string name="app_name">VisitApp</string>
     <string name="app_title">TwójDoktor</string>
+    <string name="registration">Rejestracja</string>
+    <string name="main_view">Ekran główny</string>
     <string name="email">E-mail</string>
     <string name="password">Hasło</string>
     <string name="logIn">Zaloguj</string>
     <string name="register">Zarejestruj</string>
     <string name="emailRequest">Wprowadź e-mail</string>
     <string name="passwordRequest">Wprowadź hasło</string>
+    <string name="logInSuccess">Zalogowano pomyślnie</string>
+    <string name="logInError">Błąd logowania</string>
+    <string name="responseError">Błąd odpowidzi serwera</string>
+    <string name="connectionError">Błąd połączenia z serwerem</string>
+    <string name="registerTitle">Wypełnij poniższy formularz:</string>
+    <string name="name">Imię</string>
+    <string name="surname">Nazwisko</string>
+    <string name="dateOfBirth">Data urodzenia</string>
+    <string name="sex">Płeć:</string>
+    <string name="woman">Kobieta</string>
+    <string name="man">Mężczyzna</string>
+    <string name="phoneNumber">Numer telefonu</string>
+    <string name="confirm">Zatwierdź</string>
 </resources>

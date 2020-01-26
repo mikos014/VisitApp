@@ -12,6 +12,7 @@ import wat.edu.pl.visitapp.database.connection.LoginConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.interfaces.callbacks.ConnectionCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
+import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
 public class LoginActivity extends AppCompatActivity implements ConnectionCallback
 {
@@ -70,20 +71,24 @@ public class LoginActivity extends AppCompatActivity implements ConnectionCallba
 
     private void openMainActivity()
     {
-
+        Intent openMainActivity = new Intent(LoginActivity.this, MainActivity.class);
+        openMainActivity.putExtra("user", user);
+        startActivity(openMainActivity);
+        LoginActivity.this.finish();
     }
 
     @Override
     public void onSuccess(User user)
     {
         this.user = user;
+        ToastUtil.shortToast(LoginActivity.this, getString(R.string.logInSuccess));
         openMainActivity();
     }
 
     @Override
     public void onFailure(String message)
     {
-
+        ToastUtil.shortToast(LoginActivity.this, getString(R.string.logInError));
     }
 
     @Override
