@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.LoginConnection;
 import wat.edu.pl.visitapp.database.entity.User;
-import wat.edu.pl.visitapp.interfaces.callbacks.ConnectionCallback;
+import wat.edu.pl.visitapp.interfaces.callbacks.LoginCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
-public class LoginActivity extends AppCompatActivity implements ConnectionCallback
+public class LoginActivity extends AppCompatActivity implements LoginCallback
 {
     private EditText etEmail, etPassword;
     private Button bLogin, bRegister;
@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity implements ConnectionCallba
 
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
-        bLogin.findViewById(R.id.bLogin);
-        bLogin.findViewById(R.id.bPassword);
+        bLogin = findViewById(R.id.bLogin);
+        bRegister = findViewById(R.id.bRegister);
 
         bLogin.setOnClickListener(new View.OnClickListener()
         {
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements ConnectionCallba
     @Override
     public void onFailure(String message)
     {
-        ToastUtil.shortToast(LoginActivity.this, getString(R.string.logInError));
+        ToastUtil.shortToast(LoginActivity.this, message);
     }
 
     @Override

@@ -22,4 +22,13 @@
     <string name="man">Mężczyzna</string>
     <string name="phoneNumber">Numer telefonu</string>
     <string name="confirm">Zatwierdź</string>
+    <string name="registerSuccess">Konto utworzone. Zaloguj się do serwisu.</string>
+    <string name="registerError">Błąd rejestracji</string>
+    <string name="fillEmail">Wprowadź e-mail</string>
+    <string name="fillPassword">Wprowadź hasło</string>
+    <string name="fillName">Wprowadź imię</string>
+    <string name="fillSurname">Wprowadź nazwisko</string>
+    <string name="fillDateOfBirth">Wprowadź datę urodzenia</string>
+    <string name="fillPhoneNumber">Wprowadź numer telefonu</string>
+    <string name="passwordTooShort">Hasło musi zawierać conajmniej 5 znaków</string>
 </resources>
