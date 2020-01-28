@@ -1,5 +1,8 @@
 package wat.edu.pl.visitapp.database.connection;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.interfaces.callbacks.LoginCallback;
 
@@ -59,5 +62,7 @@ public class LoginConnection
 //
 //        RequestQueue requestQueue = Volley.newRequestQueue(callback.activity());
 //        requestQueue.add(stringRequest);
+
+        callback.onSuccess(user);
     }
 }

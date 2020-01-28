@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:title="@string/search"
+            android:icon="@drawable/ic_search_sidebar"/>
+
+        <item
+            android:id="@+id/nav_cancel"
+            android:title="@string/cancelVisit"
+            android:icon="@drawable/ic_cancel_presentation_sidebar"/>
+
+        <item
+            android:id="@+id/nav_history"
+            android:title="@string/historyOfVisits"
+            android:icon="@drawable/ic_history_sidebar"/>
+
+        <item
+            android:id="@+id/nav_refferal"
+            android:title="@string/refferal"
+            android:icon="@drawable/ic_refferal_sidebar"/>
+
+        <item
+            android:id="@+id/nav_prescription"
+            android:title="@string/prescription"
+            android:icon="@drawable/ic_prescription_sidebar"/>
+
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/changeUserData"
+            android:icon="@drawable/ic_profile_sidebar"/>
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logOut"
+            android:icon="@drawable/ic_logout_sidebar"/>
+    </group>
+</menu>

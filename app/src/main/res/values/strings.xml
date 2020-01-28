@@ -2,7 +2,7 @@
     <string name="app_name">VisitApp</string>
     <string name="app_title">TwójDoktor</string>
     <string name="registration">Rejestracja</string>
-    <string name="main_view">Ekran główny</string>
+    <string name="main_view">Wyszukaj wizytę</string>
     <string name="email">E-mail</string>
     <string name="password">Hasło</string>
     <string name="logIn">Zaloguj</string>
@@ -31,4 +31,11 @@
     <string name="fillDateOfBirth">Wprowadź datę urodzenia</string>
     <string name="fillPhoneNumber">Wprowadź numer telefonu</string>
     <string name="passwordTooShort">Hasło musi zawierać conajmniej 5 znaków</string>
+    <string name="search">Wyszukaj</string>
+    <string name="cancelVisit">Odwołaj wizytę</string>
+    <string name="historyOfVisits">Historia wizyt</string>
+    <string name="refferal">Skierowania</string>
+    <string name="prescription">Recepty</string>
+    <string name="changeUserData">Zmień dane</string>
+    <string name="logOut">Wyloguj</string>
 </resources>

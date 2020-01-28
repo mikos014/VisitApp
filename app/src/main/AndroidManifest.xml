@@ -23,6 +23,7 @@
         <activity
                 android:name=".view.authenticated.MainActivity"
                 android:label="@string/main_view"
+                android:theme="@style/AppTheme"
                 android:screenOrientation="portrait" />
     </application>
 
