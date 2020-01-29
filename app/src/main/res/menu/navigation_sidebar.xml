@@ -1,40 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_search"
-            android:title="@string/search"
-            android:icon="@drawable/ic_search_sidebar"/>
+    <item android:title="@string/visits">
+        <menu>
+            <item
+                android:id="@+id/nav_search"
+                android:icon="@drawable/ic_search_sidebar"
+                android:title="@string/search" />
 
-        <item
-            android:id="@+id/nav_cancel"
-            android:title="@string/cancelVisit"
-            android:icon="@drawable/ic_cancel_presentation_sidebar"/>
+            <item
+                android:id="@+id/nav_cancel"
+                android:icon="@drawable/ic_cancel_presentation_sidebar"
+                android:title="@string/cancelVisit" />
 
-        <item
-            android:id="@+id/nav_history"
-            android:title="@string/historyOfVisits"
-            android:icon="@drawable/ic_history_sidebar"/>
+            <item
+                android:id="@+id/nav_history"
+                android:icon="@drawable/ic_history_sidebar"
+                android:title="@string/historyOfVisits" />
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/nav_refferal"
-            android:title="@string/refferal"
-            android:icon="@drawable/ic_refferal_sidebar"/>
+    <item android:title="@string/documents">
+        <menu>
+            <item
+                android:id="@+id/nav_refferal"
+                android:icon="@drawable/ic_refferal_sidebar"
+                android:title="@string/refferal" />
 
-        <item
-            android:id="@+id/nav_prescription"
-            android:title="@string/prescription"
-            android:icon="@drawable/ic_prescription_sidebar"/>
+            <item
+                android:id="@+id/nav_prescription"
+                android:icon="@drawable/ic_prescription_sidebar"
+                android:title="@string/prescription" />
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/nav_profile"
-            android:title="@string/changeUserData"
-            android:icon="@drawable/ic_profile_sidebar"/>
+    <item android:title="@string/account">
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_profile_sidebar"
+                android:title="@string/changeUserData" />
 
-        <item
-            android:id="@+id/nav_logout"
-            android:title="@string/logOut"
-            android:icon="@drawable/ic_logout_sidebar"/>
-    </group>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout_sidebar"
+                android:title="@string/logOut" />
+        </menu>
+    </item>
+
 </menu>
