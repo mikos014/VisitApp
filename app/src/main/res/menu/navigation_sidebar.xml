@@ -11,7 +11,7 @@
                 android:title="@string/search" />
 
             <item
-                android:id="@+id/nav_cancel"
+                android:id="@+id/nav_cancellation"
                 android:icon="@drawable/ic_cancel_presentation_sidebar"
                 android:title="@string/cancelVisit" />
 

@@ -2,7 +2,7 @@
     <string name="app_name">VisitApp</string>
     <string name="app_title">TwójDoktor</string>
     <string name="registration">Rejestracja</string>
-    <string name="main_view">Wyszukaj wizytę</string>
+    <string name="main_view">Wyszukaj specjalistę</string>
     <string name="email">E-mail</string>
     <string name="password">Hasło</string>
     <string name="logIn">Zaloguj</string>
@@ -33,6 +33,10 @@
     <string name="passwordTooShort">Hasło musi zawierać conajmniej 5 znaków</string>
 
     <string name="search">Wyszukaj</string>
+    <string name="searchBySpec">Wyszukaj po specjalności</string>
+    <string name="recommendedDoctors">LEKARZE Z NAJWYŻSZĄ OCENĄ</string>
+    <string name="popularSpecs">POPULARNE SPECJALNOŚCI</string>
+
     <string name="cancelVisit">Odwołaj wizytę</string>
     <string name="historyOfVisits">Historia wizyt</string>
     <string name="refferal">Skierowania</string>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite">
+
+    <SearchView
+        android:id="@+id/svSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:queryHint="@string/searchBySpec"
+        android:autofillHints="@string/searchBySpec"
+        tools:targetApi="O"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recommendedDoctors"
+        android:layout_below="@id/svSearch"
+        android:textColor="@color/colorGrey"
+        android:padding="5dp"
+        android:layout_marginStart="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/horizontalCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popularSpecs"
+        android:layout_below="@id/textView"
+        android:textColor="@color/colorGrey"
+        android:padding="5dp"
+        android:layout_marginStart="5dp"/>
+
+    <ListView
+        android:id="@+id/lvList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2" />
+
+
+</RelativeLayout>
