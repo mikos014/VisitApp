@@ -36,6 +36,7 @@
     <string name="searchBySpec">Wyszukaj po specjalności</string>
     <string name="recommendedDoctors">LEKARZE Z NAJWYŻSZĄ OCENĄ</string>
     <string name="popularSpecs">POPULARNE SPECJALNOŚCI</string>
+    <string name="choose">Umów wizytę</string>
 
     <string name="cancelVisit">Odwołaj wizytę</string>
     <string name="historyOfVisits">Historia wizyt</string>

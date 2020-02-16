@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/popularSpecs"
-        android:layout_below="@id/textView"
+        android:layout_below="@id/horizontalCardView"
         android:textColor="@color/colorGrey"
         android:padding="5dp"
         android:layout_marginStart="5dp"/>
