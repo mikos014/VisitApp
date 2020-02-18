@@ -32,6 +32,9 @@
     <string name="fillPhoneNumber">Wprowadź numer telefonu</string>
     <string name="passwordTooShort">Hasło musi zawierać conajmniej 5 znaków</string>
 
+    <string name="userColon">Użytkownik:</string>
+    <string name="emailColon">E-mail:</string>
+
     <string name="search">Wyszukaj</string>
     <string name="searchBySpec">Wyszukaj po specjalności</string>
     <string name="recommendedDoctors">LEKARZE Z NAJWYŻSZĄ OCENĄ</string>

@@ -63,6 +63,15 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
         });
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        Intent closeApp = new Intent(Intent.ACTION_MAIN);
+        closeApp.addCategory(Intent.CATEGORY_HOME);
+        closeApp.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(closeApp);
+    }
+
     private void openRegisterActivity()
     {
         Intent openRegisterActivity = new Intent(LoginActivity.this, RegisterActivity.class);

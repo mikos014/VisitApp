@@ -24,6 +24,7 @@ import wat.edu.pl.visitapp.view.authenticated.fragments.PrescriptionFragment;
 import wat.edu.pl.visitapp.view.authenticated.fragments.ProfileFragment;
 import wat.edu.pl.visitapp.view.authenticated.fragments.RefferalFragment;
 import wat.edu.pl.visitapp.view.authenticated.fragments.SearchFragment;
+import wat.edu.pl.visitapp.view.welcome.LoginActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MainCallback
 {
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer = findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -106,6 +107,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
+                break;
+            case R.id.nav_logout:
+                Intent openMainActivity = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(openMainActivity);
                 break;
         }
 

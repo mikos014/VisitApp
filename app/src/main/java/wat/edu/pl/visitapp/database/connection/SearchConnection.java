@@ -1,6 +1,7 @@
 package wat.edu.pl.visitapp.database.connection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,9 +38,12 @@ public class SearchConnection
         list.add("chirurg");
         list.add("ortopeda");
         list.add("ginekolog");
+        list.add("lekarz ogólny");
+        list.add("okulista");
+        list.add("dermatolog");
+
+        Collections.sort(list);
 
         return list;
     }
-
-
 }

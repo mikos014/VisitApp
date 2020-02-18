@@ -2,10 +2,8 @@ package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import wat.edu.pl.visitapp.R;
@@ -30,7 +28,8 @@ public class HorizontalViewHolder extends RecyclerView.ViewHolder
         bSelectDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.shortToast(view.getContext(), tvName.toString());
+                ToastUtil.shortToast(view.getContext(), tvName.getText().toString());
+                System.out.println(tvName.getText().toString());
 //                book();
             }
         });
@@ -47,9 +46,4 @@ public class HorizontalViewHolder extends RecyclerView.ViewHolder
     public TextView getTvRating() {
         return tvRating;
     }
-
-    public Button getbSelectDoctor() {
-        return bSelectDoctor;
-    }
-
 }
