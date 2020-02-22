@@ -3,14 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorWhite">
+    android:background="@color/colorAlmostWhite">
 
     <SearchView
         android:id="@+id/svSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:queryHint="@string/searchBySpec"
+        android:background="@color/colorWhite"
+        android:queryHint="@string/search"
         android:autofillHints="@string/searchBySpec"
         tools:targetApi="O"/>
 
@@ -21,11 +22,12 @@
         android:text="@string/recommendedDoctors"
         android:layout_below="@id/svSearch"
         android:textColor="@color/colorGrey"
+        android:textStyle="bold"
         android:padding="5dp"
         android:layout_marginStart="5dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/horizontalCardView"
+        android:id="@+id/rvHorizontalDoctors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"/>
@@ -35,8 +37,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/popularSpecs"
-        android:layout_below="@id/horizontalCardView"
         android:textColor="@color/colorGrey"
+        android:textStyle="bold"
+        android:layout_below="@id/rvHorizontalDoctors"
         android:padding="5dp"
         android:layout_marginStart="5dp"/>
 

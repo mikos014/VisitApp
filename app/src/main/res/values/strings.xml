@@ -42,10 +42,39 @@
     <string name="choose">Umów wizytę</string>
 
     <string name="cancelVisit">Odwołaj wizytę</string>
+
     <string name="historyOfVisits">Historia wizyt</string>
+
     <string name="refferal">Skierowania</string>
+    <string name="refferalNo">Nr</string>
+    <string name="refferalIssuedTo">Skierowanie do:</string>
+    <string name="refferalIssuedBy">Wydane przez:</string>
+    <string name="refferalIssuedDate">Data wydania:</string>
+    <string name="refferalExpiryDate">Ważne do:</string>
+    <string name="more">Więcej</string>
+
     <string name="prescription">Recepty</string>
+
     <string name="changeUserData">Zmień dane</string>
+    <string name="changeUserDataAndCommit">Uzupełnij pola i zatwierdź</string>
+    <string name="changeEmail">Zmień e-mail</string>
+    <string name="changePassword">Zmień hasło</string>
+    <string name="changeNumber">Zmień numer</string>
+    <string name="writeCurrentEmail">Wpisz obecny e-mail</string>
+    <string name="writeNewEmail">Wpisz nowy e-mail</string>
+    <string name="confirmNewEmail">Potwierdź nowy e-mail</string>
+    <string name="writeCurrentPassword">Wpisz obecne hasło</string>
+    <string name="writeNewPassword">Wpisz nowe hasło</string>
+    <string name="confirmNewPassword">Potwierdź nowe hasło</string>
+    <string name="writeNewNumber">Wpisz nowy numer</string>
+    <string name="emailsAreDifferent">E-maile różnią się</string>
+    <string name="passwordsAreDifferent">Hasła różnią się</string>
+    <string name="numberRequest">Wprowadź numer telefonu</string>
+    <string name="changeSaved">Zapisano zmianę </string>
+    <string name="email2">e-mail</string>
+    <string name="password2">hasło</string>
+    <string name="phoneNumber2">numer telefonu</string>
+
     <string name="logOut">Wyloguj</string>
 
     <string name="visits">Wizyty</string>

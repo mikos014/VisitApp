@@ -28,6 +28,13 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        Intent intent = getIntent();
+
+        if (intent != null)
+        {
+            user = (User) intent.getSerializableExtra("user");
+        }
+
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         bLogin = findViewById(R.id.bLogin);

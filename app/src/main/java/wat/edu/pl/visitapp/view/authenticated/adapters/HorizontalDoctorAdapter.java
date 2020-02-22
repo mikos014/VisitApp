@@ -7,36 +7,34 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Doctor;
-import wat.edu.pl.visitapp.view.authenticated.viewholders.HorizontalViewHolder;
+import wat.edu.pl.visitapp.view.authenticated.viewholders.HorizontalDoctorHolder;
 
-public class HorizontalViewAdapter extends RecyclerView.Adapter<HorizontalViewHolder>
+public class HorizontalDoctorAdapter extends RecyclerView.Adapter<HorizontalDoctorHolder>
 {
-
     private List<Doctor> doctorsList;
 
-    public HorizontalViewAdapter(List<Doctor> doctorsList)
+    public HorizontalDoctorAdapter(List<Doctor> doctorsList)
     {
         this.doctorsList = doctorsList;
     }
 
     @NonNull
     @Override
-    public HorizontalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HorizontalDoctorHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.horizontal_recyclerview_items, parent, false);
+                    .from(parent.getContext())
+                    .inflate(R.layout.horizontal_cardview_doctor, parent, false);
 
-        return new HorizontalViewHolder(view);
+        return new HorizontalDoctorHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HorizontalViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull HorizontalDoctorHolder holder, int position)
     {
         holder.getTvName().setText(doctorsList.get(position).getName());
         holder.getTvSpec().setText(doctorsList.get(position).getSpec());

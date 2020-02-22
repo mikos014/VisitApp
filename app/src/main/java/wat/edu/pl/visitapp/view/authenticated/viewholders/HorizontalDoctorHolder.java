@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 
-public class HorizontalViewHolder extends RecyclerView.ViewHolder
+public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 {
     private TextView tvName;
     private TextView tvSpec;
     private TextView tvRating;
     private Button bSelectDoctor;
 
-    public HorizontalViewHolder(final View view)
+    public HorizontalDoctorHolder(final View view)
     {
         super(view);
 

@@ -1,7 +1,5 @@
 package wat.edu.pl.visitapp.database.entity;
 
-import com.android.volley.toolbox.StringRequest;
-
 import java.io.Serializable;
 
 public class User implements Serializable
@@ -10,11 +8,11 @@ public class User implements Serializable
     private String email;
     private String name;
     private String surname;
-    private int dateOfBirth;
+    private String dateOfBirth;
     private int sex;
     private String phoneNumber;
 
-    public User(int userId, String email, String name, String surname, int dateOfBirth, int sex, String phoneNumber)
+    public User(int userId, String email, String name, String surname, String dateOfBirth, int sex, String phoneNumber)
     {
         this.userId = userId;
         this.email = email;
@@ -24,6 +22,7 @@ public class User implements Serializable
         this.sex = sex;
         this.phoneNumber = phoneNumber;
     }
+
 
     public int getUserId() {
         return userId;
@@ -57,11 +56,11 @@ public class User implements Serializable
         this.surname = surname;
     }
 
-    public int getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

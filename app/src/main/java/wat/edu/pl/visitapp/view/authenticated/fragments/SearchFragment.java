@@ -20,13 +20,13 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.SearchConnection;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
-import wat.edu.pl.visitapp.view.authenticated.adapters.HorizontalViewAdapter;
+import wat.edu.pl.visitapp.view.authenticated.adapters.HorizontalDoctorAdapter;
 
 public class SearchFragment extends Fragment implements SearchCallback {
     private SearchConnection searchConnection;
 
     private SearchView svSearch;
-    private RecyclerView rvCardView;
+    private RecyclerView rvHorizontalDoctors;
     private ListView lvList;
 
     public SearchFragment() {
@@ -38,7 +38,7 @@ public class SearchFragment extends Fragment implements SearchCallback {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         svSearch = view.findViewById(R.id.svSearch);
-        rvCardView = view.findViewById(R.id.horizontalCardView);
+        rvHorizontalDoctors = view.findViewById(R.id.rvHorizontalDoctors);
         lvList = view.findViewById(R.id.lvList);
 
         searchConnection = new SearchConnection(this);
@@ -56,12 +56,12 @@ public class SearchFragment extends Fragment implements SearchCallback {
             }
         });
 
-        rvCardView.setHasFixedSize(true);
+        rvHorizontalDoctors.setHasFixedSize(true);
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(getContext());
         managerCardView.setOrientation(RecyclerView.HORIZONTAL);
-        rvCardView.setAdapter(new HorizontalViewAdapter(searchConnection.getExampleOfDoctors()));
-        rvCardView.setLayoutManager(managerCardView);
+        rvHorizontalDoctors.setAdapter(new HorizontalDoctorAdapter(searchConnection.getExampleOfDoctors()));
+        rvHorizontalDoctors.setLayoutManager(managerCardView);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview_doctors_spec, searchConnection.getExampleOfSpecs());
         lvList.setAdapter(arrayAdapter);

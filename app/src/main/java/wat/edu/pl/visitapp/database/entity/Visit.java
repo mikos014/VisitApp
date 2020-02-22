@@ -1,10 +1,12 @@
 package wat.edu.pl.visitapp.database.entity;
 
+import java.util.Date;
+
 public class Visit
 {
     private int visitId;
-    private String date;
+    private Date date;
     private String time;
-    private int user;
-    private int doctor;
+    private User user;
+    private Doctor doctor;
 }
