@@ -20,6 +20,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.SearchConnection;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
+import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 import wat.edu.pl.visitapp.view.authenticated.adapters.HorizontalDoctorAdapter;
 
 public class SearchFragment extends Fragment implements SearchCallback {
@@ -36,6 +37,8 @@ public class SearchFragment extends Fragment implements SearchCallback {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
+
+        getActivity().setTitle(R.string.search);
 
         svSearch = view.findViewById(R.id.svSearch);
         rvHorizontalDoctors = view.findViewById(R.id.rvHorizontalDoctors);

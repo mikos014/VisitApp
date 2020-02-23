@@ -17,6 +17,8 @@ public class CancellationVisitFragment extends Fragment
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
+        getActivity().setTitle(R.string.cancelVisit);
+
         return inflater.inflate(R.layout.fragment_cancellation_visit, container, false);
     }
 }

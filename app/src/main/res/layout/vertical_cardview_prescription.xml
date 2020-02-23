@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="380dp"
-    android:layout_height="210dp"
+    android:layout_height="180dp"
     android:layout_margin="5dp"
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="10dp"
@@ -23,12 +23,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/refferalNo"
+                android:text="@string/prescriptionNo"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvRefferalNumber"
+                android:id="@+id/tvPrescriptionNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -46,12 +46,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/refferalIssuedTo"
+                android:text="@string/prescriptionIssuedBy"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvRefferalIssuedTo"
+                android:id="@+id/tvPrescriptionIssuedBy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -69,12 +69,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/refferalIssuedBy"
+                android:text="@string/prescriptionIssuedDate"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvRefferalIssuedBy"
+                android:id="@+id/tvPrescriptionIssuedDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -92,35 +92,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/refferalIssuedDate"
+                android:text="@string/prescriptionExpiryDate"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tvRefferalIssuedDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:layout_marginStart="5dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/refferalExpiryDate"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvRefferalExpiryDate"
+                android:id="@+id/tvPrescriptionExpiryDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -128,7 +105,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/bRefMore"
+            android:id="@+id/bPreMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/more"

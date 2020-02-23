@@ -42,6 +42,8 @@ public class ProfileFragment extends Fragment implements ProfileCallback {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        getActivity().setTitle(R.string.changeUserData);
+
         etOldEmail = view.findViewById(R.id.etOldEmail);
         etNewEmail = view.findViewById(R.id.etNewEmail1);
         etNewEmail2 = view.findViewById(R.id.etNewEmail2);

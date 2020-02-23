@@ -28,6 +28,8 @@ public class RefferalFragment extends Fragment implements RefferalCallback
     {
         View view = inflater.inflate(R.layout.fragment_refferal, container, false);
 
+        getActivity().setTitle(R.string.refferal);
+
         Bundle args = getArguments();
         User user = (User) args.getSerializable("user");
 

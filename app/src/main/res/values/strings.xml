@@ -46,7 +46,7 @@
     <string name="historyOfVisits">Historia wizyt</string>
 
     <string name="refferal">Skierowania</string>
-    <string name="refferalNo">Nr</string>
+    <string name="refferalNo">Skierowanie nr</string>
     <string name="refferalIssuedTo">Skierowanie do:</string>
     <string name="refferalIssuedBy">Wydane przez:</string>
     <string name="refferalIssuedDate">Data wydania:</string>
@@ -54,6 +54,10 @@
     <string name="more">Więcej</string>
 
     <string name="prescription">Recepty</string>
+    <string name="prescriptionNo">Recepta nr</string>
+    <string name="prescriptionIssuedBy">Wydane przez:</string>
+    <string name="prescriptionIssuedDate">Data wydania:</string>
+    <string name="prescriptionExpiryDate">Ważne do:</string>
 
     <string name="changeUserData">Zmień dane</string>
     <string name="changeUserDataAndCommit">Uzupełnij pola i zatwierdź</string>

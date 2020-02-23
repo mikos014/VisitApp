@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     {
         Bundle args = new Bundle();
         args.putSerializable("user", user);
+
+        Fragment fragment;
         switch (menuItem.getItemId())
         {
             case R.id.nav_search:
@@ -113,14 +115,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new HistoryFragment()).commit();
                 break;
             case R.id.nav_refferal:
-                Fragment fragment = new RefferalFragment();
+                fragment = new RefferalFragment();
                 fragment.setArguments(args);
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         fragment).commit();
                 break;
             case R.id.nav_prescription:
+                fragment = new PrescriptionFragment();
+                fragment.setArguments(args);
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new PrescriptionFragment()).commit();
+                        fragment).commit();
                 break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
