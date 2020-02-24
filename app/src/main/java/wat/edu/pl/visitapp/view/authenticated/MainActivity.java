@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openFragment(new PrescriptionFragment(), true);
                 break;
             case R.id.nav_profile:
-                openFragment(new PrescriptionFragment(), false);
+                openFragment(new ProfileFragment(), false);
                 break;
             case R.id.nav_logout:
                 Intent openMainActivity = new Intent(MainActivity.this, LoginActivity.class);

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="29dp"
-        android:text="@string/prescriptionNumber"
+        android:text="@string/refferalNumber"
         android:textColor="@color/colorBlack"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvPreNo"
+        android:id="@+id/tvRefNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
@@ -42,10 +42,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPreNo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRefNo" />
 
     <TextView
-        android:id="@+id/tvPreUser"
+        android:id="@+id/tvRefUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -61,160 +61,51 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:text="@string/medicine"
+        android:text="@string/purpose"
         android:textColor="@color/colorBlack"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPreUser" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRefUser" />
 
     <TextView
-        android:id="@+id/tvMedicineName1"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv3.1"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
+        android:text="@string/refferalToDoctor"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
     <TextView
-        android:id="@+id/tvMedicineForm1"
+        android:id="@+id/tvRefDoctorSpec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineName1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="okulista"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv3.1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
-    <TextView
-        android:id="@+id/tvMedicineDosage1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineForm1"
-        app:layout_constraintTop_toBottomOf="@+id/tv3" />
-
-    <TextView
-        android:id="@+id/tvMedicineMethodOfDosage1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage1"
-        app:layout_constraintTop_toBottomOf="@+id/tv3" />
-
-    <TextView
-        android:id="@+id/tvMedicineName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineName1" />
-
-    <TextView
-        android:id="@+id/tvMedicineForm2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineName2"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineForm1" />
-
-    <TextView
-        android:id="@+id/tvMedicineDosage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineForm2"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineDosage1" />
-
-    <TextView
-        android:id="@+id/tvMedicineMethodOfDosage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage2"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage1" />
-
-    <TextView
-        android:id="@+id/tvMedicineName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineName2" />
-
-    <TextView
-        android:id="@+id/tvMedicineForm3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineName3"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineForm2" />
-
-    <TextView
-        android:id="@+id/tvMedicineDosage3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineForm3"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineDosage2" />
-
-    <TextView
-        android:id="@+id/tvMedicineMethodOfDosage3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage3"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage2" />
 
     <TextView
         android:id="@+id/tv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="140dp"
         android:text="@string/issuedDate"
         android:textColor="@color/colorBlack"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineName3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv3.1" />
 
     <TextView
-        android:id="@+id/tvIssDate"
+        android:id="@+id/tvRefIssDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -235,10 +126,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvIssDate" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRefIssDate" />
 
     <TextView
-        android:id="@+id/tvExpDate"
+        android:id="@+id/tvRefExpDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -253,27 +144,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="95dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="140dp"
         android:text="@string/doctor"
         android:textColor="@color/colorBlack"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tv4"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv3.1" />
 
     <TextView
-        android:id="@+id/tvPreDoctorSpec"
+        android:id="@+id/tvRefIssuedByDoctorSpec"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="15dp"
-        android:text="laryngolog"
+        android:text="lekarz ogólny"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/tvIssDate"
+        app:layout_constraintStart_toEndOf="@+id/tvRefIssDate"
         app:layout_constraintTop_toBottomOf="@+id/tv6" />
 
     <TextView
-        android:id="@+id/tvPreDoctor"
+        android:id="@+id/tvRefIssuedByDoctor"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
@@ -281,6 +172,6 @@
         android:text="lek. Jerzy Stefaniuk"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/tv5"
-        app:layout_constraintTop_toBottomOf="@+id/tvPreDoctorSpec" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRefIssuedByDoctorSpec" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

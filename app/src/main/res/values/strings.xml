@@ -52,6 +52,9 @@
     <string name="refferalIssuedDate">Data wydania:</string>
     <string name="refferalExpiryDate">Ważne do:</string>
     <string name="more">Więcej</string>
+    <string name="refferalNumber">Skierowanie numer</string>
+    <string name="purpose">Cel skierowania</string>
+    <string name="refferalToDoctor">Skierowanie do lekarza o specjalności:</string>
 
     <string name="prescription">Recepty</string>
     <string name="prescriptionNo">Recepta nr</string>
