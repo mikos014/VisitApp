@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -47,7 +48,8 @@ public class VerticalRefferalHolder extends RecyclerView.ViewHolder
 
                 Intent openRefferalActivity = new Intent(view.getContext(), RefferalActivity.class);
                 openRefferalActivity.putExtra("refferal", refferal);
-                view.getContext().startActivity(openRefferalActivity);
+                v.getContext().startActivity(openRefferalActivity);
+                ((Activity) v.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }

@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
     {
         Intent openRegisterActivity = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(openRegisterActivity);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     private void openMainActivity()

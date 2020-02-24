@@ -98,6 +98,12 @@ public class RegisterActivity extends AppCompatActivity implements RegisterCallb
     }
 
     @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    @Override
     public void onFailure(String message)
     {
         ToastUtil.shortToast(RegisterActivity.this, message);

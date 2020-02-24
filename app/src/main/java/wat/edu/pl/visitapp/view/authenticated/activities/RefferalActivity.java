@@ -23,7 +23,7 @@ public class RefferalActivity extends AppCompatActivity
         Intent openRefferalFragment = new Intent(RefferalActivity.this, MainActivity.class);
         openRefferalFragment.putExtra("action", getString(R.string.refferal));
         startActivity(openRefferalFragment);
-
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         RefferalActivity.this.finish();
     }
 }

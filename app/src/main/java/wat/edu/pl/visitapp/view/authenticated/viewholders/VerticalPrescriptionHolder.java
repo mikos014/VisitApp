@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,8 @@ public class VerticalPrescriptionHolder extends RecyclerView.ViewHolder
                 Intent openPrescriptionActivity = new Intent(view.getContext(), PrescriptionActivity.class);
                 openPrescriptionActivity.putExtra("prescription", prescription);
                 v.getContext().startActivity(openPrescriptionActivity);
+                ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
             }
         });
     }

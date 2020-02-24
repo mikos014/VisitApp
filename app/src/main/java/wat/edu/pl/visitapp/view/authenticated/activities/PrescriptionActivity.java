@@ -102,6 +102,7 @@ public class PrescriptionActivity extends AppCompatActivity {
 //        openPrescriptionFragment.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         openPrescriptionFragment.putExtra("action", getString(R.string.prescription));
         startActivity(openPrescriptionFragment);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 
         PrescriptionActivity.this.finish();
     }
