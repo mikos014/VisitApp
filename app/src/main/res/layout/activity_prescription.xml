@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
         android:layout_marginTop="15dp"
-        android:text="00004212412"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
@@ -50,7 +49,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginTop="15dp"
-        android:text="Andrzej Nowak"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv2" />
@@ -74,7 +72,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
@@ -85,7 +82,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineName1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
@@ -96,7 +92,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineForm1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
@@ -107,7 +102,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
@@ -118,7 +112,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineName1" />
@@ -129,7 +122,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineName2"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineForm1" />
@@ -140,7 +132,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineForm2"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineDosage1" />
@@ -151,7 +142,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage2"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage1" />
@@ -162,7 +152,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineName2" />
@@ -173,7 +162,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineName3"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineForm2" />
@@ -184,7 +172,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineForm3"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineDosage2" />
@@ -195,7 +182,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage3"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage2" />
@@ -219,7 +205,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:text="25.02.2020"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv4" />
@@ -243,7 +228,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        android:text="26.02.2020"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv5" />
@@ -267,7 +251,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="15dp"
-        android:text="laryngolog"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/tvIssDate"
         app:layout_constraintTop_toBottomOf="@+id/tv6" />
@@ -278,7 +261,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
         android:layout_marginTop="8dp"
-        android:text="lek. Jerzy Stefaniuk"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/tv5"
         app:layout_constraintTop_toBottomOf="@+id/tvPreDoctorSpec" />
