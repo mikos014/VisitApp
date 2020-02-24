@@ -1,6 +1,8 @@
 package wat.edu.pl.visitapp.database.entity;
 
-public class Doctor
+import java.io.Serializable;
+
+public class Doctor implements Serializable
 {
     private int doctorId;
     private String name;

@@ -35,7 +35,7 @@ public class VerticalPrescriptionAdapter extends RecyclerView.Adapter<VerticalPr
                         .from(parent.getContext())
                         .inflate(R.layout.vertical_cardview_prescription, parent, false);
 
-        return new VerticalPrescriptionHolder(view);
+        return new VerticalPrescriptionHolder(view, listOfPrescription);
     }
 
     @Override
@@ -45,11 +45,7 @@ public class VerticalPrescriptionAdapter extends RecyclerView.Adapter<VerticalPr
         holder.getTvIssuedBy().setText(listOfPrescription.get(position).getIssuedByDoctor().getName());
 
         Date date = listOfPrescription.get(position).getIssuedDate();
-        System.out.println(date);
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        c.add(Calendar.DATE, 30);
-        Date datePlus30 = c.getTime();
+        Date datePlus30 = listOfPrescription.get(position).getExpirationDate();
 
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
 

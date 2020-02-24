@@ -58,6 +58,12 @@
     <string name="prescriptionIssuedBy">Wydane przez:</string>
     <string name="prescriptionIssuedDate">Data wydania:</string>
     <string name="prescriptionExpiryDate">Ważne do:</string>
+    <string name="prescriptionNumber">Recepta numer</string>
+    <string name="patient">Pacjent</string>
+    <string name="medicine">Lek</string>
+    <string name="issuedDate">Data wydania</string>
+    <string name="expDate">Data ważności</string>
+    <string name="doctor">Lekarz</string>
 
     <string name="changeUserData">Zmień dane</string>
     <string name="changeUserDataAndCommit">Uzupełnij pola i zatwierdź</string>

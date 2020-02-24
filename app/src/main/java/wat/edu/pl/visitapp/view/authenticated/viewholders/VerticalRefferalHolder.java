@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -8,8 +9,15 @@ import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.sql.Ref;
+import java.util.List;
+
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.database.entity.Prescription;
+import wat.edu.pl.visitapp.database.entity.Refferal;
 import wat.edu.pl.visitapp.utils.ToastUtil;
+import wat.edu.pl.visitapp.view.authenticated.MainActivity;
+import wat.edu.pl.visitapp.view.authenticated.activities.RefferalActivity;
 
 public class VerticalRefferalHolder extends RecyclerView.ViewHolder
 {
@@ -20,7 +28,7 @@ public class VerticalRefferalHolder extends RecyclerView.ViewHolder
     private TextView tvExpirationDate;
     private Button bMore;
 
-    public VerticalRefferalHolder(@NonNull final View view) {
+    public VerticalRefferalHolder(@NonNull final View view, final List<Refferal> list) {
         super(view);
 
         tvNumber = view.findViewById(R.id.tvRefferalNumber);
@@ -34,8 +42,23 @@ public class VerticalRefferalHolder extends RecyclerView.ViewHolder
             @Override
             public void onClick(View v) {
                 ToastUtil.shortToast(view.getContext(), "Więcej...");
+
+                Refferal refferal = getRefferal(list, tvNumber.getText().toString());
+
+                Intent openRefferalActivity = new Intent(view.getContext(), RefferalActivity.class);
+                openRefferalActivity.putExtra("refferal", refferal);
+                view.getContext().startActivity(openRefferalActivity);
             }
         });
+    }
+
+    private Refferal getRefferal(List<Refferal> refferals, String refferalNo)
+    {
+        for (Refferal r: refferals) {
+            if (r.getRefferalNo().equals(refferalNo))
+                return r;
+        }
+        return null;
     }
 
     public TextView getTvNumber() {

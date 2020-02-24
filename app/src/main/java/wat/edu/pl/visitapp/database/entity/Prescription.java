@@ -1,22 +1,26 @@
 package wat.edu.pl.visitapp.database.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class Prescription
+public class Prescription implements Serializable
 {
     private int prescriptionId;
     private String prescriptionNo;
     private Date issuedDate;
+    private Date expirationDate;
     private String issuedCity;
     private Doctor issuedByDoctor;
     private User issuedToUser;
-    private Medicine medicine;
+    private List<Medicine> medicine;
     private String extraInfo;
 
-    public Prescription(int prescriptionId, String prescriptionNo, Date issuedDate, String issuedCity, Doctor issuedByDoctor, User issuedToUser, Medicine medicine, String extraInfo) {
+    public Prescription(int prescriptionId, String prescriptionNo, Date issuedDate, Date expirationDate, String issuedCity, Doctor issuedByDoctor, User issuedToUser, List<Medicine> medicine, String extraInfo) {
         this.prescriptionId = prescriptionId;
         this.prescriptionNo = prescriptionNo;
         this.issuedDate = issuedDate;
+        this.expirationDate = expirationDate;
         this.issuedCity = issuedCity;
         this.issuedByDoctor = issuedByDoctor;
         this.issuedToUser = issuedToUser;
@@ -48,6 +52,14 @@ public class Prescription
         this.issuedDate = issuedDate;
     }
 
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
     public String getIssuedCity() {
         return issuedCity;
     }
@@ -72,11 +84,11 @@ public class Prescription
         this.issuedToUser = issuedToUser;
     }
 
-    public Medicine getMedicine() {
+    public List<Medicine> getMedicine() {
         return medicine;
     }
 
-    public void setMedicine(Medicine medicine) {
+    public void setMedicine(List<Medicine> medicine) {
         this.medicine = medicine;
     }
 

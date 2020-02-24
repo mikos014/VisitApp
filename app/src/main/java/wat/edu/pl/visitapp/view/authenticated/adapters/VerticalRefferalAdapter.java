@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class VerticalRefferalAdapter extends RecyclerView.Adapter<VerticalReffer
                         .from(parent.getContext())
                         .inflate(R.layout.vertical_cardview_refferal, parent, false);
 
-        return new VerticalRefferalHolder(view);
+        return new VerticalRefferalHolder(view, refferalList);
     }
 
     @Override
@@ -44,11 +43,7 @@ public class VerticalRefferalAdapter extends RecyclerView.Adapter<VerticalReffer
         holder.getTvIssuedTo().setText(refferalList.get(position).getIssuedToDoctor());
 
         Date date = refferalList.get(position).getIssuedDate();
-        System.out.println(date);
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        c.add(Calendar.DATE, 30);
-        Date datePlus30 = c.getTime();
+        Date datePlus30 = refferalList.get(position).getExpirationDate();
 
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
         holder.getTvIssuedDate().setText(sdf.format(date));

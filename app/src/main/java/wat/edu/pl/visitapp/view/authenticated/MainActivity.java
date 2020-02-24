@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private User user;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,14 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setSupportActionBar(toolbar);
 
-//        Intent intent = getIntent();
-//
-//        if(intent != null)
-//        {
-//            user = (User) intent.getSerializableExtra("user");
-//        }
-
-        User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
+        user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
 
         View headerView = navigationView.getHeaderView(0);
         tvNavName = headerView.findViewById(R.id.tvNavName);
@@ -72,11 +67,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (savedInstanceState == null)
+        Intent intent = getIntent();
+
+        if(intent.getSerializableExtra("user") != null)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new SearchFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_search);
+            user = (User) intent.getSerializableExtra("user");
+        }
+
+        String action = (String) intent.getSerializableExtra("action");
+        if (action != null)
+        {
+            if (action.equals(getString(R.string.refferal)))
+            {
+                openFragment(new RefferalFragment(), true);
+            }
+            else if(action.equals(getString(R.string.prescription)))
+            {
+                openFragment(new PrescriptionFragment(), true);
+            }
+        }
+        else
+        {
+            openFragment(new SearchFragment(), false);
         }
     }
 
@@ -96,50 +108,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
     {
-        Bundle args = new Bundle();
-        args.putSerializable("user", user);
-
-        Fragment fragment;
         switch (menuItem.getItemId())
         {
             case R.id.nav_search:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SearchFragment()).commit();
+                openFragment(new SearchFragment(), false);
                 break;
             case R.id.nav_cancellation:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CancellationVisitFragment()).commit();
+                openFragment(new CancellationVisitFragment(), true);
                 break;
             case R.id.nav_history:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HistoryFragment()).commit();
+                openFragment(new HistoryFragment(), true);
                 break;
             case R.id.nav_refferal:
-                fragment = new RefferalFragment();
-                fragment.setArguments(args);
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        fragment).commit();
+                openFragment(new RefferalFragment(), true);
                 break;
             case R.id.nav_prescription:
-                fragment = new PrescriptionFragment();
-                fragment.setArguments(args);
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        fragment).commit();
+                openFragment(new PrescriptionFragment(), true);
                 break;
             case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
+                openFragment(new PrescriptionFragment(), false);
                 break;
             case R.id.nav_logout:
                 Intent openMainActivity = new Intent(MainActivity.this, LoginActivity.class);
+                openMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(openMainActivity);
+                MainActivity.this.finish();
                 break;
         }
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openFragment(Fragment fragment, boolean isUserNeeded)
+    {
+        if (isUserNeeded)
+        {
+            Bundle args = new Bundle();
+            args.putSerializable("user", user);
+            fragment.setArguments(args);
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                fragment).commit();
     }
 
     @Override

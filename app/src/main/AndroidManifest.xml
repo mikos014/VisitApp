@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity
-            android:name=".view.welcome.LoginActivity">
+        <activity android:name=".view.welcome.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,10 +19,16 @@
         <activity
             android:name=".view.welcome.RegisterActivity"
             android:label="@string/registration"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.authenticated.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.authenticated.activities.PrescriptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.authenticated.activities.RefferalActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
