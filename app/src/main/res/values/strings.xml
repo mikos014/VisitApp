@@ -44,6 +44,12 @@
     <string name="cancelVisit">Odwołaj wizytę</string>
 
     <string name="historyOfVisits">Historia wizyt</string>
+    <string name="visitDate">Termin wizyty:</string>
+    <string name="visitHour">godz.</string>
+    <string name="addOpinion">Dodaj opinię</string>
+    <string name="addOpinionLongText">Dodaj opnię lekarzowie na podstawie przeprowadzonnej wizyty.</string>
+    <string name="save">Zapisz</string>
+    <string name="cancel">Anuluj</string>
 
     <string name="refferal">Skierowania</string>
     <string name="refferalNo">Skierowanie nr</string>
