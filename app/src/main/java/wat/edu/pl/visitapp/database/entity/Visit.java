@@ -9,4 +9,5 @@ public class Visit
     private String time;
     private User user;
     private Doctor doctor;
+    private boolean hasOpinion;
 }
