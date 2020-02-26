@@ -48,7 +48,7 @@
     <string name="visitHour">godz.</string>
     <string name="addOpinion">Dodaj opinię</string>
     <string name="addOpinionLongText">Dodaj opinię lekarzowie na podstawie przeprowadzonej wizyty.</string>
-    <string name="veryBad">Nie polecam nikomu !</string>
+    <string name="veryBad">Nie polecam lekarza !</string>
     <string name="needSomeImprovements">Wymaga więcej zaangażowania...</string>
     <string name="average">Ponadprzeciętnie, nie było tak źle.</string>
     <string name="good">Oceniam dobrze.</string>

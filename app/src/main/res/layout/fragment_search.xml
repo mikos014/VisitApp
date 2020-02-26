@@ -1,53 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:background="@color/colorAlmostWhite">
 
-    <SearchView
-        android:id="@+id/svSearch"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAlmostWhite"
+        tools:ignore="ScrollViewCount">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/colorWhite"
-        android:queryHint="@string/search"
-        android:autofillHints="@string/searchBySpec"
-        tools:targetApi="O"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/recommendedDoctors"
-        android:layout_below="@id/svSearch"
-        android:textColor="@color/colorGrey"
-        android:textStyle="bold"
-        android:padding="5dp"
-        android:layout_marginStart="5dp"/>
+        <SearchView
+            android:id="@+id/svSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:autofillHints="@string/searchBySpec"
+            android:background="@color/colorWhite"
+            android:queryHint="@string/search"
+            tools:targetApi="O" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHorizontalDoctors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:padding="5dp"
+            android:text="@string/recommendedDoctors"
+            android:textColor="@color/colorGrey"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/popularSpecs"
-        android:textColor="@color/colorGrey"
-        android:textStyle="bold"
-        android:layout_below="@id/rvHorizontalDoctors"
-        android:padding="5dp"
-        android:layout_marginStart="5dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHorizontalDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <ListView
-        android:id="@+id/lvList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:padding="5dp"
+            android:text="@string/popularSpecs"
+            android:textColor="@color/colorGrey"
+            android:textStyle="bold" />
 
+        <ListView
+            android:id="@+id/lvList"
+            android:layout_width="match_parent"
+            android:layout_height="350dp" />
 
-</RelativeLayout>
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

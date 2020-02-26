@@ -7,155 +7,134 @@
     android:fillViewport="true"
     android:background="@color/colorAlmostWhite">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/etTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="29dp"
             android:text="@string/changeUserDataAndCommit"
             android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/etOldEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:autofillHints="@string/writeCurrentEmail"
             android:ems="10"
             android:hint="@string/writeCurrentEmail"
             android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etTitle"
             tools:targetApi="O" />
 
         <EditText
             android:id="@+id/etNewEmail1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:autofillHints="@string/writeNewEmail"
             android:ems="10"
             android:hint="@string/writeNewEmail"
             android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etOldEmail"
             tools:targetApi="O" />
 
         <EditText
             android:id="@+id/etNewEmail2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:autofillHints="@string/confirmNewEmail"
             android:ems="10"
             android:hint="@string/confirmNewEmail"
             android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNewEmail1"
             tools:targetApi="O" />
 
         <Button
             android:id="@+id/bChangeEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"            android:layout_marginTop="15dp"
             android:background="@drawable/shape_button"
             android:text="@string/changeEmail"
-            android:textColor="@color/colorWhite"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNewEmail2" />
+            android:textColor="@color/colorWhite"/>
 
         <EditText
             android:id="@+id/etOldPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:autofillHints="@string/writeCurrentPassword"
             android:ems="10"
             android:hint="@string/writeCurrentPassword"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bChangeEmail"
             tools:targetApi="O" />
 
         <EditText
             android:id="@+id/etNewPassword1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:autofillHints="@string/writeNewPassword"
             android:ems="10"
             android:hint="@string/writeNewPassword"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etOldPassword"
             tools:targetApi="O" />
 
         <EditText
             android:id="@+id/etNewPassword2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:autofillHints="@string/confirmNewPassword"
             android:ems="10"
             android:hint="@string/confirmNewPassword"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNewPassword1"
             tools:targetApi="O" />
 
         <Button
             android:id="@+id/bChangePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="148dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:background="@drawable/shape_button"
             android:text="@string/changePassword"
-            android:textColor="@color/colorWhite"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNewPassword2" />
+            android:textColor="@color/colorWhite"/>
 
         <EditText
             android:id="@+id/etNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="99dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:autofillHints="@string/writeNewNumber"
             android:ems="10"
             android:hint="@string/writeNewNumber"
             android:inputType="number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bChangePassword"
             tools:targetApi="O" />
 
         <Button
             android:id="@+id/bChangeNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="144dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/shape_button"
             android:text="@string/changeNumber"
-            android:textColor="@color/colorWhite"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etNumber" />
+            android:textColor="@color/colorWhite"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

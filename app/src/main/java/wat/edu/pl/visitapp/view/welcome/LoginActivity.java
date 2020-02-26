@@ -40,6 +40,11 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
         bLogin = findViewById(R.id.bLogin);
         bRegister = findViewById(R.id.bRegister);
 
+//        do usunięcia
+        etEmail.setText("admin");
+        etPassword.setText("admin");
+//
+
         bLogin.setOnClickListener(new View.OnClickListener()
         {
             @Override
