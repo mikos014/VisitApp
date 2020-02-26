@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
 public class OpinionDialog extends DialogFragment
@@ -64,7 +65,16 @@ public class OpinionDialog extends DialogFragment
             @Override
             public void onClick(View v) {
 
+                String text = tvRatingDescription.getText().toString();
 
+                if (text.equals(""))
+                {
+                    ToastUtil.shortToast(getActivity(), getString(R.string.fillRatingStars));
+                }
+                else
+                {
+                    
+                }
             }
         });
 

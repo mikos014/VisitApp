@@ -11,10 +11,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.PrescriptionConnection;
+import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.interfaces.callbacks.PrescriptionCallback;
+import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalPrescriptionAdapter;
 
 public class PrescriptionFragment extends Fragment implements PrescriptionCallback
@@ -35,10 +39,11 @@ public class PrescriptionFragment extends Fragment implements PrescriptionCallba
         rvVerticalPrescription = view.findViewById(R.id.rvVerticalPrescription);
 
         PrescriptionConnection connection = new PrescriptionConnection(this);
+        List<Prescription> prescriptionList = connection.getListOfPrescription(user);
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(getContext());
         managerCardView.setOrientation(RecyclerView.VERTICAL);
-        rvVerticalPrescription.setAdapter(new VerticalPrescriptionAdapter(connection.getListOfPrescription(user)));
+        rvVerticalPrescription.setAdapter(new VerticalPrescriptionAdapter(prescriptionList));
         rvVerticalPrescription.setLayoutManager(managerCardView);
 
         return view;
@@ -51,6 +56,6 @@ public class PrescriptionFragment extends Fragment implements PrescriptionCallba
 
     @Override
     public void onFailure(String message) {
-
+        ToastUtil.shortToast(getActivity(), message);
     }
 }

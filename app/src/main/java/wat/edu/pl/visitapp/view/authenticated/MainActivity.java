@@ -77,7 +77,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String action = (String) intent.getSerializableExtra("action");
         if (action != null)
         {
-            if (action.equals(getString(R.string.refferal)))
+            if (action.equals(getString(R.string.historyOfVisits)))
+            {
+                openFragment(new HistoryFragment(), true);
+            }
+            else if (action.equals(getString(R.string.refferal)))
             {
                 openFragment(new RefferalFragment(), true);
             }
