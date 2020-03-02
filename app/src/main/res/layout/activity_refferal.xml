@@ -138,7 +138,7 @@
         android:id="@+id/tv6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="140dp"
         android:text="@string/doctor"
         android:textColor="@color/colorBlack"

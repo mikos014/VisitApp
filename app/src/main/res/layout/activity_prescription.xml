@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
@@ -80,9 +80,9 @@
         android:id="@+id/tvMedicineForm1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineName1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
@@ -90,9 +90,9 @@
         android:id="@+id/tvMedicineDosage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineForm1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
@@ -100,9 +100,9 @@
         android:id="@+id/tvMedicineMethodOfDosage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage1"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineName1" />
 
@@ -120,9 +120,9 @@
         android:id="@+id/tvMedicineForm2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineName2"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineForm1" />
 
@@ -130,9 +130,9 @@
         android:id="@+id/tvMedicineDosage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineForm2"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineDosage1" />
 
@@ -140,9 +140,9 @@
         android:id="@+id/tvMedicineMethodOfDosage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage2"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage1" />
 
@@ -152,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineName2" />
 
@@ -160,9 +160,9 @@
         android:id="@+id/tvMedicineForm3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineName3"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineForm2" />
 
@@ -170,9 +170,9 @@
         android:id="@+id/tvMedicineDosage3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineForm3"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineDosage2" />
 
@@ -180,9 +180,9 @@
         android:id="@+id/tvMedicineMethodOfDosage3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="15dp"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvMedicineDosage3"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineMethodOfDosage2" />
 
@@ -236,7 +236,7 @@
         android:id="@+id/tv6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="50dp"
         android:text="@string/doctor"
         android:textColor="@color/colorBlack"
@@ -257,7 +257,7 @@
 
     <TextView
         android:id="@+id/tvPreDoctor"
-        android:layout_width="170sp"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
         android:layout_marginTop="8dp"

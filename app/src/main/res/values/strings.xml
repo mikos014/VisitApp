@@ -42,6 +42,10 @@
     <string name="choose">Umów wizytę</string>
 
     <string name="cancelVisit">Odwołaj wizytę</string>
+    <string name="cancelV">Odwołaj</string>
+    <string name="sureToCancelVisit">Czy na pewno chcesz odwołać tę wizytę ?</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
 
     <string name="historyOfVisits">Historia wizyt</string>
     <string name="visitDate">Termin wizyty:</string>
