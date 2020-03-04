@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 
 import wat.edu.pl.visitapp.R;
-import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.database.entity.Refferal;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 

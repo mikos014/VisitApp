@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else
         {
-            openFragment(new SearchFragment(), false);
+            openFragment(new SearchFragment(), true);
         }
     }
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId())
         {
             case R.id.nav_search:
-                openFragment(new SearchFragment(), false);
+                openFragment(new SearchFragment(), true);
                 break;
             case R.id.nav_cancellation:
                 openFragment(new CancellationVisitFragment(), true);

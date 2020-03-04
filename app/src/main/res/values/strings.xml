@@ -40,6 +40,7 @@
     <string name="recommendedDoctors">LEKARZE Z NAJWYŻSZĄ OCENĄ</string>
     <string name="popularSpecs">POPULARNE SPECJALNOŚCI</string>
     <string name="choose">Umów wizytę</string>
+    <string name="singleQuotationMark">\'</string>
 
     <string name="cancelVisit">Odwołaj wizytę</string>
     <string name="cancelV">Odwołaj</string>

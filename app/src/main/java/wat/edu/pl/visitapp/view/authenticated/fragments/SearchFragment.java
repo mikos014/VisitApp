@@ -1,6 +1,7 @@
 package wat.edu.pl.visitapp.view.authenticated.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.SearchConnection;
+import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
+import wat.edu.pl.visitapp.view.authenticated.activities.BrowseActivity;
 import wat.edu.pl.visitapp.view.authenticated.adapters.HorizontalDoctorAdapter;
 
 public class SearchFragment extends Fragment implements SearchCallback {
@@ -30,15 +33,21 @@ public class SearchFragment extends Fragment implements SearchCallback {
     private RecyclerView rvHorizontalDoctors;
     private ListView lvList;
 
+    private User user;
+
     public SearchFragment() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_search, container, false);
+        final View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         getActivity().setTitle(R.string.search);
+
+        Bundle args = getArguments();
+
+        user = (User) args.getSerializable("user");
 
         svSearch = view.findViewById(R.id.svSearch);
         rvHorizontalDoctors = view.findViewById(R.id.rvHorizontalDoctors);
@@ -49,7 +58,10 @@ public class SearchFragment extends Fragment implements SearchCallback {
         svSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-//                search();
+                Intent openBrowseActivity = new Intent(getContext(), BrowseActivity.class);
+                openBrowseActivity.putExtra("query", query);
+                startActivity(openBrowseActivity);
+                ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return false;
             }
 
@@ -73,6 +85,11 @@ public class SearchFragment extends Fragment implements SearchCallback {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ToastUtil.shortToast(getContext(), parent.getItemAtPosition(position).toString());
+
+                Intent openBrowseActivity = new Intent(getContext(), BrowseActivity.class);
+                openBrowseActivity.putExtra("query", parent.getItemAtPosition(position).toString());
+                startActivity(openBrowseActivity);
+                ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

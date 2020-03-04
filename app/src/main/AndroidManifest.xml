@@ -29,6 +29,9 @@
         <activity
             android:name=".view.authenticated.activities.RefferalActivity"
             android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".view.authenticated.activities.BrowseActivity"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

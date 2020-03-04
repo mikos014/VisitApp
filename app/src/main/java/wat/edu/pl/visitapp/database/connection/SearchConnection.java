@@ -1,19 +1,17 @@
 package wat.edu.pl.visitapp.database.connection;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.database.entity.Doctor;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
-import wat.edu.pl.visitapp.view.authenticated.fragments.SearchFragment;
 
 public class SearchConnection
 {
     private SearchCallback callback;
 
-    public SearchConnection(SearchFragment callback)
+    public SearchConnection(SearchCallback callback)
     {
         this.callback = callback;
     }

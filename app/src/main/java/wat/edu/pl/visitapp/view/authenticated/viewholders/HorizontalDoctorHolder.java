@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.utils.ToastUtil;
+import wat.edu.pl.visitapp.view.authenticated.activities.BrowseActivity;
 
 public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 {
@@ -30,7 +32,11 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
             public void onClick(View v) {
                 ToastUtil.shortToast(view.getContext(), tvName.getText().toString());
                 System.out.println(tvName.getText().toString());
-//                book();
+                Intent openBrowseActivity = new Intent(v.getContext(), BrowseActivity.class);
+
+//                do przekierowania na activity rezerwacji
+                openBrowseActivity.putExtra("query", "abc");
+                v.getContext().startActivity(openBrowseActivity);
             }
         });
     }
