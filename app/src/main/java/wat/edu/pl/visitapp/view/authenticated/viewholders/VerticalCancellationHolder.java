@@ -21,6 +21,7 @@ public class VerticalCancellationHolder extends RecyclerView.ViewHolder
     private TextView tvVisitDoctorName;
     private TextView tvVisitDoctorSpec;
     private TextView tvVisitDoctorRating;
+    private TextView tvVisitDoctorDistance;
     private Button bCancelVisit;
 
     public VerticalCancellationHolder(@NonNull View view) {
@@ -31,6 +32,7 @@ public class VerticalCancellationHolder extends RecyclerView.ViewHolder
         tvVisitDoctorName = view.findViewById(R.id.tvCancellationDoctorName);
         tvVisitDoctorSpec = view.findViewById(R.id.tvCancellationDoctorSpec);
         tvVisitDoctorRating = view.findViewById(R.id.tvCancellationDoctorRating);
+        tvVisitDoctorDistance = view.findViewById(R.id.tvCancellationDoctorDistance);
         bCancelVisit = view.findViewById(R.id.bCancelVisit);
 
         bCancelVisit.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +65,10 @@ public class VerticalCancellationHolder extends RecyclerView.ViewHolder
 
     public TextView getTvVisitDoctorRating() {
         return tvVisitDoctorRating;
+    }
+
+    public TextView getTvVisitDoctorDistance() {
+        return tvVisitDoctorDistance;
     }
 
     public Button getbCancelVisit() {

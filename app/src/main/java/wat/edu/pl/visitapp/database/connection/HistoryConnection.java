@@ -36,9 +36,9 @@ public class HistoryConnection
 
         Doctor doctor = new Doctor(1, "lek. Michał Malinowski", 4.7, "lekarz ogólny");
 
-        Visit visit = new Visit(1, date, "13:30", user, doctor, false);
-        Visit visit1 = new Visit(1, date, "13:30", user, doctor, false);
-        Visit visit2 = new Visit(1, date, "13:30", user, doctor, false);
+        Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "Czumy 1", "228463828", false);
+        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "Czumy 1", "228463828",false);
+        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "Czumy 1", "228463828",false);
 
         list.add(visit);
         list.add(visit1);

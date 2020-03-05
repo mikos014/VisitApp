@@ -16,7 +16,7 @@
         android:weightSum="4">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal"
@@ -30,7 +30,7 @@
                 android:src="@drawable/ic_doctor_icon" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
@@ -49,6 +49,20 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp" />
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tvSearchDoctorDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7km"
+                    android:textSize="18sp"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -10,16 +10,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.control.MapControl;
 import wat.edu.pl.visitapp.database.entity.Doctor;
+import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.HorizontalDoctorHolder;
 
 public class HorizontalDoctorAdapter extends RecyclerView.Adapter<HorizontalDoctorHolder>
 {
-    private List<Doctor> doctorsList;
+    private List<Visit> visitList;
 
-    public HorizontalDoctorAdapter(List<Doctor> doctorsList)
+    public HorizontalDoctorAdapter(List<Visit> visitList)
     {
-        this.doctorsList = doctorsList;
+        this.visitList = visitList;
     }
 
     @NonNull
@@ -36,13 +38,17 @@ public class HorizontalDoctorAdapter extends RecyclerView.Adapter<HorizontalDoct
     @Override
     public void onBindViewHolder(@NonNull HorizontalDoctorHolder holder, int position)
     {
-        holder.getTvName().setText(doctorsList.get(position).getName());
-        holder.getTvSpec().setText(doctorsList.get(position).getSpec());
-        holder.getTvRating().setText(String.valueOf(doctorsList.get(position).getRating()));
+        MapControl mapControl = new MapControl();
+        String distance = mapControl.getDistance(visitList.get(position).getPlaceLatitude(), visitList.get(position).getPlaceLongitude());
+
+        holder.getTvName().setText(visitList.get(position).getDoctor().getName());
+        holder.getTvSpec().setText(visitList.get(position).getDoctor().getSpec());
+        holder.getTvDistance().setText(distance);
+        holder.getTvRating().setText(String.valueOf(visitList.get(position).getDoctor().getRating()));
     }
 
     @Override
     public int getItemCount() {
-        return doctorsList.size();
+        return visitList.size();
     }
 }

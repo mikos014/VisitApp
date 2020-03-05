@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.zip.Inflater;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.control.MapControl;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalCancellationHolder;
 
@@ -40,10 +41,15 @@ public class VerticalCancellationAdapter extends RecyclerView.Adapter<VerticalCa
     {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
 
+        MapControl mapControl = new MapControl();
+        String distance = mapControl.getDistance(list.get(position).getPlaceLatitude(), list.get(position).getPlaceLongitude());
+
         holder.getTvVisitDate().setText(sdf.format(list.get(position).getDate()));
         holder.getTvVisitTime().setText(list.get(position).getTime());
         holder.getTvVisitDoctorName().setText(list.get(position).getDoctor().getName());
         holder.getTvVisitDoctorSpec().setText(list.get(position).getDoctor().getSpec());
+        holder.getTvVisitDoctorDistance().setText(distance);
+        holder.getTvVisitDoctorRating().setText(String.valueOf(list.get(position).getDoctor().getRating()));
     }
 
     @Override

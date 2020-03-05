@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.control.MapControl;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalDoctorHolder;
 
@@ -33,8 +34,12 @@ public class VeriticalDoctorAdapter extends RecyclerView.Adapter<VerticalDoctorH
 
     @Override
     public void onBindViewHolder(@NonNull VerticalDoctorHolder holder, int position) {
+        MapControl mapControl = new MapControl();
+        String distance = mapControl.getDistance(visitList.get(position).getPlaceLatitude(), visitList.get(position).getPlaceLongitude());
+
         holder.getTvDoctorName().setText(visitList.get(position).getDoctor().getName());
         holder.getTvDoctorSpec().setText(visitList.get(position).getDoctor().getSpec());
+        holder.getTvDoctorDistance().setText(distance);
         holder.getTvDoctorRating().setText(String.valueOf(visitList.get(position).getDoctor().getRating()));
 
     }

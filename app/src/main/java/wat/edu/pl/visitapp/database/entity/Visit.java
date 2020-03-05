@@ -9,14 +9,24 @@ public class Visit
     private String time;
     private User user;
     private Doctor doctor;
+    private double placeLatitude;
+    private double placeLongitude;
+    private String clinicName;
+    private String clinicStreet;
+    private String clinicPhoneNo;
     private boolean hasOpinion;
 
-    public Visit(int visitId, Date date, String time, User user, Doctor doctor, boolean hasOpinion) {
+    public Visit(int visitId, Date date, String time, User user, Doctor doctor, double placeLatitude, double placeLongitude, String clinicName, String clinicStreet, String clinicPhoneNo, boolean hasOpinion) {
         this.visitId = visitId;
         this.date = date;
         this.time = time;
         this.user = user;
         this.doctor = doctor;
+        this.placeLatitude = placeLatitude;
+        this.placeLongitude = placeLongitude;
+        this.clinicName = clinicName;
+        this.clinicStreet = clinicStreet;
+        this.clinicPhoneNo = clinicPhoneNo;
         this.hasOpinion = hasOpinion;
     }
 
@@ -58,6 +68,46 @@ public class Visit
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+
+    public double getPlaceLatitude() {
+        return placeLatitude;
+    }
+
+    public void setPlaceLatitude(double placeLatitude) {
+        this.placeLatitude = placeLatitude;
+    }
+
+    public double getPlaceLongitude() {
+        return placeLongitude;
+    }
+
+    public void setPlaceLongitude(double placeLongitude) {
+        this.placeLongitude = placeLongitude;
+    }
+
+    public String getClinicName() {
+        return clinicName;
+    }
+
+    public void setClinicName(String clinicName) {
+        this.clinicName = clinicName;
+    }
+
+    public String getClinicStreet() {
+        return clinicStreet;
+    }
+
+    public void setClinicStreet(String clinicStreet) {
+        this.clinicStreet = clinicStreet;
+    }
+
+    public String getClinicPhoneNo() {
+        return clinicPhoneNo;
+    }
+
+    public void setClinicPhoneNo(String clinicPhoneNo) {
+        this.clinicPhoneNo = clinicPhoneNo;
     }
 
     public boolean isHasOpinion() {

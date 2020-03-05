@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.control.MapControl;
 import wat.edu.pl.visitapp.database.connection.SearchConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
@@ -75,7 +76,7 @@ public class SearchFragment extends Fragment implements SearchCallback {
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(getContext());
         managerCardView.setOrientation(RecyclerView.HORIZONTAL);
-        rvHorizontalDoctors.setAdapter(new HorizontalDoctorAdapter(searchConnection.getExampleOfDoctors()));
+        rvHorizontalDoctors.setAdapter(new HorizontalDoctorAdapter(searchConnection.getExampleOfVisits()));
         rvHorizontalDoctors.setLayoutManager(managerCardView);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview_doctors_spec, searchConnection.getExampleOfSpecs());
@@ -92,6 +93,9 @@ public class SearchFragment extends Fragment implements SearchCallback {
                 ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
+
+//        MapControl mC = new MapControl();
+//        ToastUtil.shortToast(getContext(), mC.getRouteDistance(51.421882, 21.924779, 51.424463, 21.951240));
 
         return view;
     }

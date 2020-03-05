@@ -15,6 +15,7 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 {
     private TextView tvName;
     private TextView tvSpec;
+    private TextView tvDistance;
     private TextView tvRating;
     private Button bSelectDoctor;
 
@@ -24,6 +25,7 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 
         tvName = view.findViewById(R.id.tvDoctorName);
         tvSpec = view.findViewById(R.id.tvDoctorSpec);
+        tvDistance = view.findViewById(R.id.tvDoctorDistance);
         tvRating = view.findViewById(R.id.tvDoctorRating);
         bSelectDoctor = view.findViewById(R.id.bSelectDoctor);
 
@@ -36,7 +38,7 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 
 //                do przekierowania na activity rezerwacji
                 openBrowseActivity.putExtra("query", "abc");
-                v.getContext().startActivity(openBrowseActivity);
+//                v.getContext().startActivity(openBrowseActivity);
             }
         });
     }
@@ -47,6 +49,10 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 
     public TextView getTvSpec() {
         return tvSpec;
+    }
+
+    public TextView getTvDistance() {
+        return tvDistance;
     }
 
     public TextView getTvRating() {

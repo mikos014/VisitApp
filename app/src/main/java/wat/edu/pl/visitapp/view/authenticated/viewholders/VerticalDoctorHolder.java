@@ -14,6 +14,7 @@ public class VerticalDoctorHolder extends RecyclerView.ViewHolder {
     private TextView tvDoctorName;
     private TextView tvDoctorSpec;
     private TextView tvDoctorRating;
+    private TextView tvDoctorDistance;
     private Button bBookVisit;
 
     public VerticalDoctorHolder(@NonNull final View view) {
@@ -22,6 +23,7 @@ public class VerticalDoctorHolder extends RecyclerView.ViewHolder {
         tvDoctorName = view.findViewById(R.id.tvSearchDoctorName);
         tvDoctorSpec = view.findViewById(R.id.tvSearchDoctorSpec);
         tvDoctorRating = view.findViewById(R.id.tvSearchDoctorRating);
+        tvDoctorDistance = view.findViewById(R.id.tvSearchDoctorDistance);
         bBookVisit = view.findViewById(R.id.bSearchSelectDoctor);
 
         bBookVisit.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +44,10 @@ public class VerticalDoctorHolder extends RecyclerView.ViewHolder {
 
     public TextView getTvDoctorRating() {
         return tvDoctorRating;
+    }
+
+    public TextView getTvDoctorDistance() {
+        return tvDoctorDistance;
     }
 
     public Button getbBookVisit() {
