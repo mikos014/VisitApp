@@ -47,7 +47,6 @@ public class MapControl
                 distance = "Too Far";
             }
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return distance;

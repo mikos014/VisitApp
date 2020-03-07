@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_doctor_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_star_doctorsrating" />
+
+                <TextView
+                    android:id="@+id/tvDetailDoctorRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="4.6"
+                    android:textColor="@color/colorAlmostWhite"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp">
+
+            <TextView
+                android:id="@+id/tvDetailDoctorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dr Jan Kowalski"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAlmostWhite"/>
+
+            <TextView
+                android:id="@+id/tvDetailDoctorSpec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="laryngolog"
+                android:textSize="17sp"
+                android:textColor="@color/colorAlmostWhite"/>
+
+            <TextView
+                android:id="@+id/tvDetailClinicName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SZPLO Przychodnia Publiczna"
+                android:textSize="17sp"
+                android:textColor="@color/colorAlmostWhite"/>
+
+            <TextView
+                android:id="@+id/tvDetailClinicStreet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ul. Powstańców Sląskich 199"
+                android:textSize="17sp"
+                android:textColor="@color/colorAlmostWhite"/>
+
+            <TextView
+                android:id="@+id/tvDetailClinicCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01-001 Warszawa"
+                android:textSize="17sp"
+                android:textColor="@color/colorAlmostWhite"/>
+
+            <TextView
+                android:id="@+id/tvDetailClinicNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22 232 34 43"
+                android:textSize="17sp"
+                android:textColor="@color/colorAlmostWhite"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ExpandableListView
+            android:id="@+id/elvDatesOfVisits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</LinearLayout>

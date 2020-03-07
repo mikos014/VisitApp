@@ -14,11 +14,11 @@ import wat.edu.pl.visitapp.control.MapControl;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalDoctorHolder;
 
-public class VeriticalDoctorAdapter extends RecyclerView.Adapter<VerticalDoctorHolder> {
+public class VerticalDoctorAdapter extends RecyclerView.Adapter<VerticalDoctorHolder> {
 
     private List<Visit> visitList;
 
-    public VeriticalDoctorAdapter(List<Visit> visitList) {
+    public VerticalDoctorAdapter(List<Visit> visitList) {
         this.visitList = visitList;
     }
 
@@ -29,7 +29,7 @@ public class VeriticalDoctorAdapter extends RecyclerView.Adapter<VerticalDoctorH
         View view = LayoutInflater.from(parent.getContext())
                                     .inflate(R.layout.vertical_cardview_doctor, parent, false);
 
-        return new VerticalDoctorHolder(view);
+        return new VerticalDoctorHolder(view, visitList);
     }
 
     @Override

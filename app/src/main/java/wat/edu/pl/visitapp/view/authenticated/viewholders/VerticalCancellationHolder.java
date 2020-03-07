@@ -71,7 +71,4 @@ public class VerticalCancellationHolder extends RecyclerView.ViewHolder
         return tvVisitDoctorDistance;
     }
 
-    public Button getbCancelVisit() {
-        return bCancelVisit;
-    }
 }

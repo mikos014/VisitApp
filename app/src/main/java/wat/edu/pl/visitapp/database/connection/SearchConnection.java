@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -43,9 +44,9 @@ public class SearchConnection
         User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
         Doctor doctor = new Doctor(1, "lek. Jan Zanberg", 4.7, "lekarz ogólny");
 
-        Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "Czumy 1", "228463828", false);
-        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "Czumy 1", "228463828",false);
-        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "Czumy 1", "228463828",false);
+        Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa", "Czumy 1", "228463828", false);
+        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
+        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
 
         list.add(visit);
         list.add(visit1);
@@ -69,5 +70,27 @@ public class SearchConnection
         Collections.sort(list);
 
         return list;
+    }
+
+    public HashMap<String, List<String>> getDatesOfVisits(int id)
+    {
+        HashMap<String, List<String>> dates = new HashMap<>();
+
+        List<String> hours = new LinkedList<>();
+        hours.add("13:00");
+        hours.add("14:00");
+        hours.add("15:00");
+        dates.put("26.03.2020r.", hours);
+
+        dates.put("27.03.2020r.", hours);
+
+        dates.put("28.03.2020r.", hours);
+
+        return dates;
+    }
+
+    public void bookTheVisit(int visitId, int userId, String date, String time)
+    {
+
     }
 }

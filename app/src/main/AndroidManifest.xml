@@ -34,6 +34,9 @@
         <activity
             android:name=".view.authenticated.activities.BrowseActivity"
             android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".view.authenticated.activities.VisitDetailsActivity"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

@@ -18,7 +18,7 @@ import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
-import wat.edu.pl.visitapp.view.authenticated.adapters.VeriticalDoctorAdapter;
+import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalDoctorAdapter;
 
 public class BrowseActivity extends AppCompatActivity implements SearchCallback
 {
@@ -49,7 +49,7 @@ public class BrowseActivity extends AppCompatActivity implements SearchCallback
         List<Visit> list = connection.getVisitsLimitByString(queryText);
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(BrowseActivity.this);
-        rvList.setAdapter(new VeriticalDoctorAdapter(list));
+        rvList.setAdapter(new VerticalDoctorAdapter(list));
         rvList.setLayoutManager(managerCardView);
     }
 

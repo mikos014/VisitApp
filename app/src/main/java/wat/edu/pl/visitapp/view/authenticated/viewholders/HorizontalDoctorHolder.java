@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -7,9 +8,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.activities.BrowseActivity;
+import wat.edu.pl.visitapp.view.authenticated.activities.VisitDetailsActivity;
 
 public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
 {
@@ -19,7 +24,7 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
     private TextView tvRating;
     private Button bSelectDoctor;
 
-    public HorizontalDoctorHolder(final View view)
+    public HorizontalDoctorHolder(final View view, final List<Visit> list)
     {
         super(view);
 
@@ -29,18 +34,23 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
         tvRating = view.findViewById(R.id.tvDoctorRating);
         bSelectDoctor = view.findViewById(R.id.bSelectDoctor);
 
-        bSelectDoctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtil.shortToast(view.getContext(), tvName.getText().toString());
-                System.out.println(tvName.getText().toString());
-                Intent openBrowseActivity = new Intent(v.getContext(), BrowseActivity.class);
-
-//                do przekierowania na activity rezerwacji
-                openBrowseActivity.putExtra("query", "abc");
-//                v.getContext().startActivity(openBrowseActivity);
-            }
+        bSelectDoctor.setOnClickListener(v -> {
+            Visit visit = getVisit(list, tvName.getText().toString());
+            Intent detailActivity = new Intent(v.getContext(), VisitDetailsActivity.class);
+            detailActivity.putExtra("visit", visit);
+            v.getContext().startActivity(detailActivity);
+            ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
+    }
+
+    private Visit getVisit(List<Visit> list, String doctorName)
+    {
+        for (Visit v: list)
+        {
+            if (v.getDoctor().getName().equals(doctorName))
+                return v;
+        }
+        return null;
     }
 
     public TextView getTvName() {

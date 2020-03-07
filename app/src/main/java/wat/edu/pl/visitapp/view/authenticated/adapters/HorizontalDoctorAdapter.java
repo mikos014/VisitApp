@@ -32,7 +32,7 @@ public class HorizontalDoctorAdapter extends RecyclerView.Adapter<HorizontalDoct
                     .from(parent.getContext())
                     .inflate(R.layout.horizontal_cardview_doctor, parent, false);
 
-        return new HorizontalDoctorHolder(view);
+        return new HorizontalDoctorHolder(view, visitList);
     }
 
     @Override

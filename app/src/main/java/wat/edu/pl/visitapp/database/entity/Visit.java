@@ -1,9 +1,9 @@
 package wat.edu.pl.visitapp.database.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Visit
-{
+public class Visit implements Serializable {
     private int visitId;
     private Date date;
     private String time;
@@ -13,10 +13,11 @@ public class Visit
     private double placeLongitude;
     private String clinicName;
     private String clinicStreet;
+    private String clinicCity;
     private String clinicPhoneNo;
     private boolean hasOpinion;
 
-    public Visit(int visitId, Date date, String time, User user, Doctor doctor, double placeLatitude, double placeLongitude, String clinicName, String clinicStreet, String clinicPhoneNo, boolean hasOpinion) {
+    public Visit(int visitId, Date date, String time, User user, Doctor doctor, double placeLatitude, double placeLongitude, String clinicName, String clinicStreet, String clinicCity, String clinicPhoneNo, boolean hasOpinion) {
         this.visitId = visitId;
         this.date = date;
         this.time = time;
@@ -26,6 +27,7 @@ public class Visit
         this.placeLongitude = placeLongitude;
         this.clinicName = clinicName;
         this.clinicStreet = clinicStreet;
+        this.clinicCity = clinicCity;
         this.clinicPhoneNo = clinicPhoneNo;
         this.hasOpinion = hasOpinion;
     }
@@ -100,6 +102,14 @@ public class Visit
 
     public void setClinicStreet(String clinicStreet) {
         this.clinicStreet = clinicStreet;
+    }
+
+    public String getClinicCity() {
+        return clinicCity;
+    }
+
+    public void setClinicCity(String clinicCity) {
+        this.clinicCity = clinicCity;
     }
 
     public String getClinicPhoneNo() {

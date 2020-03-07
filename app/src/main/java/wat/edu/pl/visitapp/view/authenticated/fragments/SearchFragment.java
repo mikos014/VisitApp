@@ -82,16 +82,13 @@ public class SearchFragment extends Fragment implements SearchCallback {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview_doctors_spec, searchConnection.getExampleOfSpecs());
         lvList.setAdapter(arrayAdapter);
 
-        lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtil.shortToast(getContext(), parent.getItemAtPosition(position).toString());
+        lvList.setOnItemClickListener((parent, view1, position, id) -> {
+            ToastUtil.shortToast(getContext(), parent.getItemAtPosition(position).toString());
 
-                Intent openBrowseActivity = new Intent(getContext(), BrowseActivity.class);
-                openBrowseActivity.putExtra("query", parent.getItemAtPosition(position).toString());
-                startActivity(openBrowseActivity);
-                ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
+            Intent openBrowseActivity = new Intent(getContext(), BrowseActivity.class);
+            openBrowseActivity.putExtra("query", parent.getItemAtPosition(position).toString());
+            startActivity(openBrowseActivity);
+            ((Activity) view1.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
 //        MapControl mC = new MapControl();
