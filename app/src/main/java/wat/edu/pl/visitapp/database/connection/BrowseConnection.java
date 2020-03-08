@@ -9,17 +9,18 @@ import java.util.List;
 import wat.edu.pl.visitapp.database.entity.Doctor;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
+import wat.edu.pl.visitapp.interfaces.callbacks.BrowseCallback;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 
 public class BrowseConnection
 {
-    private SearchCallback callback;
+    private BrowseCallback callback;
 
-    public BrowseConnection(SearchCallback callback) {
+    public BrowseConnection(BrowseCallback callback) {
         this.callback = callback;
     }
 
-    public List<Visit> getVisitsLimitByString(String query)
+    public void getVisitsLimitByString(String query)
     {
         List<Visit> list = new LinkedList<>();
 
@@ -45,6 +46,6 @@ public class BrowseConnection
         list.add(visit1);
         list.add(visit2);
 
-        return list;
+        callback.onSuccessSetVisitByQuery(list);
     }
 }

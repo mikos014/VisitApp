@@ -11,12 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.activities.BrowseActivity;
 import wat.edu.pl.visitapp.view.authenticated.activities.VisitDetailsActivity;
 
-public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
+public class HorizontalSearchHolder extends RecyclerView.ViewHolder
 {
     private TextView tvName;
     private TextView tvSpec;
@@ -24,7 +25,7 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
     private TextView tvRating;
     private Button bSelectDoctor;
 
-    public HorizontalDoctorHolder(final View view, final List<Visit> list)
+    public HorizontalSearchHolder(final View view, final List<Visit> list, final User user)
     {
         super(view);
 
@@ -38,6 +39,7 @@ public class HorizontalDoctorHolder extends RecyclerView.ViewHolder
             Visit visit = getVisit(list, tvName.getText().toString());
             Intent detailActivity = new Intent(v.getContext(), VisitDetailsActivity.class);
             detailActivity.putExtra("visit", visit);
+            detailActivity.putExtra("user", user);
             v.getContext().startActivity(detailActivity);
             ((Activity) view.getContext()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });

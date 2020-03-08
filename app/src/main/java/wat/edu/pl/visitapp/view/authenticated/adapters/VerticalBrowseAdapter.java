@@ -11,29 +11,32 @@ import java.util.List;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.control.MapControl;
+import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalDoctorHolder;
+import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalBrowseHolder;
 
-public class VerticalDoctorAdapter extends RecyclerView.Adapter<VerticalDoctorHolder> {
+public class VerticalBrowseAdapter extends RecyclerView.Adapter<VerticalBrowseHolder> {
 
     private List<Visit> visitList;
+    private User user;
 
-    public VerticalDoctorAdapter(List<Visit> visitList) {
+    public VerticalBrowseAdapter(List<Visit> visitList, User user) {
         this.visitList = visitList;
+        this.user = user;
     }
 
     @NonNull
     @Override
-    public VerticalDoctorHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public VerticalBrowseHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
                                     .inflate(R.layout.vertical_cardview_doctor, parent, false);
 
-        return new VerticalDoctorHolder(view, visitList);
+        return new VerticalBrowseHolder(view, visitList, user);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VerticalDoctorHolder holder, int position) {
+    public void onBindViewHolder(@NonNull VerticalBrowseHolder holder, int position) {
         MapControl mapControl = new MapControl();
         String distance = mapControl.getDistance(visitList.get(position).getPlaceLatitude(), visitList.get(position).getPlaceLongitude());
 

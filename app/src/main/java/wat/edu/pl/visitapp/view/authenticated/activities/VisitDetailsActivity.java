@@ -3,12 +3,14 @@ package wat.edu.pl.visitapp.view.authenticated.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -16,12 +18,17 @@ import java.util.List;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.SearchConnection;
+import wat.edu.pl.visitapp.database.connection.VisitDetailConnection;
+import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
+import wat.edu.pl.visitapp.interfaces.callbacks.VisitDetailCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.ExpandableDatesAdapter;
+import wat.edu.pl.visitapp.view.authenticated.dialogs.CancellationAlertDialog;
+import wat.edu.pl.visitapp.view.authenticated.dialogs.ConfirmationDialog;
 
-public class VisitDetailsActivity extends AppCompatActivity implements SearchCallback
+public class VisitDetailsActivity extends AppCompatActivity implements VisitDetailCallback
 {
     private Toolbar toolbar;
     private TextView tvDoctorName;
@@ -33,9 +40,11 @@ public class VisitDetailsActivity extends AppCompatActivity implements SearchCal
     private TextView tvClinicPhoneNo;
     private ExpandableListView elvDatesOfVisits;
 
-    private HashMap<String, List<String>> itemsMap;
+    private HashMap itemsMap;
 
+    private boolean hasRefferal;
     private Visit visit;
+    private User user;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,6 +70,7 @@ public class VisitDetailsActivity extends AppCompatActivity implements SearchCal
         Intent intent = getIntent();
 
         visit = (Visit) intent.getSerializableExtra("visit");
+        user = (User) intent.getSerializableExtra("user");
 
         tvDoctorName.setText(visit.getDoctor().getName());
         tvDoctorSpec.setText(visit.getDoctor().getSpec());
@@ -70,12 +80,12 @@ public class VisitDetailsActivity extends AppCompatActivity implements SearchCal
         tvClinicCity.setText(visit.getClinicCity());
         tvClinicPhoneNo.setText(visit.getClinicPhoneNo());
 
-        SearchConnection connection = new SearchConnection(VisitDetailsActivity.this);
-        itemsMap = connection.getDatesOfVisits(visit.getVisitId());
+        VisitDetailConnection connection = new VisitDetailConnection(this);
+        connection.getDatesOfVisits(visit.getVisitId());
+        connection.checkRightToBook(visit.getVisitId(), user.getUserId());
 
-        ExpandableDatesAdapter adapter = new ExpandableDatesAdapter(VisitDetailsActivity.this, getHeaders(itemsMap), itemsMap);
+        ExpandableDatesAdapter adapter = new ExpandableDatesAdapter(VisitDetailsActivity.this, getHeaders(itemsMap), itemsMap, hasRefferal, visit);
         elvDatesOfVisits.setAdapter(adapter);
-
     }
 
     private List<String> getHeaders(HashMap<String, List<String>> hashMap) {
@@ -92,17 +102,17 @@ public class VisitDetailsActivity extends AppCompatActivity implements SearchCal
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccessSetDates(HashMap hashMap) {
+        itemsMap = hashMap;
+    }
 
+    @Override
+    public void onSuccessSetRightToBook(boolean hasRefferal) {
+        this.hasRefferal = hasRefferal;
     }
 
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(VisitDetailsActivity.this, message);
-    }
-
-    @Override
-    public Activity getFragment() {
-        return VisitDetailsActivity.this;
     }
 }

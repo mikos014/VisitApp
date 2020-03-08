@@ -42,6 +42,11 @@
     <string name="choose">Umów wizytę</string>
     <string name="singleQuotationMark">\'</string>
     <string name="chooseDateOfVisit">Wybierz termin wizyty</string>
+    <string name="sureToBookTheVisit">Czy potwierdzasz chęć rezerwacji wizyty ?</string>
+    <string name="noRefferalCannotBookTheVisit">Brak skierowania do lekarza z wybraną specjalnością.</string>
+    <string name="hint">Podpowiedź:</string>
+    <string name="seeRefferalOrSeeGPAdvice">Zobacz dostępne skierowania w zakładce lub zacznij leczenie od wizyty u lekarza ogólnego.</string>
+    <string name="iUnderstand">Rozumiem</string>
 
     <string name="cancelVisit">Odwołaj wizytę</string>
     <string name="cancelV">Odwołaj</string>

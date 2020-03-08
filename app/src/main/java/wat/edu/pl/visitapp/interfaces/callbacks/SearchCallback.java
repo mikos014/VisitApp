@@ -2,9 +2,14 @@ package wat.edu.pl.visitapp.interfaces.callbacks;
 
 import android.app.Activity;
 
+import java.util.List;
+
+import wat.edu.pl.visitapp.database.entity.Visit;
+
 public interface SearchCallback
 {
-    void onSuccess();
+    void onSuccessSetVisitAds(List<Visit> visitList);
+    void onSuccessSetDoctorSpecAds(List<String> specList);
     void onFailure(String message);
     Activity getFragment();
 }

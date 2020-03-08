@@ -16,14 +16,17 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.BrowseConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
+import wat.edu.pl.visitapp.interfaces.callbacks.BrowseCallback;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
-import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalDoctorAdapter;
+import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalBrowseAdapter;
 
-public class BrowseActivity extends AppCompatActivity implements SearchCallback
+public class BrowseActivity extends AppCompatActivity implements BrowseCallback
 {
     private Toolbar tSearch;
     private RecyclerView rvList;
+
+    List<Visit> visitList;
     private User user;
 
     @Override
@@ -33,9 +36,8 @@ public class BrowseActivity extends AppCompatActivity implements SearchCallback
         setContentView(R.layout.activity_browse);
 
         Intent intent = getIntent();
-
-        user = (User) intent.getSerializableExtra("user");
         String queryText = (String) intent.getSerializableExtra("query");
+        user = (User) intent.getSerializableExtra("user");
 
         setTitle(getString(R.string.singleQuotationMark) + queryText + getString(R.string.singleQuotationMark));
         tSearch = findViewById(R.id.searchToolbar);
@@ -46,10 +48,10 @@ public class BrowseActivity extends AppCompatActivity implements SearchCallback
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         BrowseConnection connection = new BrowseConnection(BrowseActivity.this);
-        List<Visit> list = connection.getVisitsLimitByString(queryText);
+        connection.getVisitsLimitByString(queryText);
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(BrowseActivity.this);
-        rvList.setAdapter(new VerticalDoctorAdapter(list));
+        rvList.setAdapter(new VerticalBrowseAdapter(visitList, user));
         rvList.setLayoutManager(managerCardView);
     }
 
@@ -60,9 +62,10 @@ public class BrowseActivity extends AppCompatActivity implements SearchCallback
         return true;
     }
 
-    @Override
-    public void onSuccess() {
 
+    @Override
+    public void onSuccessSetVisitByQuery(List<Visit> listByQuery) {
+        visitList = listByQuery;
     }
 
     @Override
@@ -70,8 +73,5 @@ public class BrowseActivity extends AppCompatActivity implements SearchCallback
         ToastUtil.shortToast(BrowseActivity.this, message);
     }
 
-    @Override
-    public Activity getFragment() {
-        return null;
-    }
+
 }

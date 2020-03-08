@@ -22,7 +22,7 @@ public class SearchConnection
         this.callback = callback;
     }
 
-    public List<Visit> getExampleOfVisits()
+    public void getExampleOfVisits()
     {
 //        list.add(new Doctor(1, "lek. Andrzej Polak", 5.0, "Laryngolog"));
 //        list.add(new Doctor(42, "dr Adam Kowalski", 4.9, "Lekarz ogólny"));
@@ -52,10 +52,10 @@ public class SearchConnection
         list.add(visit1);
         list.add(visit2);
 
-        return list;
+        callback.onSuccessSetVisitAds(list);
     }
 
-    public List<String> getExampleOfSpecs()
+    public void getExampleOfSpecs()
     {
         List<String> list = new LinkedList<>();
 
@@ -69,28 +69,7 @@ public class SearchConnection
 
         Collections.sort(list);
 
-        return list;
+        callback.onSuccessSetDoctorSpecAds(list);
     }
 
-    public HashMap<String, List<String>> getDatesOfVisits(int id)
-    {
-        HashMap<String, List<String>> dates = new HashMap<>();
-
-        List<String> hours = new LinkedList<>();
-        hours.add("13:00");
-        hours.add("14:00");
-        hours.add("15:00");
-        dates.put("26.03.2020r.", hours);
-
-        dates.put("27.03.2020r.", hours);
-
-        dates.put("28.03.2020r.", hours);
-
-        return dates;
-    }
-
-    public void bookTheVisit(int visitId, int userId, String date, String time)
-    {
-
-    }
 }

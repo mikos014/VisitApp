@@ -1,27 +1,38 @@
 package wat.edu.pl.visitapp.view.authenticated.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import java.util.HashMap;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.database.entity.Visit;
+import wat.edu.pl.visitapp.utils.ToastUtil;
+import wat.edu.pl.visitapp.view.authenticated.dialogs.ConfirmationDialog;
 
 public class ExpandableDatesAdapter extends BaseExpandableListAdapter
 {
     private Context context;
     private List<String> headersList;
     private HashMap<String, List<String>> itemsMap;
+    private Boolean hasRefferal;
+    private Visit visit;
 
-    public ExpandableDatesAdapter(Context context, List<String> headersList, HashMap<String, List<String>> itemsMap) {
+    public ExpandableDatesAdapter(Context context, List<String> headersList, HashMap<String, List<String>> itemsMap, Boolean hasRefferal, Visit visit) {
         this.context = context;
         this.headersList = headersList;
         this.itemsMap = itemsMap;
+        this.hasRefferal = hasRefferal;
+        this.visit = visit;
     }
 
     @Override
@@ -83,6 +94,22 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
         }
         TextView textView = convertView.findViewById(R.id.tvExpandableItem);
         textView.setText(child);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putSerializable("hasRefferal", hasRefferal);
+                args.putSerializable("visit", visit);
+                ConfirmationDialog dialog = new ConfirmationDialog();
+                FragmentManager fm = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+                dialog.setArguments(args);
+                dialog.show(fm, "");
+
+                ToastUtil.shortToast(v.getContext(), textView.getText().toString());
+            }
+        });
+
         return convertView;
     }
 
