@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 
@@ -16,6 +17,7 @@ import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
 public class RefferalActivity extends AppCompatActivity
 {
+    private Toolbar toolbar;
     private TextView tvRefferalNo;
     private TextView tvUser;
     private TextView tvRefferalToDoctorSpec;
@@ -31,6 +33,7 @@ public class RefferalActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_refferal);
 
+        toolbar = findViewById(R.id.refferalToolbar);
         tvRefferalNo = findViewById(R.id.tvRefNo);
         tvUser = findViewById(R.id.tvRefUser);
         tvRefferalToDoctorSpec = findViewById(R.id.tvRefDoctorSpec);
@@ -38,6 +41,11 @@ public class RefferalActivity extends AppCompatActivity
         tvExpirationDate = findViewById(R.id.tvRefExpDate);
         tvIssuedByDoctorSpec = findViewById(R.id.tvRefIssuedByDoctorSpec);
         tvIssuedByDoctor = findViewById(R.id.tvRefIssuedByDoctor);
+
+        setTitle(R.string.refferal);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Bundle args = getIntent().getExtras();
         Refferal r;
@@ -65,5 +73,11 @@ public class RefferalActivity extends AppCompatActivity
         startActivity(openRefferalFragment);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         RefferalActivity.this.finish();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

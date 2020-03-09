@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 
@@ -15,6 +16,7 @@ import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
 public class PrescriptionActivity extends AppCompatActivity {
+    private Toolbar toolbar;
     private TextView tvNumber;
     private TextView tvUser;
     private TextView tvMedicineName1;
@@ -41,6 +43,7 @@ public class PrescriptionActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_prescription);
 
+        toolbar = findViewById(R.id.prescriptionToolbar);
         tvNumber = findViewById(R.id.tvPreNo);
         tvUser = findViewById(R.id.tvPreUser);
         tvMedicineName1 = findViewById(R.id.tvMedicineName1);
@@ -59,6 +62,11 @@ public class PrescriptionActivity extends AppCompatActivity {
         tvExpirationDate = findViewById(R.id.tvExpDate);
         tvDoctorSpec = findViewById(R.id.tvPreDoctorSpec);
         tvDoctor = findViewById(R.id.tvPreDoctor);
+
+        setTitle(R.string.prescription);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Bundle args = getIntent().getExtras();
         Prescription p;
@@ -105,5 +113,11 @@ public class PrescriptionActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 
         PrescriptionActivity.this.finish();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

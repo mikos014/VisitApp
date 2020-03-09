@@ -23,11 +23,11 @@ public class VisitDetailConnection
         hours.add("13:00");
         hours.add("14:00");
         hours.add("15:00");
-        dates.put("26.03.2020r.", hours);
+        dates.put("26.03.2020", hours);
 
-        dates.put("27.03.2020r.", hours);
+        dates.put("27.03.2020", hours);
 
-        dates.put("28.03.2020r.", hours);
+        dates.put("28.03.2020", hours);
 
         callback.onSuccessSetDates(dates);
     }

@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,7 +27,7 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
     private Context context;
     private List<String> headersList;
     private HashMap<String, List<String>> itemsMap;
-    private Boolean hasRefferal;
+    private boolean hasRefferal;
     private Visit visit;
 
     public ExpandableDatesAdapter(Context context, List<String> headersList, HashMap<String, List<String>> itemsMap, Boolean hasRefferal, Visit visit) {
@@ -98,6 +101,15 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+
+                try {
+                    visit.setDate(sdf.parse(getGroup(groupPosition).toString()));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                visit.setTime(getChild(groupPosition, childPosition).toString());
+
                 Bundle args = new Bundle();
                 args.putSerializable("hasRefferal", hasRefferal);
                 args.putSerializable("visit", visit);
@@ -106,7 +118,7 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
                 dialog.setArguments(args);
                 dialog.show(fm, "");
 
-                ToastUtil.shortToast(v.getContext(), textView.getText().toString());
+                ToastUtil.shortToast(v.getContext(), getGroup(groupPosition).toString() + textView.getText().toString());
             }
         });
 

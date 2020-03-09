@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import java.text.SimpleDateFormat;
+
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.BookingConnection;
 import wat.edu.pl.visitapp.database.entity.Visit;
@@ -27,7 +29,7 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
         View view;
 
         Bundle args = getArguments();
-        Boolean hasRefferal = (Boolean) args.getSerializable("hasRefferal");
+        boolean hasRefferal = (Boolean) args.getSerializable("hasRefferal");
         BookingConnection connection = new BookingConnection(this);
 
         if (hasRefferal)
@@ -36,8 +38,14 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
 
             Visit visit = (Visit) args.getSerializable("visit");
 
+            TextView tvDate = view.findViewById(R.id.tvDialogDate);
+            TextView tvTime = view.findViewById(R.id.tvDialogTime);
             Button bYes = view.findViewById(R.id.bYes);
             Button bNo = view.findViewById(R.id.bNo);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+            tvDate.setText(sdf.format(visit.getDate()));
+            tvTime.setText(visit.getTime());
 
             bYes.setOnClickListener(new View.OnClickListener() {
                 @Override

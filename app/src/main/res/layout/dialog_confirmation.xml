@@ -14,10 +14,51 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="@string/sureToBookTheVisit"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/visitDate"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvDialogDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/shortYear"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/shortHour"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tvDialogTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private TextView tvNavName, tvNavEmail;
 
+    private String action;
     private User user;
 
     @SuppressLint("SetTextI18n")
@@ -69,13 +70,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent intent = getIntent();
 
-        if(intent.getSerializableExtra("user") != null)
-        {
+        if(intent.getSerializableExtra("user") != null) {
             user = (User) intent.getSerializableExtra("user");
         }
 
-        String action = (String) intent.getSerializableExtra("action");
-        if (action != null)
+        action = (String) intent.getSerializableExtra("action");
+
+        if (action == null)
+        {
+            openFragment(new SearchFragment(), true);
+        }
+        else
         {
             if (action.equals(getString(R.string.historyOfVisits)))
             {
@@ -89,10 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             {
                 openFragment(new PrescriptionFragment(), true);
             }
-        }
-        else
-        {
-            openFragment(new SearchFragment(), true);
         }
     }
 
