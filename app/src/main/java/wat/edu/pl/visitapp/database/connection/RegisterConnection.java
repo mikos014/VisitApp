@@ -80,5 +80,7 @@ public class RegisterConnection
 //
 //        RequestQueue requestQueue = Volley.newRequestQueue(callback.activity());
 //        requestQueue.add(stringRequest);
+
+        callback.onSuccess();
     }
 }

@@ -18,9 +18,11 @@ import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalHistoryHolder;
 public class VerticalHistoryAdapter extends RecyclerView.Adapter<VerticalHistoryHolder> {
 
     private List<Visit> historyVisitList;
+    private int userId;
 
-    public VerticalHistoryAdapter(List<Visit> historyVisitList) {
+    public VerticalHistoryAdapter(List<Visit> historyVisitList, int userId) {
         this.historyVisitList = historyVisitList;
+        this.userId = userId;
     }
 
     @NonNull
@@ -30,7 +32,7 @@ public class VerticalHistoryAdapter extends RecyclerView.Adapter<VerticalHistory
         View view = LayoutInflater.from(parent.getContext())
                                     .inflate(R.layout.vertical_cardview_visit, parent, false);
 
-        return new VerticalHistoryHolder(view, historyVisitList);
+        return new VerticalHistoryHolder(view, historyVisitList, userId);
     }
 
     @Override

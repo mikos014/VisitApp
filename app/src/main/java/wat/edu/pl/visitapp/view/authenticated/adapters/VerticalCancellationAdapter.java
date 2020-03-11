@@ -20,9 +20,11 @@ import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalCancellationHo
 public class VerticalCancellationAdapter extends RecyclerView.Adapter<VerticalCancellationHolder> {
 
     private List<Visit> list;
+    private int userId;
 
-    public VerticalCancellationAdapter(List<Visit> list) {
+    public VerticalCancellationAdapter(List<Visit> list, int userId) {
         this.list = list;
+        this.userId = userId;
     }
 
     @NonNull
@@ -33,7 +35,7 @@ public class VerticalCancellationAdapter extends RecyclerView.Adapter<VerticalCa
                         .from(parent.getContext())
                         .inflate(R.layout.vertical_cardview_visit_cancellation, parent, false);
 
-        return new VerticalCancellationHolder(view);
+        return new VerticalCancellationHolder(view, list, userId);
     }
 
     @Override

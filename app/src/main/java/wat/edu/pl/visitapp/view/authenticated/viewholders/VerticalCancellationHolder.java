@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
+import android.os.Bundle;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Date;
+import java.util.List;
+
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.database.entity.Prescription;
+import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.dialogs.CancellationAlertDialog;
 
@@ -24,7 +30,7 @@ public class VerticalCancellationHolder extends RecyclerView.ViewHolder
     private TextView tvVisitDoctorDistance;
     private Button bCancelVisit;
 
-    public VerticalCancellationHolder(@NonNull View view) {
+    public VerticalCancellationHolder(@NonNull View view, List<Visit> list, int userId) {
         super(view);
 
         tvVisitDate = view.findViewById(R.id.tvCancellationVisitDate);
@@ -38,13 +44,22 @@ public class VerticalCancellationHolder extends RecyclerView.ViewHolder
         bCancelVisit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putInt("visitId", getVisitId(list));
+                args.putInt("userId", userId);
                 CancellationAlertDialog dialog = new CancellationAlertDialog();
                 FragmentManager fm = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+                dialog.setArguments(args);
                 dialog.show(fm, "");
 
                 ToastUtil.shortToast(v.getContext(), String.valueOf(getAdapterPosition()));
             }
         });
+    }
+
+    private int getVisitId(List<Visit> list)
+    {
+        return list.get(getAdapterPosition()).getVisitId();
     }
 
     public TextView getTvVisitDate() {

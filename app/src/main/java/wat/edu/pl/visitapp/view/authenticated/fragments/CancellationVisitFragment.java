@@ -39,19 +39,19 @@ public class CancellationVisitFragment extends Fragment implements CancellationC
         User user = (User) args.getSerializable("user");
 
         CancellationConnection connection = new CancellationConnection(this);
-        listOfVisit = connection.getCancellationVisits(user);
+        connection.getCancellationVisits(user.getUserId());
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(getContext());
         managerCardView.setOrientation(RecyclerView.VERTICAL);
-        rvVerticalCancellation.setAdapter(new VerticalCancellationAdapter(listOfVisit));
+        rvVerticalCancellation.setAdapter(new VerticalCancellationAdapter(listOfVisit, user.getUserId()));
         rvVerticalCancellation.setLayoutManager(managerCardView);
 
         return view;
     }
 
     @Override
-    public void onSuccess() {
-
+    public void onSuccessSetCancellationVisitList(List<Visit> list) {
+        listOfVisit = list;
     }
 
     @Override

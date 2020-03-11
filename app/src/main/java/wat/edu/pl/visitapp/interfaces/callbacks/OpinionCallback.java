@@ -1,7 +1,7 @@
 package wat.edu.pl.visitapp.interfaces.callbacks;
 
-public interface BookingCallback
+public interface OpinionCallback
 {
-    void onSuccessBooking(String message);
+    void onSuccessAddOpinion(String message);
     void onFailure(String message);
 }

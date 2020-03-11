@@ -24,6 +24,7 @@ import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalPrescriptionAdapt
 public class PrescriptionFragment extends Fragment implements PrescriptionCallback
 {
     private RecyclerView rvVerticalPrescription;
+    private List<Prescription> prescriptionList;
 
     @Nullable
     @Override
@@ -39,7 +40,7 @@ public class PrescriptionFragment extends Fragment implements PrescriptionCallba
         rvVerticalPrescription = view.findViewById(R.id.rvVerticalPrescription);
 
         PrescriptionConnection connection = new PrescriptionConnection(this);
-        List<Prescription> prescriptionList = connection.getListOfPrescription(user);
+        connection.getListOfPrescription(user.getUserId());
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(getContext());
         managerCardView.setOrientation(RecyclerView.VERTICAL);
@@ -50,8 +51,8 @@ public class PrescriptionFragment extends Fragment implements PrescriptionCallba
     }
 
     @Override
-    public void onSuccess() {
-
+    public void onSuccessSetPrescriptionList(List<Prescription> prescriptionList) {
+        this.prescriptionList = prescriptionList;
     }
 
     @Override

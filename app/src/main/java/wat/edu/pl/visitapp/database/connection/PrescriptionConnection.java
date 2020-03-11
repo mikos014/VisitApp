@@ -21,7 +21,7 @@ public class PrescriptionConnection
         this.callback = callback;
     }
 
-    public List<Prescription> getListOfPrescription(User user)
+    public void getListOfPrescription(int userId)
     {
         List<Prescription> list = new LinkedList<>();
 
@@ -46,22 +46,25 @@ public class PrescriptionConnection
         medicineList.add(medicine1);
         medicineList.add(medicine2);
 
+        User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
         Doctor doctor = new Doctor(1, "lek. Marek Nowak", 4.6, "lekarz ogólny");
+
         Prescription p1 = new Prescription(1, "0003424", date, datePlus30, "Warszawa", doctor, user, medicineList, "");
         Prescription p2 = new Prescription(2, "0003543", date, datePlus30, "Warszawa", doctor, user, medicineList, "");
 
         list.add(p1);
         list.add(p2);
-        return list;
+        callback.onSuccessSetPrescriptionList(list);
     }
+//TODO remove if unuse
 
-    public Prescription getPrescription(User user, int i)
-    {
-        for (Prescription p: getListOfPrescription(user))
-        {
-            if (p.getPrescriptionId() == i)
-                return p;
-        }
-        return null;
-    }
+//    public Prescription getPrescription(User user, int i)
+//    {
+//        for (Prescription p: getListOfPrescription(user))
+//        {
+//            if (p.getPrescriptionId() == i)
+//                return p;
+//        }
+//        return null;
+//    }
 }

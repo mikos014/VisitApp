@@ -24,6 +24,7 @@ import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalHistoryAdapter;
 public class HistoryFragment extends Fragment implements HistoryCallback
 {
     private RecyclerView rvHistory;
+    private List<Visit> historyVisitList;
 
     @Nullable
     @Override
@@ -38,18 +39,19 @@ public class HistoryFragment extends Fragment implements HistoryCallback
         rvHistory = view.findViewById(R.id.rvVerticalHistory);
 
         HistoryConnection connection = new HistoryConnection(this);
-        List<Visit> historyVisitList = connection.getHistoryVisit(user);
+        connection.getHistoryVisit(user.getUserId());
 
         LinearLayoutManager managerCardView = new LinearLayoutManager(getContext());
         managerCardView.setOrientation(RecyclerView.VERTICAL);
-        rvHistory.setAdapter(new VerticalHistoryAdapter(historyVisitList));
+        rvHistory.setAdapter(new VerticalHistoryAdapter(historyVisitList, user.getUserId()));
         rvHistory.setLayoutManager(managerCardView);
 
         return view;
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccessSetHistoryList(List<Visit> historyList) {
+        this.historyVisitList = historyList;
     }
 
     @Override

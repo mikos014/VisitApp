@@ -1,7 +1,7 @@
 package wat.edu.pl.visitapp.interfaces.callbacks;
 
-public interface BookingCallback
+public interface CancelVisitCallback
 {
-    void onSuccessBooking(String message);
+    void onSuccessCancel(String message);
     void onFailure(String message);
 }

@@ -51,10 +51,6 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
                 @Override
                 public void onClick(View v) {
                    connection.bookVisit(visit);
-
-                    Intent mainActivity = new Intent(getContext(), MainActivity.class);
-                    mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(mainActivity);
                 }
             });
 
@@ -81,9 +77,18 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
         return view;
     }
 
-    @Override
-    public void onSuccess() {
+    private void openMainActivity()
+    {
+        Intent mainActivity = new Intent(getContext(), MainActivity.class);
+        mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(mainActivity);
+    }
 
+    @Override
+    public void onSuccessBooking(String message) {
+        ToastUtil.shortToast(getContext(), message);
+
+        openMainActivity();
     }
 
     @Override

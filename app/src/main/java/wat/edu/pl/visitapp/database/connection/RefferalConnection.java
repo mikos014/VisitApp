@@ -21,7 +21,7 @@ public class RefferalConnection
         this.callback = callback;
     }
 
-    public List<Refferal> getRefferalList(User user) {
+    public void getRefferalList(User user) {
         List<Refferal> list = new LinkedList<>();
 
         Date date = null;
@@ -46,16 +46,17 @@ public class RefferalConnection
         list.add(refferal);
         list.add(refferal2);
 
-        return list;
+        callback.onSuccessSetRefferalList(list);
     }
+//TODO remove if ususe
 
-    public Refferal getRefferal(User user, int i)
-    {
-        for (Refferal r: getRefferalList(user))
-        {
-            if (r.getRefferalId() == i)
-                return r;
-        }
-        return null;
-    }
+//    public Refferal getRefferal(User user, int i)
+//    {
+//        for (Refferal r: getRefferalList(user))
+//        {
+//            if (r.getRefferalId() == i)
+//                return r;
+//        }
+//        return null;
+//    }
 }

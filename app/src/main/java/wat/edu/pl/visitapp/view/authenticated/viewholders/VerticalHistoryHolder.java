@@ -1,14 +1,12 @@
 package wat.edu.pl.visitapp.view.authenticated.viewholders;
 
-import android.app.Activity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,7 +26,7 @@ public class VerticalHistoryHolder extends RecyclerView.ViewHolder
     private TextView tvHistoryDoctorRating;
     private Button bAddOpinion;
 
-    public VerticalHistoryHolder(@NonNull final View view, final List<Visit> historyVisitList)
+    public VerticalHistoryHolder(@NonNull final View view, final List<Visit> historyVisitList, final int userId)
     {
         super(view);
 
@@ -42,13 +40,22 @@ public class VerticalHistoryHolder extends RecyclerView.ViewHolder
         bAddOpinion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putInt("visitId", getVisitId(historyVisitList));
+                args.putInt("userId", userId);
                 OpinionDialog dialog = new OpinionDialog();
                 FragmentManager fm = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+                dialog.setArguments(args);
                 dialog.show(fm, "");
 
                 ToastUtil.shortToast(v.getContext(), String.valueOf(getAdapterPosition()));
             }
         });
+    }
+
+    private int getVisitId(List<Visit> historyList)
+    {
+        return historyList.get(getAdapterPosition()).getVisitId();
     }
 
     public TextView getTvHistoryVisitDate() {

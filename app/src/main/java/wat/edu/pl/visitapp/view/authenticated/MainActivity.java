@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment).commit();
     }
 
+    //TODO remove if unuse
     @Override
     public Activity getActivity()
     {

@@ -13,6 +13,6 @@ public class BookingConnection
 
     public void bookVisit(Visit visit)
     {
-
+        callback.onSuccessBooking("Wizyta zarezerwowana");
     }
 }
