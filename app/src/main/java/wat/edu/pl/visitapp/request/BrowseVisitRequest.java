@@ -35,7 +35,7 @@ public class BrowseVisitRequest extends AsyncTask<String, Void, List<Visit>> {
             headers.add("Content-Type", "application/json");
 
             HttpEntity<Void> request = new HttpEntity<>(null, headers);
-            ResponseEntity<Visit[]> responseEntity = restTemplate.postForEntity(url, request, Visit[].class);
+            ResponseEntity<Visit[]> responseEntity = restTemplate.postForEntity(url, null, Visit[].class);
 
             return Arrays.asList(responseEntity.getBody());
         }
