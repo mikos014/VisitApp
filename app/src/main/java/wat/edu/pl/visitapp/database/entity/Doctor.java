@@ -16,6 +16,9 @@ public class Doctor implements Serializable
         this.spec = spec;
     }
 
+    public Doctor() {
+    }
+
     public int getDoctorId() {
         return doctorId;
     }

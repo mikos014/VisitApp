@@ -115,4 +115,9 @@ public class VisitDetailsActivity extends AppCompatActivity implements VisitDeta
     public void onFailure(String message) {
         ToastUtil.shortToast(VisitDetailsActivity.this, message);
     }
+
+    @Override
+    public Activity activity() {
+        return VisitDetailsActivity.this;
+    }
 }

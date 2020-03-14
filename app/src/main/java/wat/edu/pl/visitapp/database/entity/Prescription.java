@@ -28,6 +28,9 @@ public class Prescription implements Serializable
         this.extraInfo = extraInfo;
     }
 
+    public Prescription() {
+    }
+
     public int getPrescriptionId() {
         return prescriptionId;
     }

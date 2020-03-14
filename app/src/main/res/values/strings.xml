@@ -1,4 +1,23 @@
 <resources>
+    <string name="LOGIN_URL">https://servervisitapp.herokuapp.com/api/login</string>
+    <string name="REGISTER_URL">https://servervisitapp.herokuapp.com/api/register</string>
+    <string name="CHANGE_EMAIL_URL">https://servervisitapp.herokuapp.com/api/changeEmail</string>
+    <string name="CHANGE_PASSWORD_URL">https://servervisitapp.herokuapp.com/api/changePassword</string>
+    <string name="CHANGE_PHONE_NUMBER_URL">https://servervisitapp.herokuapp.com/api/changeNumber</string>
+    <string name="RIGHT_TO_BOOK_URL">https://servervisitapp.herokuapp.com/api/rightToBook</string>
+    <string name="DOCTOR_SPEC_URL">https://servervisitapp.herokuapp.com/api/doctor</string>
+    <string name="PRESCRIPTION_URL">https://servervisitapp.herokuapp.com/api/prescription/</string>
+    <string name="REFFERAL_URL">https://servervisitapp.herokuapp.com/api/refferal/</string>
+    <string name="GET_UNOCCUPIED_DATES_URL">https://servervisitapp.herokuapp.com/api/searchUnoccupied/</string>
+    <string name="ADD_OPINION_URL">https://servervisitapp.herokuapp.com/api/historyV/opinion/</string>
+    <string name="HISTORY_VISIT_URL">https://servervisitapp.herokuapp.com/api/historyV/</string>
+    <string name="CURRENT_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV/</string>
+    <string name="SEARCH_BY_QUERY_URL">https://servervisitapp.herokuapp.com/api/searchByQuery/</string>
+    <string name="UNOCCUPIED_VISIT_URL">https://servervisitapp.herokuapp.com/api/search</string>
+    <string name="CANCEL_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV/cancel/</string>
+    <string name="BOOK_VISIT_URL">https://servervisitapp.herokuapp.com/api/book</string>
+
+
     <string name="app_name">VisitApp</string>
     <string name="app_title">TwójDoktor</string>
     <string name="registration">Rejestracja</string>
@@ -43,6 +62,7 @@
     <string name="singleQuotationMark">\'</string>
     <string name="chooseDateOfVisit">Wybierz termin wizyty</string>
     <string name="sureToBookTheVisit">Czy potwierdzasz chęć rezerwacji wizyty ?</string>
+    <string name="visitBooked">Wizyta zarezerwowana</string>
     <string name="shortYear">r.</string>
     <string name="shortHour">godz.</string>
     <string name="noRefferalCannotBookTheVisit">Brak skierowania do lekarza z wybraną specjalnością.</string>
@@ -52,6 +72,7 @@
 
     <string name="cancelVisit">Odwołaj wizytę</string>
     <string name="cancelV">Odwołaj</string>
+    <string name="visitCancelled">Wizyta odwołana</string>
     <string name="sureToCancelVisit">Czy na pewno chcesz odwołać tę wizytę ?</string>
     <string name="yes">Tak</string>
     <string name="no">Nie</string>
@@ -61,6 +82,7 @@
     <string name="visitHour">godz.</string>
     <string name="addOpinion">Dodaj opinię</string>
     <string name="addOpinionLongText">Dodaj opinię lekarzowie na podstawie przeprowadzonej wizyty.</string>
+    <string name="opinionAdded">Opinia została dodana</string>
     <string name="veryBad">Nie polecam lekarza !</string>
     <string name="needSomeImprovements">Wymaga więcej zaangażowania...</string>
     <string name="average">Ponadprzeciętnie, nie było tak źle.</string>

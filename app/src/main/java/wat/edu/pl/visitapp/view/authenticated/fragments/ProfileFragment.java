@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment implements ProfileCallback {
         bChangePassword = view.findViewById(R.id.bChangePassword);
         bChangeNumber = view.findViewById(R.id.bChangeNo);
 
-        connection = new ProfileConnection(this);
+        connection = new ProfileConnection(this, user);
 
         bChangeEmail.setOnClickListener(new View.OnClickListener() {
             @Override

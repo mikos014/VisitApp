@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.dialogs;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -85,8 +86,8 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
     }
 
     @Override
-    public void onSuccessBooking(String message) {
-        ToastUtil.shortToast(getContext(), message);
+    public void onSuccessBooking() {
+        ToastUtil.shortToast(getContext(), getString(R.string.visitBooked));
 
         openMainActivity();
     }
@@ -94,5 +95,10 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getContext(), message);
+    }
+
+    @Override
+    public Activity getFragment() {
+        return getActivity();
     }
 }

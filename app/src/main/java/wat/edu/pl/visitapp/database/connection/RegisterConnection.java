@@ -12,9 +12,12 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
+import wat.edu.pl.visitapp.database.entity.UserCreds;
 import wat.edu.pl.visitapp.interfaces.callbacks.RegisterCallback;
+import wat.edu.pl.visitapp.request.RegisterRequest;
 
 public class RegisterConnection
 {
@@ -36,51 +39,29 @@ public class RegisterConnection
 
     public void register()
     {
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, adres, new Response.Listener<String>()
-//        {
-//            @Override
-//            public void onResponse(String response)
-//            {
-//                try
-//                {
-//                    JSONObject jsonObject = new JSONObject(response);
-//                    abc
-//                }
-//                catch (JSONException e)
-//                {
-//                    e.printStackTrace();
-//                    callback.onFailure(callback.activity().getString(R.string.responseError) + e.toString());
-//                }
-//            }
-//        },
-//                new Response.ErrorListener()
-//                {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error)
-//                    {
-//
-//                    }
-//                })
-//        {
-//            @Override
-//            protected Map<String, String> getParams()
-//            {
-//                Map<String, String> params = new HashMap<>();
-//                params.put("email", email);
-//                params.put("password", password);
-//                params.put("name", name);
-//                params.put("surname", surname);
-//                params.put("dateOfBirth", dateOfBirth);
-//                params.put("phoneNumber", phoneNumber);
-//                params.put("sex", String.valueOf(sex));
-//
-//                return params;
-//            }
-//        };
-//
-//        RequestQueue requestQueue = Volley.newRequestQueue(callback.activity());
-//        requestQueue.add(stringRequest);
+        String url = callback.activity().getString(R.string.REGISTER_URL);
+        UserCreds userCreds = new UserCreds();
+        userCreds.setEmail(email);
+        userCreds.setPassword(password);
+        userCreds.setName(name);
+        userCreds.setSurname(surname);
+        userCreds.setDateOfBirth(dateOfBirth);
+        userCreds.setPhoneNumber(phoneNumber);
+        userCreds.setSex(sex);
 
-        callback.onSuccess();
+        boolean isNoError = false;
+        try
+        {
+            isNoError = new RegisterRequest(url).execute(userCreds).get();
+        }
+        catch (ExecutionException | InterruptedException e)
+        {
+            callback.onFailure("Błąd połączenia");
+        }
+
+        if (isNoError)
+            callback.onSuccess();
+        else
+            callback.onFailure("Błąd rejestracji");
     }
 }

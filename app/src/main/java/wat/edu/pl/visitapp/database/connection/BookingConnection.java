@@ -1,7 +1,12 @@
 package wat.edu.pl.visitapp.database.connection;
 
+import java.util.concurrent.ExecutionException;
+
+import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.interfaces.callbacks.BookingCallback;
+import wat.edu.pl.visitapp.request.BookVisitRequest;
+import wat.edu.pl.visitapp.request.CancelVisitRequest;
 
 public class BookingConnection
 {
@@ -13,6 +18,21 @@ public class BookingConnection
 
     public void bookVisit(Visit visit)
     {
-        callback.onSuccessBooking("Wizyta zarezerwowana");
+        String url = callback.getFragment().getString(R.string.CANCEL_VISIT_URL);
+        boolean isNoError = false;
+
+        try
+        {
+            isNoError = new BookVisitRequest(url).execute(visit).get();
+        }
+        catch (ExecutionException | InterruptedException e)
+        {
+            callback.onFailure("Błąd połączenia");
+        }
+
+        if (isNoError)
+            callback.onSuccessBooking();
+        else
+            callback.onFailure("Błąd serwera. Proszę spróbować później.");
     }
 }

@@ -41,8 +41,8 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
         bRegister = findViewById(R.id.bRegister);
 
 //        do usunięcia
-        etEmail.setText("admin");
-        etPassword.setText("admin");
+        etEmail.setText("kowalski@wp.pl");
+        etPassword.setText("abc1234");
 //
 
         bLogin.setOnClickListener(new View.OnClickListener()
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
             {
                 if (!etEmail.getText().toString().isEmpty() && !etPassword.getText().toString().isEmpty())
                 {
-                    loginConnection = new LoginConnection(LoginActivity.this, etEmail.getText().toString(), etPassword.getText().toString(), user);
+                    loginConnection = new LoginConnection(LoginActivity.this, etEmail.toString(), etPassword.toString());
                     loginConnection.login();
                 }
                 else

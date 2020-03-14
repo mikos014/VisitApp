@@ -1,16 +1,13 @@
 package wat.edu.pl.visitapp.database.connection;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-import wat.edu.pl.visitapp.database.entity.Doctor;
-import wat.edu.pl.visitapp.database.entity.User;
+import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
+import wat.edu.pl.visitapp.request.DoctorSpecRequest;
+import wat.edu.pl.visitapp.request.VisitRequest;
 import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 
 public class SearchConnection
@@ -24,52 +21,42 @@ public class SearchConnection
 
     public void getExampleOfVisits()
     {
-//        list.add(new Doctor(1, "lek. Andrzej Polak", 5.0, "Laryngolog"));
-//        list.add(new Doctor(42, "dr Adam Kowalski", 4.9, "Lekarz ogólny"));
-//        list.add(new Doctor(54, "dr hab. Jacek Wrzesień", 4.7, "Pediatra"));
-//        list.add(new Doctor(7, "lek. Marek Adamowski", 4.6, "Chirurg"));
-
-        List<Visit> list = new LinkedList<>();
-
-        Date date = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-
-        try
-        {
-            date = sdf.parse("28.02.2020");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
-        Doctor doctor = new Doctor(1, "lek. Jan Zanberg", 4.7, "lekarz ogólny");
-
-        Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa", "Czumy 1", "228463828", false);
-        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
-        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
-
-        list.add(visit);
-        list.add(visit1);
-        list.add(visit2);
-
-        callback.onSuccessSetVisitAds(list);
+//        String url = callback.getFragment().getString(R.string.UNOCCUPIED_VISIT_URL);
+//        List<Visit> visits = null;
+//        try
+//        {
+//            visits = new VisitRequest(url).execute().get();
+//        }
+//        catch (ExecutionException | InterruptedException e)
+//        {
+//            callback.onFailure("Błąd połączenia");
+//        }
+//        if (visits != null)
+//            callback.onSuccessSetVisitAds(visits);
+//        else
+//            callback.onFailure("Bład serwera");
+        callback.onSuccessSetVisitAds(new LinkedList<>());
     }
 
     public void getExampleOfSpecs()
     {
-        List<String> list = new LinkedList<>();
+//        String url = callback.getFragment().getString(R.string.DOCTOR_SPEC_URL);
+//        List<String> specs = null;
+//        try
+//        {
+//            specs = new DoctorSpecRequest(url).execute().get();
+//        }
+//        catch (ExecutionException | InterruptedException e)
+//        {
+//            callback.onFailure("Błąd połączenia");
+//        }
+//
+//        if (specs != null)
+//            callback.onSuccessSetDoctorSpecAds(specs);
+//        else
+//            callback.onFailure("Bład serwera");
+        callback.onSuccessSetDoctorSpecAds(new LinkedList<>());
 
-        list.add("dentysta");
-        list.add("chirurg");
-        list.add("ortopeda");
-        list.add("ginekolog");
-        list.add("lekarz ogólny");
-        list.add("okulista");
-        list.add("dermatolog");
-
-        Collections.sort(list);
-
-        callback.onSuccessSetDoctorSpecAds(list);
     }
 
 }

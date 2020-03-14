@@ -1,9 +1,11 @@
 package wat.edu.pl.visitapp.database.connection;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
+import java.util.concurrent.ExecutionException;
 
+import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.User;
+import wat.edu.pl.visitapp.database.entity.UserCreds;
+import wat.edu.pl.visitapp.request.LoginRequest;
 import wat.edu.pl.visitapp.interfaces.callbacks.LoginCallback;
 
 public class LoginConnection
@@ -11,58 +13,35 @@ public class LoginConnection
     private LoginCallback callback;
 
     private String email, password;
-    private User user;
 
-    public LoginConnection(LoginCallback callback, String email, String password, User user)
+    public LoginConnection(LoginCallback callback, String email, String password)
     {
         this.callback = callback;
         this.email = email;
         this.password = password;
-        this.user = user;
     }
 
     public void login()
     {
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, adres, new Response.Listener<String>()
-//        {
-//            @Override
-//            public void onResponse(String response)
-//            {
-//                try
-//                {
-//                    JSONObject jsonObject = new JSONObject(response);
-//                    abc
-//                }
-//                catch (JSONException e)
-//                {
-//                    e.printStackTrace();
-//                    callback.onFailure(callback.activity().getString(R.string.responseError) + e.toString());
-//                }
-//
-//            }
-//        },
-//        new Response.ErrorListener()
-//        {
-//            @Override
-//            public void onErrorResponse(VolleyError error)
-//            {
-//                callback.onFailure(callback.activity().getString(R.string.connectionError) + error.toString());
-//            }
-//        })
-//        {
-//            @Override
-//            protected Map<String, String> getParams()
-//            {
-//                Map<String, String> params = new HashMap<>();
-//                params.put("email", email);
-//                params.put("password", password);
-//                return params;
-//            }
-//        };
-//
-//        RequestQueue requestQueue = Volley.newRequestQueue(callback.activity());
-//        requestQueue.add(stringRequest);
+        User user = null;
+        UserCreds userCreds = new UserCreds();
+        userCreds.setEmail(email);
+        userCreds.setPassword(password);
 
-        callback.onSuccess(user);
+        String url = callback.activity().getString(R.string.LOGIN_URL);
+        try
+        {
+            user = new LoginRequest(url).execute(userCreds).get();
+        }
+        catch (ExecutionException | InterruptedException e)
+        {
+            callback.onFailure("Błąd połączenia");
+        }
+
+        if (user != null)
+            callback.onSuccess(user);
+        else
+            callback.onFailure("Bład serwera");
+
     }
 }

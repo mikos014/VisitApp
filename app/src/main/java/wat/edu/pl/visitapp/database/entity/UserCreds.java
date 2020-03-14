@@ -1,6 +1,8 @@
 package wat.edu.pl.visitapp.database.entity;
 
-public class UserCreds
+import java.io.Serializable;
+
+public class UserCreds implements Serializable
 {
     private String oldEmail;
     private String email;
@@ -22,6 +24,9 @@ public class UserCreds
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.sex = sex;
+    }
+
+    public UserCreds() {
     }
 
     public String getOldEmail() {

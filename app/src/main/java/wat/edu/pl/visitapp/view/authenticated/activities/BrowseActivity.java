@@ -73,5 +73,10 @@ public class BrowseActivity extends AppCompatActivity implements BrowseCallback
         ToastUtil.shortToast(BrowseActivity.this, message);
     }
 
+    @Override
+    public Activity activity() {
+        return BrowseActivity.this;
+    }
+
 
 }

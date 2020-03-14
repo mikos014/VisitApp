@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class RefferalFragment extends Fragment implements RefferalCallback
         rvVerticalRefferal = view.findViewById(R.id.rvVerticalRefferal);
 
         RefferalConnection connection = new RefferalConnection(this);
-        connection.getRefferalList(user);
+        connection.getRefferalList(user.getUserId());
 
         rvVerticalRefferal.setHasFixedSize(true);
 
@@ -60,5 +61,10 @@ public class RefferalFragment extends Fragment implements RefferalCallback
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getActivity(), message);
+    }
+
+    @Override
+    public Activity getFragment() {
+        return getActivity();
     }
 }

@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,5 +58,10 @@ public class CancellationVisitFragment extends Fragment implements CancellationC
     @Override
     public void onFailure(String message) {
 
+    }
+
+    @Override
+    public Activity getFragment() {
+        return getActivity();
     }
 }

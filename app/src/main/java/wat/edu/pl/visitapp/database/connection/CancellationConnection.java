@@ -5,11 +5,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
+import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Doctor;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.interfaces.callbacks.CancellationCallback;
+import wat.edu.pl.visitapp.request.BrowseVisitRequest;
+import wat.edu.pl.visitapp.request.CancellationRequest;
 
 public class CancellationConnection
 {
@@ -21,29 +25,21 @@ public class CancellationConnection
 
     public void getCancellationVisits(int userId)
     {
-        List<Visit> list = new LinkedList<>();
-
-        Date date = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-
+        String url = callback.getFragment().getString(R.string.CURRENT_VISIT_URL);
+        List<Visit> visits = null;
         try
         {
-            date = sdf.parse("28.02.2020");
-        } catch (ParseException e) {
-            e.printStackTrace();
+            visits = new CancellationRequest(url).execute(userId).get();
+        }
+        catch (ExecutionException | InterruptedException e)
+        {
+            callback.onFailure("Błąd połączenia");
         }
 
-        User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
-        Doctor doctor = new Doctor(1, "lek. Michał Malinowski", 4.7, "lekarz ogólny");
+        if (visits != null)
+            callback.onSuccessSetCancellationVisitList(visits);
+        else
+            callback.onFailure("Bład serwera");
 
-        Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828", false);
-        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
-        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
-
-        list.add(visit);
-        list.add(visit1);
-        list.add(visit2);
-
-        callback.onSuccessSetCancellationVisitList(list);
     }
 }

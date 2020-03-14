@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.dialogs;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -108,8 +109,8 @@ public class OpinionDialog extends DialogFragment implements OpinionCallback
     }
 
     @Override
-    public void onSuccessAddOpinion(String message) {
-        ToastUtil.shortToast(getContext(), message);
+    public void onSuccessAddOpinion() {
+        ToastUtil.shortToast(getContext(), getString(R.string.opinionAdded));
 
         openMainActivity();
     }
@@ -117,5 +118,10 @@ public class OpinionDialog extends DialogFragment implements OpinionCallback
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getContext(), message);
+    }
+
+    @Override
+    public Activity getFragment() {
+        return getActivity();
     }
 }

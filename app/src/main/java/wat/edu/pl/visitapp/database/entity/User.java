@@ -23,6 +23,8 @@ public class User implements Serializable
         this.phoneNumber = phoneNumber;
     }
 
+    public User() {
+    }
 
     public int getUserId() {
         return userId;

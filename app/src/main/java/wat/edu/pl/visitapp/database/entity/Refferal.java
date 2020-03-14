@@ -27,6 +27,9 @@ public class Refferal implements Serializable
         this.extraInfo = extraInfo;
     }
 
+    public Refferal() {
+    }
+
     public int getRefferalId() {
         return refferalId;
     }

@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.dialogs;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -61,8 +62,8 @@ public class CancellationAlertDialog extends DialogFragment implements CancelVis
     }
 
     @Override
-    public void onSuccessCancel(String message) {
-        ToastUtil.shortToast(getContext(), message);
+    public void onSuccessCancel() {
+        ToastUtil.shortToast(getContext(), getString(R.string.visitCancelled));
 
         openMainActivity();
     }
@@ -71,5 +72,10 @@ public class CancellationAlertDialog extends DialogFragment implements CancelVis
     public void onFailure(String message) {
         ToastUtil.shortToast(getContext(), message);
 
+    }
+
+    @Override
+    public Activity getFragment() {
+        return getActivity();
     }
 }

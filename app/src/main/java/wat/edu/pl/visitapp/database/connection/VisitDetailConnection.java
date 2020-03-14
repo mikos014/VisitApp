@@ -1,11 +1,13 @@
 package wat.edu.pl.visitapp.database.connection;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-import wat.edu.pl.visitapp.database.entity.Visit;
+import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.interfaces.callbacks.VisitDetailCallback;
+import wat.edu.pl.visitapp.request.RightToBookRequest;
+import wat.edu.pl.visitapp.request.VisitDatesRequest;
 
 public class VisitDetailConnection
 {
@@ -17,23 +19,40 @@ public class VisitDetailConnection
 
     public void getDatesOfVisits(int visitId)
     {
-        HashMap<String, List<String>> dates = new HashMap<>();
+        String url = callback.activity().getString(R.string.GET_UNOCCUPIED_DATES_URL);
 
-        List<String> hours = new LinkedList<>();
-        hours.add("13:00");
-        hours.add("14:00");
-        hours.add("15:00");
-        dates.put("26.03.2020", hours);
+        HashMap<String, List<String>> dates = null;
 
-        dates.put("27.03.2020", hours);
+        try
+        {
+            dates = new VisitDatesRequest(url).execute(visitId).get();
+        }
+        catch (ExecutionException | InterruptedException e)
+        {
+            callback.onFailure("Błąd połączenia");
+        }
 
-        dates.put("28.03.2020", hours);
-
+        if (dates != null)
+            callback.onSuccessSetDates(dates);
+        else
+            callback.onFailure("Błąd serwera. Proszę spróbować później.");
         callback.onSuccessSetDates(dates);
     }
 
     public void checkRightToBook(int visitId, int userId)
     {
-        callback.onSuccessSetRightToBook(true);
+        String url = callback.activity().getString(R.string.ADD_OPINION_URL);
+        boolean hasRefferal = false;
+
+        try
+        {
+            hasRefferal = new RightToBookRequest(url).execute(visitId, userId).get();
+        }
+        catch (ExecutionException | InterruptedException e)
+        {
+            callback.onFailure("Błąd połączenia");
+        }
+
+        callback.onSuccessSetRightToBook(hasRefferal);
     }
 }

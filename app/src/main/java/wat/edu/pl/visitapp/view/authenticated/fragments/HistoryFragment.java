@@ -1,5 +1,6 @@
 package wat.edu.pl.visitapp.view.authenticated.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,5 +58,10 @@ public class HistoryFragment extends Fragment implements HistoryCallback
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getActivity(), message);
+    }
+
+    @Override
+    public Activity getFragment() {
+        return getActivity();
     }
 }

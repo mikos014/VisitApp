@@ -18,6 +18,9 @@ public class Medicine implements Serializable
         this.methodOfDosage = methodOfDosage;
     }
 
+    public Medicine() {
+    }
+
     public int getMedicineId() {
         return medicineId;
     }

@@ -1,10 +1,13 @@
 package wat.edu.pl.visitapp.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class Visit implements Serializable {
     private int visitId;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date date;
     private String time;
     private User user;
@@ -30,6 +33,9 @@ public class Visit implements Serializable {
         this.clinicCity = clinicCity;
         this.clinicPhoneNo = clinicPhoneNo;
         this.hasOpinion = hasOpinion;
+    }
+
+    public Visit() {
     }
 
     public int getVisitId() {
