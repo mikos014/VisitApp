@@ -25,7 +25,7 @@ public class LoginRequest extends AsyncTask<UserCreds, Void, User> {
             String url = this.url;
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            ResponseEntity<User> responseEntity = restTemplate.postForEntity(url, userCreds, User.class);
+            ResponseEntity<User> responseEntity = restTemplate.postForEntity(url, userCreds[0], User.class);
 
             return responseEntity.getBody();
         }

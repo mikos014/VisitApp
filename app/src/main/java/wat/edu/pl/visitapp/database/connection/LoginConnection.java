@@ -38,10 +38,10 @@ public class LoginConnection
             callback.onFailure("Błąd połączenia");
         }
 
-        if (user != null)
+//        if (user != null)
             callback.onSuccess(user);
-        else
-            callback.onFailure("Bład serwera");
+//        else
+//            callback.onFailure("Bład serwera");
 
     }
 }
