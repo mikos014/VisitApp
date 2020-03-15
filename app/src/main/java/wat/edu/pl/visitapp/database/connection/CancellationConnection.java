@@ -40,6 +40,5 @@ public class CancellationConnection
             callback.onSuccessSetCancellationVisitList(visits);
         else
             callback.onFailure("Bład serwera");
-
     }
 }

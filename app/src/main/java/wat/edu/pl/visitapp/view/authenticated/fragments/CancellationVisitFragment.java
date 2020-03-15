@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
@@ -20,6 +21,7 @@ import wat.edu.pl.visitapp.database.connection.CancellationConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.interfaces.callbacks.CancellationCallback;
+import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalCancellationAdapter;
 
 public class CancellationVisitFragment extends Fragment implements CancellationCallback
@@ -57,7 +59,8 @@ public class CancellationVisitFragment extends Fragment implements CancellationC
 
     @Override
     public void onFailure(String message) {
-
+        ToastUtil.shortToast(getContext(), message);
+        listOfVisit = new LinkedList<>();
     }
 
     @Override

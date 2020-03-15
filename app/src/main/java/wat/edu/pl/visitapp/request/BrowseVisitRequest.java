@@ -11,7 +11,9 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import wat.edu.pl.visitapp.database.entity.Visit;
 
@@ -30,12 +32,10 @@ public class BrowseVisitRequest extends AsyncTask<String, Void, List<Visit>> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-            headers.add("query", String.valueOf(strings[0]));
-            headers.add("Content-Type", "application/json");
+            Map<String, String> params = new HashMap<>();
+            params.put("userId", strings[0]);
 
-            HttpEntity<Void> request = new HttpEntity<>(null, headers);
-            ResponseEntity<Visit[]> responseEntity = restTemplate.postForEntity(url, null, Visit[].class);
+            ResponseEntity<Visit[]> responseEntity = restTemplate.getForEntity(url, Visit[].class, params);
 
             return Arrays.asList(responseEntity.getBody());
         }

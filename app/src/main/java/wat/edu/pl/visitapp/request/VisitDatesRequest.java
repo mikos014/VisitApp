@@ -11,6 +11,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class VisitDatesRequest extends AsyncTask<Integer, Void, HashMap> {
     private String url;
@@ -27,12 +28,10 @@ public class VisitDatesRequest extends AsyncTask<Integer, Void, HashMap> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-            headers.add("visitId", String.valueOf(integers[0]));
-            headers.add("Content-Type", "application/json");
+            Map<String, Integer> params = new HashMap<>();
+            params.put("userId", integers[0]);
 
-            HttpEntity<Void> request = new HttpEntity<>(null, headers);
-            ResponseEntity<HashMap> responseEntity = restTemplate.postForEntity(url, request, HashMap.class);
+            ResponseEntity<HashMap> responseEntity = restTemplate.getForEntity(url, HashMap.class, params);
 
             return responseEntity.getBody();
         }

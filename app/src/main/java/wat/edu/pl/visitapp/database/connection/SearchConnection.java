@@ -6,48 +6,38 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
+import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.request.DoctorSpecRequest;
 import wat.edu.pl.visitapp.request.VisitRequest;
-import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 
-public class SearchConnection
-{
+public class SearchConnection {
     private SearchCallback callback;
 
-    public SearchConnection(SearchCallback callback)
-    {
+    public SearchConnection(SearchCallback callback) {
         this.callback = callback;
     }
 
-    public void getExampleOfVisits()
-    {
+    public void getExampleOfVisits() {
         String url = callback.getFragment().getString(R.string.UNOCCUPIED_VISIT_URL);
         List<Visit> visits = null;
-        try
-        {
+        try {
             visits = new VisitRequest(url).execute().get();
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
+        } catch (ExecutionException | InterruptedException e) {
             callback.onFailure("Błąd połączenia");
         }
+
         if (visits != null)
             callback.onSuccessSetVisitAds(visits);
         else
             callback.onFailure("Bład serwera");
-        callback.onSuccessSetVisitAds(new LinkedList<>());
     }
 
-    public void getExampleOfSpecs()
-    {
+    public void getExampleOfSpecs() {
         String url = callback.getFragment().getString(R.string.DOCTOR_SPEC_URL);
         List<String> specs = null;
-        try
-        {
+        try {
             specs = new DoctorSpecRequest(url).execute().get();
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
+        } catch (ExecutionException | InterruptedException e) {
             callback.onFailure("Błąd połączenia");
         }
 
@@ -55,7 +45,6 @@ public class SearchConnection
             callback.onSuccessSetDoctorSpecAds(specs);
         else
             callback.onFailure("Bład serwera");
-        callback.onSuccessSetDoctorSpecAds(new LinkedList<>());
 
     }
 

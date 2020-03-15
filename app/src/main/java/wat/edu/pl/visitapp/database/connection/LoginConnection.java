@@ -1,5 +1,7 @@
 package wat.edu.pl.visitapp.database.connection;
 
+import android.util.Log;
+
 import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
@@ -38,10 +40,10 @@ public class LoginConnection
             callback.onFailure("Błąd połączenia");
         }
 
-//        if (user != null)
+        if (user != null)
             callback.onSuccess(user);
-//        else
-//            callback.onFailure("Bład serwera");
+        else
+            callback.onFailure("Bład serwera");
 
     }
 }

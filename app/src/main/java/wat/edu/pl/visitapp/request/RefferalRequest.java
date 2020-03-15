@@ -11,7 +11,9 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import wat.edu.pl.visitapp.database.entity.Refferal;
 
@@ -30,12 +32,9 @@ public class RefferalRequest extends AsyncTask<Integer, Void, List<Refferal>> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-            headers.add("userId", String.valueOf(integers[0]));
-            headers.add("Content-Type", "application/json");
-
-            HttpEntity<Void> request = new HttpEntity<>(null, headers);
-            ResponseEntity<Refferal[]> responseEntity = restTemplate.postForEntity(url, request, Refferal[].class);
+            Map<String, Integer> params = new HashMap<>();
+            params.put("userId", integers[0]);
+            ResponseEntity<Refferal[]> responseEntity = restTemplate.getForEntity(url, Refferal[].class, params);
 
             return Arrays.asList(responseEntity.getBody());
         } catch (RestClientException e) {

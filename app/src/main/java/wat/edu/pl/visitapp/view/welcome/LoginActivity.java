@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback
             {
                 if (!etEmail.getText().toString().isEmpty() && !etPassword.getText().toString().isEmpty())
                 {
-                    loginConnection = new LoginConnection(LoginActivity.this, etEmail.toString(), etPassword.toString());
+                    loginConnection = new LoginConnection(LoginActivity.this, etEmail.getText().toString(), etPassword.getText().toString());
                     loginConnection.login();
                 }
                 else
