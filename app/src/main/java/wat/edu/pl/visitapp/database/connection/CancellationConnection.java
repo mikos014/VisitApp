@@ -35,10 +35,12 @@ public class CancellationConnection
 
         User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
         Doctor doctor = new Doctor(1, "lek. Michał Malinowski", 4.7, "lekarz ogólny");
+        Doctor doctor8 = new Doctor(9, "lek. Wiesław Tadel", 4.7, "kardiolog");
+        Doctor doctor9 = new Doctor(10, "dr. Jakub Zaberg", 4.3, "laryngolog");
 
         Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828", false);
-        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
-        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
+        Visit visit1 = new Visit(1, date, "13:30", user, doctor8, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
+        Visit visit2 = new Visit(1, date, "13:30", user, doctor9, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
 
         list.add(visit);
         list.add(visit1);

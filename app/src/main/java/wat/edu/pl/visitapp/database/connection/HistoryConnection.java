@@ -36,15 +36,14 @@ public class HistoryConnection
 
         User user = new User(1, "j.kowalski@wp.pl", "Jan", "Kowalski", "19800812", 0, "600000000");
 
-        Doctor doctor = new Doctor(1, "lek. Michał Malinowski", 4.7, "lekarz ogólny");
+        Doctor doctor6 = new Doctor(7, "dr Artur Taczuk", 4.2, "ortopeda");
+        Doctor doctor7 = new Doctor(8, "dr hab. Jan Edwin", 4.9, "okulista");
 
-        Visit visit = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828", false);
-        Visit visit1 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
-        Visit visit2 = new Visit(1, date, "13:30", user, doctor, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
+        Visit visit = new Visit(1, date, "10:30", user, doctor6, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828", true);
+        Visit visit1 = new Visit(2, date, "17:30", user, doctor7, 51.421882,21.924779, "Przychodnia Rejonowa SZPZLO Warszawa Bemowo", "00-001 Warszawa","Czumy 1", "228463828",false);
 
         list.add(visit);
         list.add(visit1);
-        list.add(visit2);
 
         callback.onSuccessSetHistoryList(list);
     }

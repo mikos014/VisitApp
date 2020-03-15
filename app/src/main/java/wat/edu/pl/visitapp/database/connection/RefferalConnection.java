@@ -39,10 +39,11 @@ public class RefferalConnection
         c.add(Calendar.DATE, 30);
         Date datePlus30 = c.getTime();
 
-        Doctor doctor = new Doctor(1, "lek. Michał Malinowski", 4.7, "lekarz ogólny");
+        Doctor doctor3 = new Doctor(4, "lek. Mariusz Nach", 4.7, "neurolog");
+        Doctor doctor4 = new Doctor(5, "dr. Jan Hadan", 4.5, "kardiolog");
 
-        Refferal refferal = new Refferal(1, "00002124361", date, datePlus30,"Warszawa", doctor, "laryngolog", user, "");
-        Refferal refferal2 = new Refferal(2, "0000212141", date, datePlus30,"Warszawa", doctor, "dermatolog", user, "");
+        Refferal refferal = new Refferal(1, "00002124361", date, datePlus30,"Warszawa", doctor3, "laryngolog", user, "");
+        Refferal refferal2 = new Refferal(2, "0000212141", date, datePlus30,"Warszawa", doctor4, "dermatolog", user, "");
         list.add(refferal);
         list.add(refferal2);
 
