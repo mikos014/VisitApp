@@ -10,6 +10,7 @@ public interface SearchCallback
 {
     void onSuccessSetVisitAds(List<Visit> visitList);
     void onSuccessSetDoctorSpecAds(List<String> specList);
-    void onFailure(String message);
+    void onFailureSetVisitAds(String message);
+    void onFailureSetDoctorSpecAds(String message);
     Activity getFragment();
 }

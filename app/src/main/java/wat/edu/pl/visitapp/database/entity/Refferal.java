@@ -1,5 +1,7 @@
 package wat.edu.pl.visitapp.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,7 +9,9 @@ public class Refferal implements Serializable
 {
     private int refferalId;
     private String refferalNo;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date issuedDate;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date expirationDate;
     private String issuedCity;
     private Doctor issuedByDoctor;

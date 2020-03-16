@@ -43,10 +43,8 @@ public class VerticalBrowseHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    private Visit getVisit(List<Visit> list, String doctorName)
-    {
-        for (Visit v: list)
-        {
+    private Visit getVisit(List<Visit> list, String doctorName) {
+        for (Visit v : list) {
             if (v.getDoctor().getName().equals(doctorName))
                 return v;
         }

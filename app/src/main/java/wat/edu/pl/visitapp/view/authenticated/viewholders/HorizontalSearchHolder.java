@@ -13,20 +13,16 @@ import java.util.List;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.utils.ToastUtil;
-import wat.edu.pl.visitapp.view.authenticated.activities.BrowseActivity;
 import wat.edu.pl.visitapp.view.authenticated.activities.VisitDetailsActivity;
 
-public class HorizontalSearchHolder extends RecyclerView.ViewHolder
-{
+public class HorizontalSearchHolder extends RecyclerView.ViewHolder {
     private TextView tvName;
     private TextView tvSpec;
     private TextView tvDistance;
     private TextView tvRating;
     private Button bSelectDoctor;
 
-    public HorizontalSearchHolder(final View view, final List<Visit> list, final User user)
-    {
+    public HorizontalSearchHolder(final View view, final List<Visit> list, final User user) {
         super(view);
 
         tvName = view.findViewById(R.id.tvDoctorName);
@@ -45,10 +41,8 @@ public class HorizontalSearchHolder extends RecyclerView.ViewHolder
         });
     }
 
-    private Visit getVisit(List<Visit> list, String doctorName)
-    {
-        for (Visit v: list)
-        {
+    private Visit getVisit(List<Visit> list, String doctorName) {
+        for (Visit v : list) {
             if (v.getDoctor().getName().equals(doctorName))
                 return v;
         }

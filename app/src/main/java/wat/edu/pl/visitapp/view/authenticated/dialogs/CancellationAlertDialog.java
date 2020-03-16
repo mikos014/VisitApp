@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RatingBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,8 +18,7 @@ import wat.edu.pl.visitapp.interfaces.callbacks.CancelVisitCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
-public class CancellationAlertDialog extends DialogFragment implements CancelVisitCallback
-{
+public class CancellationAlertDialog extends DialogFragment implements CancelVisitCallback {
     private Button bYes;
     private Button bNo;
 
@@ -54,8 +51,7 @@ public class CancellationAlertDialog extends DialogFragment implements CancelVis
         return view;
     }
 
-    private void openMainActivity()
-    {
+    private void openMainActivity() {
         Intent mainActivity = new Intent(getContext(), MainActivity.class);
         mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(mainActivity);

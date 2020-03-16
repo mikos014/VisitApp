@@ -2,13 +2,8 @@ package wat.edu.pl.visitapp.request;
 
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,8 +20,7 @@ public class LoginRequest extends AsyncTask<UserCreds, Void, User> {
 
     @Override
     protected User doInBackground(UserCreds... userCreds) {
-        try
-        {
+        try {
             String url = this.url;
 
             RestTemplate restTemplate = new RestTemplate();
@@ -35,9 +29,7 @@ public class LoginRequest extends AsyncTask<UserCreds, Void, User> {
             ResponseEntity<User> responseEntity = restTemplate.postForEntity(url, userCreds[0], User.class);
 
             return responseEntity.getBody();
-        }
-        catch (RestClientException e)
-        {
+        } catch (RestClientException e) {
             return null;
         }
     }

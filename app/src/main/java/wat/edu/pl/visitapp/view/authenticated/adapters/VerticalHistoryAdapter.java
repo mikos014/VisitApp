@@ -3,7 +3,6 @@ package wat.edu.pl.visitapp.view.authenticated.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,14 +29,13 @@ public class VerticalHistoryAdapter extends RecyclerView.Adapter<VerticalHistory
     public VerticalHistoryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                                    .inflate(R.layout.vertical_cardview_visit, parent, false);
+                .inflate(R.layout.vertical_cardview_visit, parent, false);
 
         return new VerticalHistoryHolder(view, historyVisitList, userId);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VerticalHistoryHolder holder, int position)
-    {
+    public void onBindViewHolder(@NonNull VerticalHistoryHolder holder, int position) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
         holder.getTvHistoryVisitDate().setText(sdf.format(historyVisitList.get(position).getDate()));
@@ -46,12 +44,9 @@ public class VerticalHistoryAdapter extends RecyclerView.Adapter<VerticalHistory
         holder.getTvHistoryDoctorSpec().setText(historyVisitList.get(position).getDoctor().getSpec());
         holder.getTvHistoryDoctorRating().setText(String.valueOf(historyVisitList.get(position).getDoctor().getRating()));
 
-        if (historyVisitList.get(position).isHasOpinion())
-        {
+        if (historyVisitList.get(position).isHasOpinion()) {
             holder.getbAddOpinion().setVisibility(View.GONE);
-        }
-        else
-        {
+        } else {
             holder.getbAddOpinion().setVisibility(View.VISIBLE);
         }
     }

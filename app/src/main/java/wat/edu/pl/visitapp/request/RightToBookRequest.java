@@ -24,17 +24,11 @@ public class RightToBookRequest extends AsyncTask<Integer, Void, Boolean> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-            headers.add("visitId", String.valueOf(integers[0]));
-            headers.add("userId", String.valueOf(integers[1]));
-            headers.add("Content-Type", "application/json");
-
-            HttpEntity<Void> request = new HttpEntity<>(null, headers);
-            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, request, null);
+            url = url + "/" + integers[0] + "/" + integers[1];
+            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, null, null);
 
             return responseEntity.getStatusCode().value() == 200;
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return false;
         }
     }

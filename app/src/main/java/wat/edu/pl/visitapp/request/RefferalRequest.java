@@ -2,11 +2,8 @@ package wat.edu.pl.visitapp.request;
 
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -32,9 +29,8 @@ public class RefferalRequest extends AsyncTask<Integer, Void, List<Refferal>> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            Map<String, Integer> params = new HashMap<>();
-            params.put("userId", integers[0]);
-            ResponseEntity<Refferal[]> responseEntity = restTemplate.getForEntity(url, Refferal[].class, params);
+            url = url + "/" + integers[0];
+            ResponseEntity<Refferal[]> responseEntity = restTemplate.getForEntity(url, Refferal[].class);
 
             return Arrays.asList(responseEntity.getBody());
         } catch (RestClientException e) {

@@ -8,6 +8,7 @@ public interface VisitDetailCallback
 {
     void onSuccessSetDates(HashMap hashMap);
     void onSuccessSetRightToBook(boolean hasRefferal);
-    void onFailure(String message);
+    void onFailureSetDates(String message);
+    void onFailureSetRightToBook(String message);
     Activity activity();
 }

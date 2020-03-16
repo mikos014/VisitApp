@@ -1,17 +1,5 @@
 package wat.edu.pl.visitapp.database.connection;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
@@ -19,14 +7,12 @@ import wat.edu.pl.visitapp.database.entity.UserCreds;
 import wat.edu.pl.visitapp.interfaces.callbacks.RegisterCallback;
 import wat.edu.pl.visitapp.request.RegisterRequest;
 
-public class RegisterConnection
-{
+public class RegisterConnection {
     private RegisterCallback callback;
     private String email, password, name, surname, dateOfBirth, phoneNumber;
     private int sex;
 
-    public RegisterConnection(RegisterCallback callback, String email, String password, String name, String surname, String dateOfBirth, String phoneNumber, int sex)
-    {
+    public RegisterConnection(RegisterCallback callback, String email, String password, String name, String surname, String dateOfBirth, String phoneNumber, int sex) {
         this.callback = callback;
         this.email = email;
         this.password = password;
@@ -37,8 +23,7 @@ public class RegisterConnection
         this.sex = sex;
     }
 
-    public void register()
-    {
+    public void register() {
         String url = callback.activity().getString(R.string.REGISTER_URL);
         UserCreds userCreds = new UserCreds();
         userCreds.setEmail(email);
@@ -50,12 +35,9 @@ public class RegisterConnection
         userCreds.setSex(sex);
 
         boolean isNoError = false;
-        try
-        {
+        try {
             isNoError = new RegisterRequest(url).execute(userCreds).get();
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
+        } catch (ExecutionException | InterruptedException e) {
             callback.onFailure("Błąd połączenia");
         }
 

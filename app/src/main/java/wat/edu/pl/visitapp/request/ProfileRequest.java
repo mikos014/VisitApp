@@ -26,8 +26,7 @@ public class ProfileRequest extends AsyncTask<UserCreds, Void, Boolean> {
             ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, userCreds, null);
 
             return responseEntity.getStatusCode().value() == 200;
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return false;
         }
     }

@@ -16,8 +16,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Refferal;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalRefferalHolder;
 
-public class VerticalRefferalAdapter extends RecyclerView.Adapter<VerticalRefferalHolder>
-{
+public class VerticalRefferalAdapter extends RecyclerView.Adapter<VerticalRefferalHolder> {
     private List<Refferal> refferalList;
 
     public VerticalRefferalAdapter(List<Refferal> refferalList) {
@@ -26,18 +25,16 @@ public class VerticalRefferalAdapter extends RecyclerView.Adapter<VerticalReffer
 
     @NonNull
     @Override
-    public VerticalRefferalHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-    {
+    public VerticalRefferalHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
-                        .from(parent.getContext())
-                        .inflate(R.layout.vertical_cardview_refferal, parent, false);
+                .from(parent.getContext())
+                .inflate(R.layout.vertical_cardview_refferal, parent, false);
 
         return new VerticalRefferalHolder(view, refferalList);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VerticalRefferalHolder holder, int position)
-    {
+    public void onBindViewHolder(@NonNull VerticalRefferalHolder holder, int position) {
         holder.getTvNumber().setText(refferalList.get(position).getRefferalNo());
         holder.getTvIssuedBy().setText(refferalList.get(position).getIssuedByDoctor().getName());
         holder.getTvIssuedTo().setText(refferalList.get(position).getIssuedToDoctor());

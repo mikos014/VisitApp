@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,15 +23,13 @@ import wat.edu.pl.visitapp.interfaces.callbacks.CancellationCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalCancellationAdapter;
 
-public class CancellationVisitFragment extends Fragment implements CancellationCallback
-{
+public class CancellationVisitFragment extends Fragment implements CancellationCallback {
     private RecyclerView rvVerticalCancellation;
     private List<Visit> listOfVisit;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cancellation_visit, container, false);
         getActivity().setTitle(R.string.cancelVisit);
 

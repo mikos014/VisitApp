@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
@@ -22,15 +23,13 @@ import wat.edu.pl.visitapp.interfaces.callbacks.HistoryCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalHistoryAdapter;
 
-public class HistoryFragment extends Fragment implements HistoryCallback
-{
+public class HistoryFragment extends Fragment implements HistoryCallback {
     private RecyclerView rvHistory;
     private List<Visit> historyVisitList;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
         getActivity().setTitle(R.string.historyOfVisits);
 
@@ -58,6 +57,7 @@ public class HistoryFragment extends Fragment implements HistoryCallback
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getActivity(), message);
+        historyVisitList = new LinkedList<>();
     }
 
     @Override

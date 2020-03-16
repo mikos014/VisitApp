@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentManager;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,8 +21,7 @@ import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.dialogs.ConfirmationDialog;
 
-public class ExpandableDatesAdapter extends BaseExpandableListAdapter
-{
+public class ExpandableDatesAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> headersList;
     private HashMap<String, List<String>> itemsMap;
@@ -76,8 +74,7 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         String group = (String) getGroup(groupPosition);
-        if (convertView == null)
-        {
+        if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.expandable_recyclerview_header, parent, false);
         }
@@ -90,8 +87,7 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         String child = (String) getChild(groupPosition, childPosition);
-        if (convertView == null)
-        {
+        if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.expandable_recyclerview_item, parent, false);
         }
@@ -114,11 +110,9 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter
                 args.putSerializable("hasRefferal", hasRefferal);
                 args.putSerializable("visit", visit);
                 ConfirmationDialog dialog = new ConfirmationDialog();
-                FragmentManager fm = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+                FragmentManager fm = ((AppCompatActivity) v.getContext()).getSupportFragmentManager();
                 dialog.setArguments(args);
                 dialog.show(fm, "");
-
-                ToastUtil.shortToast(v.getContext(), getGroup(groupPosition).toString() + textView.getText().toString());
             }
         });
 

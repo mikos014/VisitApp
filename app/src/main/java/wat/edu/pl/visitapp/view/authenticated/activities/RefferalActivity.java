@@ -15,8 +15,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Refferal;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
-public class RefferalActivity extends AppCompatActivity
-{
+public class RefferalActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView tvRefferalNo;
     private TextView tvUser;
@@ -54,8 +53,7 @@ public class RefferalActivity extends AppCompatActivity
 
         r = (Refferal) args.getSerializable("refferal");
 
-        if (r != null)
-        {
+        if (r != null) {
             tvRefferalNo.setText(r.getRefferalNo());
             tvUser.setText(r.getIssuedToUser().getName() + " " + r.getIssuedToUser().getSurname());
             tvRefferalToDoctorSpec.setText(r.getIssuedToDoctor());

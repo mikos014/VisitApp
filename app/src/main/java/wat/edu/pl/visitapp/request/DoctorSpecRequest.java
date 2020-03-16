@@ -20,16 +20,14 @@ public class DoctorSpecRequest extends AsyncTask<Void, Void, List<String>> {
 
     @Override
     protected List<String> doInBackground(Void... voids) {
-        try
-        {
+        try {
             RestTemplate restTemplate = new RestTemplate();
 
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             ResponseEntity<String[]> responseEntity = restTemplate.getForEntity(url, String[].class);
 
             return Arrays.asList(responseEntity.getBody());
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return null;
         }
 

@@ -1,5 +1,7 @@
 package wat.edu.pl.visitapp.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +10,9 @@ public class Prescription implements Serializable
 {
     private int prescriptionId;
     private String prescriptionNo;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date issuedDate;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date expirationDate;
     private String issuedCity;
     private Doctor issuedByDoctor;

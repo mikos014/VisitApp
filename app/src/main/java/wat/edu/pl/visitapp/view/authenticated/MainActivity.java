@@ -1,19 +1,16 @@
 package wat.edu.pl.visitapp.view.authenticated;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
-
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -22,7 +19,6 @@ import com.google.android.material.navigation.NavigationView;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.User;
-import wat.edu.pl.visitapp.interfaces.callbacks.MainCallback;
 import wat.edu.pl.visitapp.view.authenticated.fragments.CancellationVisitFragment;
 import wat.edu.pl.visitapp.view.authenticated.fragments.HistoryFragment;
 import wat.edu.pl.visitapp.view.authenticated.fragments.PrescriptionFragment;
@@ -31,8 +27,7 @@ import wat.edu.pl.visitapp.view.authenticated.fragments.RefferalFragment;
 import wat.edu.pl.visitapp.view.authenticated.fragments.SearchFragment;
 import wat.edu.pl.visitapp.view.welcome.LoginActivity;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MainCallback
-{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private Toolbar toolbar;
@@ -43,8 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -70,51 +64,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent intent = getIntent();
 
-        if(intent.getSerializableExtra("user") != null) {
+        if (intent.getSerializableExtra("user") != null) {
             user = (User) intent.getSerializableExtra("user");
         }
 
         action = (String) intent.getSerializableExtra("action");
 
-        if (action == null)
-        {
+        if (action == null) {
             openFragment(new SearchFragment(), true);
-        }
-        else
-        {
-            if (action.equals(getString(R.string.historyOfVisits)))
-            {
+        } else {
+            if (action.equals(getString(R.string.historyOfVisits))) {
                 openFragment(new HistoryFragment(), true);
-            }
-            else if (action.equals(getString(R.string.refferal)))
-            {
+            } else if (action.equals(getString(R.string.refferal))) {
                 openFragment(new RefferalFragment(), true);
-            }
-            else if(action.equals(getString(R.string.prescription)))
-            {
+            } else if (action.equals(getString(R.string.prescription))) {
                 openFragment(new PrescriptionFragment(), true);
             }
         }
     }
 
     @Override
-    public void onBackPressed()
-    {
-        if (drawer.isDrawerOpen(GravityCompat.START))
-        {
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-        else
-        {
+        } else {
             super.onBackPressed();
         }
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-    {
-        switch (menuItem.getItemId())
-        {
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
             case R.id.nav_search:
                 openFragment(new SearchFragment(), true);
                 break;
@@ -144,10 +124,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void openFragment(Fragment fragment, boolean isUserNeeded)
-    {
-        if (isUserNeeded)
-        {
+    private void openFragment(Fragment fragment, boolean isUserNeeded) {
+        if (isUserNeeded) {
             Bundle args = new Bundle();
             args.putSerializable("user", user);
             fragment.setArguments(args);
@@ -155,12 +133,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 fragment).commit();
     }
-
-    //TODO remove if unuse
-    @Override
-    public Activity getActivity()
-    {
-        return MainActivity.this;
-    }
-
 }

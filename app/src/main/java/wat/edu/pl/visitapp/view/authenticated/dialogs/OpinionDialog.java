@@ -20,8 +20,7 @@ import wat.edu.pl.visitapp.interfaces.callbacks.OpinionCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
-public class OpinionDialog extends DialogFragment implements OpinionCallback
-{
+public class OpinionDialog extends DialogFragment implements OpinionCallback {
     private RatingBar rbDoctorRating;
     private TextView tvRatingDescription;
     private Button bSave;
@@ -44,10 +43,8 @@ public class OpinionDialog extends DialogFragment implements OpinionCallback
 
         rbDoctorRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser)
-            {
-                switch ((int) ratingBar.getRating())
-                {
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                switch ((int) ratingBar.getRating()) {
                     case 1:
                         numberOfStars = 1;
                         tvRatingDescription.setText(R.string.veryBad);
@@ -80,12 +77,9 @@ public class OpinionDialog extends DialogFragment implements OpinionCallback
 
                 String text = tvRatingDescription.getText().toString();
 
-                if (text.equals(""))
-                {
+                if (text.equals("")) {
                     ToastUtil.shortToast(getActivity(), getString(R.string.fillRatingStars));
-                }
-                else
-                {
+                } else {
                     connection.addOpinion(args.getInt("visitId"), args.getInt("userId"), numberOfStars);
                 }
             }
@@ -101,8 +95,7 @@ public class OpinionDialog extends DialogFragment implements OpinionCallback
         return view;
     }
 
-    private void openMainActivity()
-    {
+    private void openMainActivity() {
         Intent mainActivity = new Intent(getContext(), MainActivity.class);
         mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(mainActivity);

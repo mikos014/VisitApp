@@ -2,11 +2,8 @@ package wat.edu.pl.visitapp.request;
 
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,14 +25,12 @@ public class VisitDatesRequest extends AsyncTask<Integer, Void, HashMap> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            Map<String, Integer> params = new HashMap<>();
-            params.put("userId", integers[0]);
+            url = url + "/" + integers[0];
 
-            ResponseEntity<HashMap> responseEntity = restTemplate.getForEntity(url, HashMap.class, params);
+            ResponseEntity<HashMap> responseEntity = restTemplate.getForEntity(url, HashMap.class);
 
             return responseEntity.getBody();
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return null;
         }
     }

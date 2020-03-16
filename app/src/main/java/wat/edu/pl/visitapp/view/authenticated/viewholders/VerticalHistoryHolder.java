@@ -17,8 +17,7 @@ import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.dialogs.OpinionDialog;
 
-public class VerticalHistoryHolder extends RecyclerView.ViewHolder
-{
+public class VerticalHistoryHolder extends RecyclerView.ViewHolder {
     private TextView tvHistoryVisitDate;
     private TextView tvHistoryVisitTime;
     private TextView tvHistoryDoctorName;
@@ -26,8 +25,7 @@ public class VerticalHistoryHolder extends RecyclerView.ViewHolder
     private TextView tvHistoryDoctorRating;
     private Button bAddOpinion;
 
-    public VerticalHistoryHolder(@NonNull final View view, final List<Visit> historyVisitList, final int userId)
-    {
+    public VerticalHistoryHolder(@NonNull final View view, final List<Visit> historyVisitList, final int userId) {
         super(view);
 
         tvHistoryVisitDate = view.findViewById(R.id.tvHistoryVisitDate);
@@ -44,17 +42,14 @@ public class VerticalHistoryHolder extends RecyclerView.ViewHolder
                 args.putInt("visitId", getVisitId(historyVisitList));
                 args.putInt("userId", userId);
                 OpinionDialog dialog = new OpinionDialog();
-                FragmentManager fm = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+                FragmentManager fm = ((AppCompatActivity) v.getContext()).getSupportFragmentManager();
                 dialog.setArguments(args);
                 dialog.show(fm, "");
-
-                ToastUtil.shortToast(v.getContext(), String.valueOf(getAdapterPosition()));
             }
         });
     }
 
-    private int getVisitId(List<Visit> historyList)
-    {
+    private int getVisitId(List<Visit> historyList) {
         return historyList.get(getAdapterPosition()).getVisitId();
     }
 

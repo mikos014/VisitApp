@@ -7,7 +7,6 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.UserCreds;
 
 public class RegisterRequest extends AsyncTask<UserCreds, Void, Boolean> {
@@ -20,17 +19,14 @@ public class RegisterRequest extends AsyncTask<UserCreds, Void, Boolean> {
 
     @Override
     protected Boolean doInBackground(UserCreds... userCreds) {
-        try
-        {
+        try {
             String url = this.url;
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, userCreds, null);
+            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, userCreds[0], null);
 
             return responseEntity.getStatusCode().value() == 200;
-        }
-        catch (RestClientException e)
-        {
+        } catch (RestClientException e) {
             return false;
         }
     }

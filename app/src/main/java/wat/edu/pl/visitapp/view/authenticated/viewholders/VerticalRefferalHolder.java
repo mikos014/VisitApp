@@ -5,23 +5,18 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.sql.Ref;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
-import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.database.entity.Refferal;
 import wat.edu.pl.visitapp.utils.ToastUtil;
-import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 import wat.edu.pl.visitapp.view.authenticated.activities.RefferalActivity;
 
-public class VerticalRefferalHolder extends RecyclerView.ViewHolder
-{
+public class VerticalRefferalHolder extends RecyclerView.ViewHolder {
     private TextView tvNumber;
     private TextView tvIssuedTo;
     private TextView tvIssuedBy;
@@ -42,8 +37,6 @@ public class VerticalRefferalHolder extends RecyclerView.ViewHolder
         bMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.shortToast(view.getContext(), "Więcej...");
-
                 Refferal refferal = getRefferal(list, tvNumber.getText().toString());
 
                 Intent openRefferalActivity = new Intent(view.getContext(), RefferalActivity.class);
@@ -54,9 +47,8 @@ public class VerticalRefferalHolder extends RecyclerView.ViewHolder
         });
     }
 
-    private Refferal getRefferal(List<Refferal> refferals, String refferalNo)
-    {
-        for (Refferal r: refferals) {
+    private Refferal getRefferal(List<Refferal> refferals, String refferalNo) {
+        for (Refferal r : refferals) {
             if (r.getRefferalNo().equals(refferalNo))
                 return r;
         }

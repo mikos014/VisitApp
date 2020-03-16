@@ -30,7 +30,7 @@ public class VerticalBrowseAdapter extends RecyclerView.Adapter<VerticalBrowseHo
     public VerticalBrowseHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                                    .inflate(R.layout.vertical_cardview_doctor, parent, false);
+                .inflate(R.layout.vertical_cardview_doctor, parent, false);
 
         return new VerticalBrowseHolder(view, visitList, user);
     }

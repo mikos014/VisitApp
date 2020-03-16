@@ -2,11 +2,8 @@ package wat.edu.pl.visitapp.request;
 
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -29,8 +26,7 @@ public class BookVisitRequest extends AsyncTask<Visit, Void, Boolean> {
             ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, visits[0], null);
 
             return responseEntity.getStatusCode().value() == 200;
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return false;
         }
     }

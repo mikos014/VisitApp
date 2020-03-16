@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.control.MapControl;
@@ -32,15 +31,14 @@ public class VerticalCancellationAdapter extends RecyclerView.Adapter<VerticalCa
     public VerticalCancellationHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater
-                        .from(parent.getContext())
-                        .inflate(R.layout.vertical_cardview_visit_cancellation, parent, false);
+                .from(parent.getContext())
+                .inflate(R.layout.vertical_cardview_visit_cancellation, parent, false);
 
         return new VerticalCancellationHolder(view, list, userId);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VerticalCancellationHolder holder, int position)
-    {
+    public void onBindViewHolder(@NonNull VerticalCancellationHolder holder, int position) {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
 
         MapControl mapControl = new MapControl();

@@ -6,15 +6,15 @@
     <string name="CHANGE_PHONE_NUMBER_URL">https://servervisitapp.herokuapp.com/api/changeNumber</string>
     <string name="RIGHT_TO_BOOK_URL">https://servervisitapp.herokuapp.com/api/rightToBook</string>
     <string name="DOCTOR_SPEC_URL">https://servervisitapp.herokuapp.com/api/doctor</string>
-    <string name="PRESCRIPTION_URL">https://servervisitapp.herokuapp.com/api/prescription/</string>
-    <string name="REFFERAL_URL">https://servervisitapp.herokuapp.com/api/refferal/</string>
-    <string name="GET_UNOCCUPIED_DATES_URL">https://servervisitapp.herokuapp.com/api/searchUnoccupied/</string>
-    <string name="ADD_OPINION_URL">https://servervisitapp.herokuapp.com/api/historyV/opinion/</string>
-    <string name="HISTORY_VISIT_URL">https://servervisitapp.herokuapp.com/api/historyV/</string>
-    <string name="CURRENT_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV/</string>
-    <string name="SEARCH_BY_QUERY_URL">https://servervisitapp.herokuapp.com/api/searchByQuery/</string>
+    <string name="PRESCRIPTION_URL">https://servervisitapp.herokuapp.com/api/prescription</string>
+    <string name="REFFERAL_URL">https://servervisitapp.herokuapp.com/api/refferal</string>
+    <string name="GET_UNOCCUPIED_DATES_URL">https://servervisitapp.herokuapp.com/api/searchUnoccupied</string>
+    <string name="ADD_OPINION_URL">https://servervisitapp.herokuapp.com/api/historyV/opinion</string>
+    <string name="HISTORY_VISIT_URL">https://servervisitapp.herokuapp.com/api/historyV</string>
+    <string name="CURRENT_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV</string>
+    <string name="SEARCH_BY_QUERY_URL">https://servervisitapp.herokuapp.com/api/searchByQuery</string>
     <string name="UNOCCUPIED_VISIT_URL">https://servervisitapp.herokuapp.com/api/search</string>
-    <string name="CANCEL_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV/cancel/</string>
+    <string name="CANCEL_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV/cancel</string>
     <string name="BOOK_VISIT_URL">https://servervisitapp.herokuapp.com/api/book</string>
 
 

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
@@ -22,15 +23,13 @@ import wat.edu.pl.visitapp.interfaces.callbacks.RefferalCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalRefferalAdapter;
 
-public class RefferalFragment extends Fragment implements RefferalCallback
-{
-    private RecyclerView rvVerticalRefferal;
+public class RefferalFragment extends Fragment implements RefferalCallback {
     List<Refferal> list;
+    private RecyclerView rvVerticalRefferal;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_refferal, container, false);
 
         getActivity().setTitle(R.string.refferal);
@@ -61,6 +60,7 @@ public class RefferalFragment extends Fragment implements RefferalCallback
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getActivity(), message);
+        list = new LinkedList<>();
     }
 
     @Override

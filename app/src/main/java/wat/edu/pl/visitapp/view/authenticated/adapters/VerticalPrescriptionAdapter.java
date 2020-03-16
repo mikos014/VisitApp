@@ -4,13 +4,11 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -18,12 +16,10 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalPrescriptionHolder;
 
-public class VerticalPrescriptionAdapter extends RecyclerView.Adapter<VerticalPrescriptionHolder>
-{
+public class VerticalPrescriptionAdapter extends RecyclerView.Adapter<VerticalPrescriptionHolder> {
     private List<Prescription> listOfPrescription;
 
-    public VerticalPrescriptionAdapter(List<Prescription> listOfPrescription)
-    {
+    public VerticalPrescriptionAdapter(List<Prescription> listOfPrescription) {
         this.listOfPrescription = listOfPrescription;
     }
 
@@ -32,15 +28,14 @@ public class VerticalPrescriptionAdapter extends RecyclerView.Adapter<VerticalPr
     public VerticalPrescriptionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater
-                        .from(parent.getContext())
-                        .inflate(R.layout.vertical_cardview_prescription, parent, false);
+                .from(parent.getContext())
+                .inflate(R.layout.vertical_cardview_prescription, parent, false);
 
         return new VerticalPrescriptionHolder(view, listOfPrescription);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VerticalPrescriptionHolder holder, int position)
-    {
+    public void onBindViewHolder(@NonNull VerticalPrescriptionHolder holder, int position) {
         holder.getTvNumber().setText(listOfPrescription.get(position).getPrescriptionNo());
         holder.getTvIssuedBy().setText(listOfPrescription.get(position).getIssuedByDoctor().getName());
 

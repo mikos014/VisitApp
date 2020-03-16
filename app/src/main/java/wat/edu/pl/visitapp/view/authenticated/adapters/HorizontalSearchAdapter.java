@@ -15,8 +15,7 @@ import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.HorizontalSearchHolder;
 
-public class HorizontalSearchAdapter extends RecyclerView.Adapter<HorizontalSearchHolder>
-{
+public class HorizontalSearchAdapter extends RecyclerView.Adapter<HorizontalSearchHolder> {
     private List<Visit> visitList;
     private User user;
 
@@ -30,15 +29,14 @@ public class HorizontalSearchAdapter extends RecyclerView.Adapter<HorizontalSear
     public HorizontalSearchHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater
-                    .from(parent.getContext())
-                    .inflate(R.layout.horizontal_cardview_doctor, parent, false);
+                .from(parent.getContext())
+                .inflate(R.layout.horizontal_cardview_doctor, parent, false);
 
         return new HorizontalSearchHolder(view, visitList, user);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HorizontalSearchHolder holder, int position)
-    {
+    public void onBindViewHolder(@NonNull HorizontalSearchHolder holder, int position) {
         MapControl mapControl = new MapControl();
         String distance = mapControl.getDistance(visitList.get(position).getPlaceLatitude(), visitList.get(position).getPlaceLongitude());
 

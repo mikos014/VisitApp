@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
@@ -22,15 +23,13 @@ import wat.edu.pl.visitapp.interfaces.callbacks.PrescriptionCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalPrescriptionAdapter;
 
-public class PrescriptionFragment extends Fragment implements PrescriptionCallback
-{
+public class PrescriptionFragment extends Fragment implements PrescriptionCallback {
     private RecyclerView rvVerticalPrescription;
     private List<Prescription> prescriptionList;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_prescription, container, false);
 
         getActivity().setTitle(R.string.prescription);
@@ -59,6 +58,7 @@ public class PrescriptionFragment extends Fragment implements PrescriptionCallba
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(getActivity(), message);
+        prescriptionList = new LinkedList<>();
     }
 
     @Override

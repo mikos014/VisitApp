@@ -10,8 +10,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import wat.edu.pl.visitapp.database.entity.UserCreds;
-
 public class OpinionRequest extends AsyncTask<Integer, Void, Boolean> {
     private String url;
 
@@ -26,18 +24,11 @@ public class OpinionRequest extends AsyncTask<Integer, Void, Boolean> {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
-            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-            headers.add("visitId", String.valueOf(integers[0]));
-            headers.add("userId", String.valueOf(integers[1]));
-            headers.add("opinion", String.valueOf(integers[2]));
-            headers.add("Content-Type", "application/json");
-
-            HttpEntity<Void> request = new HttpEntity<>(null, headers);
-            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, request, null);
+            url = url + "/" + integers[0] + "/" + integers[1] + "/" + integers[2];
+            ResponseEntity<Void> responseEntity = restTemplate.postForEntity(url, null, null);
 
             return responseEntity.getStatusCode().value() == 200;
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return false;
         }
     }

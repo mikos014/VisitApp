@@ -15,8 +15,7 @@ import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.activities.PrescriptionActivity;
 
-public class VerticalPrescriptionHolder extends RecyclerView.ViewHolder
-{
+public class VerticalPrescriptionHolder extends RecyclerView.ViewHolder {
     private TextView tvNumber;
     private TextView tvIssuedBy;
     private TextView tvIssuedDate;
@@ -35,8 +34,6 @@ public class VerticalPrescriptionHolder extends RecyclerView.ViewHolder
         bMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.shortToast(view.getContext(), "Więcej...");
-
                 Prescription prescription = getPrescription(list, tvNumber.getText().toString());
 
                 Intent openPrescriptionActivity = new Intent(view.getContext(), PrescriptionActivity.class);
@@ -48,10 +45,8 @@ public class VerticalPrescriptionHolder extends RecyclerView.ViewHolder
         });
     }
 
-    private Prescription getPrescription(List<Prescription> list, String prescriptionNo)
-    {
-        for (Prescription p: list)
-        {
+    private Prescription getPrescription(List<Prescription> list, String prescriptionNo) {
+        for (Prescription p : list) {
             if (p.getPrescriptionNo().equals(prescriptionNo))
                 return p;
         }

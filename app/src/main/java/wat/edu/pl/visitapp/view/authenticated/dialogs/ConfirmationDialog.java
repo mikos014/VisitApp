@@ -22,8 +22,7 @@ import wat.edu.pl.visitapp.interfaces.callbacks.BookingCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
-public class ConfirmationDialog extends DialogFragment implements BookingCallback
-{
+public class ConfirmationDialog extends DialogFragment implements BookingCallback {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,8 +32,7 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
         boolean hasRefferal = (Boolean) args.getSerializable("hasRefferal");
         BookingConnection connection = new BookingConnection(this);
 
-        if (hasRefferal)
-        {
+        if (hasRefferal) {
             view = inflater.inflate(R.layout.dialog_confirmation, container, false);
 
             Visit visit = (Visit) args.getSerializable("visit");
@@ -51,7 +49,7 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
             bYes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   connection.bookVisit(visit);
+                    connection.bookVisit(visit);
                 }
             });
 
@@ -61,9 +59,7 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
                     getDialog().dismiss();
                 }
             });
-        }
-        else
-        {
+        } else {
             view = inflater.inflate(R.layout.dialog_confirmation_error, container, false);
 
             Button bUnderstand = view.findViewById(R.id.bUnderstand);
@@ -78,8 +74,7 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
         return view;
     }
 
-    private void openMainActivity()
-    {
+    private void openMainActivity() {
         Intent mainActivity = new Intent(getContext(), MainActivity.class);
         mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(mainActivity);

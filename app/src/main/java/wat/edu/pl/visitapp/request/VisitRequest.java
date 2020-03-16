@@ -2,7 +2,6 @@ package wat.edu.pl.visitapp.request;
 
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestClientException;
@@ -31,8 +30,7 @@ public class VisitRequest extends AsyncTask<Void, Void, List<Visit>> {
             ResponseEntity<Visit[]> responseEntity = restTemplate.getForEntity(url, Visit[].class);
 
             return Arrays.asList(responseEntity.getBody());
-        }
-        catch (RestClientException e) {
+        } catch (RestClientException e) {
             return null;
         }
     }

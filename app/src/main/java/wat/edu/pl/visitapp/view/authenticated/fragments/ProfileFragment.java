@@ -12,8 +12,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.ProfileConnection;

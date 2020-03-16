@@ -1,6 +1,5 @@
 package wat.edu.pl.visitapp.database.connection;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -23,13 +22,13 @@ public class SearchConnection {
         try {
             visits = new VisitRequest(url).execute().get();
         } catch (ExecutionException | InterruptedException e) {
-            callback.onFailure("Błąd połączenia");
+            callback.onFailureSetVisitAds("Błąd połączenia");
         }
 
         if (visits != null)
             callback.onSuccessSetVisitAds(visits);
         else
-            callback.onFailure("Bład serwera");
+            callback.onFailureSetVisitAds("Bład serwera");
     }
 
     public void getExampleOfSpecs() {
@@ -38,13 +37,13 @@ public class SearchConnection {
         try {
             specs = new DoctorSpecRequest(url).execute().get();
         } catch (ExecutionException | InterruptedException e) {
-            callback.onFailure("Błąd połączenia");
+            callback.onFailureSetDoctorSpecAds("Błąd połączenia");
         }
 
         if (specs != null)
             callback.onSuccessSetDoctorSpecAds(specs);
         else
-            callback.onFailure("Bład serwera");
+            callback.onFailureSetDoctorSpecAds("Bład serwera");
 
     }
 

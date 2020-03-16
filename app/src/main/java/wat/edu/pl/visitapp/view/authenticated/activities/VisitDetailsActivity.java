@@ -3,33 +3,26 @@ package wat.edu.pl.visitapp.view.authenticated.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentManager;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
-import wat.edu.pl.visitapp.database.connection.SearchConnection;
 import wat.edu.pl.visitapp.database.connection.VisitDetailConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.interfaces.callbacks.VisitDetailCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.ExpandableDatesAdapter;
-import wat.edu.pl.visitapp.view.authenticated.dialogs.CancellationAlertDialog;
-import wat.edu.pl.visitapp.view.authenticated.dialogs.ConfirmationDialog;
 
-public class VisitDetailsActivity extends AppCompatActivity implements VisitDetailCallback
-{
+public class VisitDetailsActivity extends AppCompatActivity implements VisitDetailCallback {
     private Toolbar toolbar;
     private TextView tvDoctorName;
     private TextView tvDoctorSpec;
@@ -90,7 +83,9 @@ public class VisitDetailsActivity extends AppCompatActivity implements VisitDeta
 
     private List<String> getHeaders(HashMap<String, List<String>> hashMap) {
         final List<String> list = new LinkedList<>();
-        hashMap.forEach((k, v) -> list.add(k));
+
+        if(hashMap.size() > 0)
+            hashMap.forEach((k, v) -> list.add(k));
         return list;
     }
 
@@ -112,8 +107,15 @@ public class VisitDetailsActivity extends AppCompatActivity implements VisitDeta
     }
 
     @Override
-    public void onFailure(String message) {
+    public void onFailureSetDates(String message) {
         ToastUtil.shortToast(VisitDetailsActivity.this, message);
+        itemsMap = new HashMap();
+    }
+
+    @Override
+    public void onFailureSetRightToBook(String message) {
+        ToastUtil.shortToast(VisitDetailsActivity.this, message);
+        hasRefferal = false;
     }
 
     @Override

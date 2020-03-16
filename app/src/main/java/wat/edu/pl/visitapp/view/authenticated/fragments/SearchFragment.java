@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TableRow;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
@@ -112,8 +114,15 @@ public class SearchFragment extends Fragment implements SearchCallback {
     }
 
     @Override
-    public void onFailure(String message) {
+    public void onFailureSetVisitAds(String message) {
         ToastUtil.shortToast(getContext(), message);
+        visitAds = new LinkedList<>();
+    }
+
+    @Override
+    public void onFailureSetDoctorSpecAds(String message) {
+        ToastUtil.shortToast(getContext(), message);
+        specAds = new LinkedList<>();
     }
 
     @Override

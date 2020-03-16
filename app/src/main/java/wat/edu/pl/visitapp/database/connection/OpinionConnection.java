@@ -13,17 +13,13 @@ public class OpinionConnection {
         this.callback = callback;
     }
 
-    public void addOpinion(int visitId, int userId, int numberOfStars)
-    {
+    public void addOpinion(int visitId, int userId, int numberOfStars) {
         String url = callback.getFragment().getString(R.string.ADD_OPINION_URL);
         boolean isNoError = false;
 
-        try
-        {
+        try {
             isNoError = new OpinionRequest(url).execute(visitId, userId, numberOfStars).get();
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
+        } catch (ExecutionException | InterruptedException e) {
             callback.onFailure("Błąd połączenia");
         }
 

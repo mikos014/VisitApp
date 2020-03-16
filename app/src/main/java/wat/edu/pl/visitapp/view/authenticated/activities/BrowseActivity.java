@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import wat.edu.pl.visitapp.R;
@@ -17,21 +18,17 @@ import wat.edu.pl.visitapp.database.connection.BrowseConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.interfaces.callbacks.BrowseCallback;
-import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalBrowseAdapter;
 
-public class BrowseActivity extends AppCompatActivity implements BrowseCallback
-{
+public class BrowseActivity extends AppCompatActivity implements BrowseCallback {
+    List<Visit> visitList;
     private Toolbar tSearch;
     private RecyclerView rvList;
-
-    List<Visit> visitList;
     private User user;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
 
@@ -71,6 +68,7 @@ public class BrowseActivity extends AppCompatActivity implements BrowseCallback
     @Override
     public void onFailure(String message) {
         ToastUtil.shortToast(BrowseActivity.this, message);
+        visitList = new LinkedList<>();
     }
 
     @Override
