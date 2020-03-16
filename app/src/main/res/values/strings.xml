@@ -1,22 +1,21 @@
 <resources>
-    <string name="LOGIN_URL">https://servervisitapp.herokuapp.com/api/login</string>
-    <string name="REGISTER_URL">https://servervisitapp.herokuapp.com/api/register</string>
-    <string name="CHANGE_EMAIL_URL">https://servervisitapp.herokuapp.com/api/changeEmail</string>
-    <string name="CHANGE_PASSWORD_URL">https://servervisitapp.herokuapp.com/api/changePassword</string>
-    <string name="CHANGE_PHONE_NUMBER_URL">https://servervisitapp.herokuapp.com/api/changeNumber</string>
-    <string name="RIGHT_TO_BOOK_URL">https://servervisitapp.herokuapp.com/api/rightToBook</string>
-    <string name="DOCTOR_SPEC_URL">https://servervisitapp.herokuapp.com/api/doctor</string>
-    <string name="PRESCRIPTION_URL">https://servervisitapp.herokuapp.com/api/prescription</string>
-    <string name="REFFERAL_URL">https://servervisitapp.herokuapp.com/api/refferal</string>
-    <string name="GET_UNOCCUPIED_DATES_URL">https://servervisitapp.herokuapp.com/api/searchUnoccupied</string>
-    <string name="ADD_OPINION_URL">https://servervisitapp.herokuapp.com/api/historyV/opinion</string>
-    <string name="HISTORY_VISIT_URL">https://servervisitapp.herokuapp.com/api/historyV</string>
-    <string name="CURRENT_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV</string>
-    <string name="SEARCH_BY_QUERY_URL">https://servervisitapp.herokuapp.com/api/searchByQuery</string>
-    <string name="UNOCCUPIED_VISIT_URL">https://servervisitapp.herokuapp.com/api/search</string>
-    <string name="CANCEL_VISIT_URL">https://servervisitapp.herokuapp.com/api/currentV/cancel</string>
-    <string name="BOOK_VISIT_URL">https://servervisitapp.herokuapp.com/api/book</string>
-
+    <string name="LOGIN_URL">https://herokuservervisitapp.herokuapp.com/api/login</string>
+    <string name="REGISTER_URL">https://herokuservervisitapp.herokuapp.com/api/register</string>
+    <string name="CHANGE_EMAIL_URL">https://herokuservervisitapp.herokuapp.com/api/changeEmail</string>
+    <string name="CHANGE_PASSWORD_URL">https://herokuservervisitapp.herokuapp.com/api/changePassword</string>
+    <string name="CHANGE_PHONE_NUMBER_URL">https://herokuservervisitapp.herokuapp.com/api/changeNumber</string>
+    <string name="RIGHT_TO_BOOK_URL">https://herokuservervisitapp.herokuapp.com/api/rightToBook</string>
+    <string name="DOCTOR_SPEC_URL">https://herokuservervisitapp.herokuapp.com/api/doctor</string>
+    <string name="PRESCRIPTION_URL">https://herokuservervisitapp.herokuapp.com/api/prescription</string>
+    <string name="REFFERAL_URL">https://herokuservervisitapp.herokuapp.com/api/refferal</string>
+    <string name="GET_UNOCCUPIED_DATES_URL">https://herokuservervisitapp.herokuapp.com/api/searchUnoccupied</string>
+    <string name="ADD_OPINION_URL">https://herokuservervisitapp.herokuapp.com/api/historyV/opinion</string>
+    <string name="HISTORY_VISIT_URL">https://herokuservervisitapp.herokuapp.com/api/historyV</string>
+    <string name="CURRENT_VISIT_URL">https://herokuservervisitapp.herokuapp.com/api/currentV</string>
+    <string name="SEARCH_BY_QUERY_URL">https://herokuservervisitapp.herokuapp.com/api/searchByQuery</string>
+    <string name="UNOCCUPIED_VISIT_URL">https://herokuservervisitapp.herokuapp.com/api/search</string>
+    <string name="CANCEL_VISIT_URL">https://herokuservervisitapp.herokuapp.com/api/currentV/cancel</string>
+    <string name="BOOK_VISIT_URL">https://herokuservervisitapp.herokuapp.com/api/book</string>
 
     <string name="app_name">VisitApp</string>
     <string name="app_title">TwójDoktor</string>
