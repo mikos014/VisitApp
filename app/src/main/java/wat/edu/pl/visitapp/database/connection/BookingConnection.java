@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.BookingCallback;
-import wat.edu.pl.visitapp.request.BookVisitRequest;
+import wat.edu.pl.visitapp.database.callbacks.BookingCallback;
+import wat.edu.pl.visitapp.database.request.BookVisitRequest;
 
 public class BookingConnection {
     private BookingCallback callback;
@@ -15,7 +15,7 @@ public class BookingConnection {
     }
 
     public void bookVisit(Visit visit) {
-        String url = callback.getFragment().getString(R.string.CANCEL_VISIT_URL);
+        String url = callback.getFragment().getString(R.string.BOOK_VISIT_URL);
         boolean isNoError = false;
 
         try {

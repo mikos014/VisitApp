@@ -18,7 +18,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.VisitDetailConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.VisitDetailCallback;
+import wat.edu.pl.visitapp.database.callbacks.VisitDetailCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.ExpandableDatesAdapter;
 
@@ -35,7 +35,6 @@ public class VisitDetailsActivity extends AppCompatActivity implements VisitDeta
 
     private HashMap itemsMap;
 
-    private boolean hasRefferal;
     private Visit visit;
     private User user;
 
@@ -75,9 +74,8 @@ public class VisitDetailsActivity extends AppCompatActivity implements VisitDeta
 
         VisitDetailConnection connection = new VisitDetailConnection(this);
         connection.getDatesOfVisits(visit.getVisitId());
-        connection.checkRightToBook(visit.getVisitId(), user.getUserId());
 
-        ExpandableDatesAdapter adapter = new ExpandableDatesAdapter(VisitDetailsActivity.this, getHeaders(itemsMap), itemsMap, hasRefferal, visit);
+        ExpandableDatesAdapter adapter = new ExpandableDatesAdapter(VisitDetailsActivity.this, getHeaders(itemsMap), itemsMap, visit);
         elvDatesOfVisits.setAdapter(adapter);
     }
 
@@ -102,20 +100,9 @@ public class VisitDetailsActivity extends AppCompatActivity implements VisitDeta
     }
 
     @Override
-    public void onSuccessSetRightToBook(boolean hasRefferal) {
-        this.hasRefferal = hasRefferal;
-    }
-
-    @Override
     public void onFailureSetDates(String message) {
         ToastUtil.shortToast(VisitDetailsActivity.this, message);
         itemsMap = new HashMap();
-    }
-
-    @Override
-    public void onFailureSetRightToBook(String message) {
-        ToastUtil.shortToast(VisitDetailsActivity.this, message);
-        hasRefferal = false;
     }
 
     @Override

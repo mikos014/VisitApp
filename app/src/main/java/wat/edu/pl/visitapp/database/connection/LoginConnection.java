@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutionException;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.UserCreds;
-import wat.edu.pl.visitapp.interfaces.callbacks.LoginCallback;
-import wat.edu.pl.visitapp.request.LoginRequest;
+import wat.edu.pl.visitapp.database.callbacks.LoginCallback;
+import wat.edu.pl.visitapp.database.request.LoginRequest;
 
 public class LoginConnection {
     private LoginCallback callback;

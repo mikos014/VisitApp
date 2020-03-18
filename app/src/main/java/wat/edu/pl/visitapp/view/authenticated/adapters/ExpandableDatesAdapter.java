@@ -25,14 +25,12 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> headersList;
     private HashMap<String, List<String>> itemsMap;
-    private boolean hasRefferal;
     private Visit visit;
 
-    public ExpandableDatesAdapter(Context context, List<String> headersList, HashMap<String, List<String>> itemsMap, Boolean hasRefferal, Visit visit) {
+    public ExpandableDatesAdapter(Context context, List<String> headersList, HashMap<String, List<String>> itemsMap, Visit visit) {
         this.context = context;
         this.headersList = headersList;
         this.itemsMap = itemsMap;
-        this.hasRefferal = hasRefferal;
         this.visit = visit;
     }
 
@@ -107,7 +105,6 @@ public class ExpandableDatesAdapter extends BaseExpandableListAdapter {
                 visit.setTime(getChild(groupPosition, childPosition).toString());
 
                 Bundle args = new Bundle();
-                args.putSerializable("hasRefferal", hasRefferal);
                 args.putSerializable("visit", visit);
                 ConfirmationDialog dialog = new ConfirmationDialog();
                 FragmentManager fm = ((AppCompatActivity) v.getContext()).getSupportFragmentManager();

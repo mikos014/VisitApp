@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.CancellationCallback;
-import wat.edu.pl.visitapp.request.CancellationRequest;
+import wat.edu.pl.visitapp.database.callbacks.CancellationCallback;
+import wat.edu.pl.visitapp.database.request.CancellationRequest;
 
 public class CancellationConnection {
     private CancellationCallback callback;

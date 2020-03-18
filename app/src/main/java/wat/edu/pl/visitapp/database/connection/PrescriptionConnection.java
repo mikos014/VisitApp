@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Prescription;
-import wat.edu.pl.visitapp.interfaces.callbacks.PrescriptionCallback;
-import wat.edu.pl.visitapp.request.PrescriptionRequest;
+import wat.edu.pl.visitapp.database.callbacks.PrescriptionCallback;
+import wat.edu.pl.visitapp.database.request.PrescriptionRequest;
 
 public class PrescriptionConnection {
     private PrescriptionCallback callback;

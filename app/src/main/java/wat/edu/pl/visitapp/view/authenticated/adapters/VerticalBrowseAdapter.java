@@ -11,6 +11,7 @@ import java.util.List;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.control.MapControl;
+import wat.edu.pl.visitapp.database.connection.BrowseConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
 import wat.edu.pl.visitapp.view.authenticated.viewholders.VerticalBrowseHolder;

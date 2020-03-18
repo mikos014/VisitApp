@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.HistoryCallback;
-import wat.edu.pl.visitapp.request.HistoryVisitRequest;
+import wat.edu.pl.visitapp.database.callbacks.HistoryCallback;
+import wat.edu.pl.visitapp.database.request.HistoryVisitRequest;
 
 public class HistoryConnection {
     private HistoryCallback callback;

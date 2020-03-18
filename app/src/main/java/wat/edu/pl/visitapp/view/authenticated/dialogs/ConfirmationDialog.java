@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.BookingConnection;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.BookingCallback;
+import wat.edu.pl.visitapp.database.callbacks.BookingCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 
@@ -26,51 +26,36 @@ public class ConfirmationDialog extends DialogFragment implements BookingCallbac
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view;
+        View view = inflater.inflate(R.layout.dialog_confirmation, container, false);
 
         Bundle args = getArguments();
-        boolean hasRefferal = (Boolean) args.getSerializable("hasRefferal");
         BookingConnection connection = new BookingConnection(this);
 
-        if (hasRefferal) {
-            view = inflater.inflate(R.layout.dialog_confirmation, container, false);
+        Visit visit = (Visit) args.getSerializable("visit");
 
-            Visit visit = (Visit) args.getSerializable("visit");
+        TextView tvDate = view.findViewById(R.id.tvDialogDate);
+        TextView tvTime = view.findViewById(R.id.tvDialogTime);
+        Button bYes = view.findViewById(R.id.bYes);
+        Button bNo = view.findViewById(R.id.bNo);
 
-            TextView tvDate = view.findViewById(R.id.tvDialogDate);
-            TextView tvTime = view.findViewById(R.id.tvDialogTime);
-            Button bYes = view.findViewById(R.id.bYes);
-            Button bNo = view.findViewById(R.id.bNo);
+        SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+        tvDate.setText(sdf.format(visit.getDate()));
+        tvTime.setText(visit.getTime());
 
-            SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-            tvDate.setText(sdf.format(visit.getDate()));
-            tvTime.setText(visit.getTime());
+        bYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                connection.bookVisit(visit);
+            }
+        });
 
-            bYes.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    connection.bookVisit(visit);
-                }
-            });
+        bNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDialog().dismiss();
+            }
+        });
 
-            bNo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    getDialog().dismiss();
-                }
-            });
-        } else {
-            view = inflater.inflate(R.layout.dialog_confirmation_error, container, false);
-
-            Button bUnderstand = view.findViewById(R.id.bUnderstand);
-
-            bUnderstand.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    getDialog().dismiss();
-                }
-            });
-        }
         return view;
     }
 

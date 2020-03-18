@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.LoginConnection;
 import wat.edu.pl.visitapp.database.entity.User;
-import wat.edu.pl.visitapp.interfaces.callbacks.LoginCallback;
+import wat.edu.pl.visitapp.database.callbacks.LoginCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 

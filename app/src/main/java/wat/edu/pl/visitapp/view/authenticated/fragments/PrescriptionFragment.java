@@ -19,7 +19,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.PrescriptionConnection;
 import wat.edu.pl.visitapp.database.entity.Prescription;
 import wat.edu.pl.visitapp.database.entity.User;
-import wat.edu.pl.visitapp.interfaces.callbacks.PrescriptionCallback;
+import wat.edu.pl.visitapp.database.callbacks.PrescriptionCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalPrescriptionAdapter;
 

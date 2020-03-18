@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.control.DataControl;
 import wat.edu.pl.visitapp.database.connection.RegisterConnection;
-import wat.edu.pl.visitapp.interfaces.callbacks.RegisterCallback;
+import wat.edu.pl.visitapp.database.callbacks.RegisterCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterCallback {

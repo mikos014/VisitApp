@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
-import wat.edu.pl.visitapp.interfaces.callbacks.VisitDetailCallback;
-import wat.edu.pl.visitapp.request.RightToBookRequest;
-import wat.edu.pl.visitapp.request.VisitDatesRequest;
+import wat.edu.pl.visitapp.database.callbacks.VisitDetailCallback;
+import wat.edu.pl.visitapp.database.request.RightToBookRequest;
+import wat.edu.pl.visitapp.database.request.VisitDatesRequest;
 
 public class VisitDetailConnection {
     private VisitDetailCallback callback;
@@ -33,16 +33,4 @@ public class VisitDetailConnection {
         callback.onSuccessSetDates(dates);
     }
 
-    public void checkRightToBook(int visitId, int userId) {
-        String url = callback.activity().getString(R.string.ADD_OPINION_URL);
-        boolean hasRefferal = false;
-
-        try {
-            hasRefferal = new RightToBookRequest(url).execute(visitId, userId).get();
-        } catch (ExecutionException | InterruptedException e) {
-            callback.onFailureSetRightToBook("Błąd połączenia");
-        }
-
-        callback.onSuccessSetRightToBook(hasRefferal);
-    }
 }

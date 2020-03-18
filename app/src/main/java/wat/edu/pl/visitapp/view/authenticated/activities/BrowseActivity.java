@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +18,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.BrowseConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.BrowseCallback;
+import wat.edu.pl.visitapp.database.callbacks.BrowseCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalBrowseAdapter;
 
@@ -59,14 +60,13 @@ public class BrowseActivity extends AppCompatActivity implements BrowseCallback 
         return true;
     }
 
-
     @Override
     public void onSuccessSetVisitByQuery(List<Visit> listByQuery) {
         visitList = listByQuery;
     }
 
     @Override
-    public void onFailure(String message) {
+    public void onFailureSetVisitByQuery(String message) {
         ToastUtil.shortToast(BrowseActivity.this, message);
         visitList = new LinkedList<>();
     }

@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Refferal;
-import wat.edu.pl.visitapp.interfaces.callbacks.RefferalCallback;
-import wat.edu.pl.visitapp.request.RefferalRequest;
+import wat.edu.pl.visitapp.database.callbacks.RefferalCallback;
+import wat.edu.pl.visitapp.database.request.RefferalRequest;
 import wat.edu.pl.visitapp.view.authenticated.fragments.RefferalFragment;
 
 public class RefferalConnection {

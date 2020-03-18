@@ -19,7 +19,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.HistoryConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.HistoryCallback;
+import wat.edu.pl.visitapp.database.callbacks.HistoryCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.adapters.VerticalHistoryAdapter;
 

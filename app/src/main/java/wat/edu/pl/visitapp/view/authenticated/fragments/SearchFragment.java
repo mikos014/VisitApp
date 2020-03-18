@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TableRow;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +23,7 @@ import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.SearchConnection;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
+import wat.edu.pl.visitapp.database.callbacks.SearchCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.activities.BrowseActivity;
 import wat.edu.pl.visitapp.view.authenticated.adapters.HorizontalSearchAdapter;

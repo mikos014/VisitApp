@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutionException;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.User;
 import wat.edu.pl.visitapp.database.entity.UserCreds;
-import wat.edu.pl.visitapp.interfaces.callbacks.ProfileCallback;
-import wat.edu.pl.visitapp.request.ProfileRequest;
+import wat.edu.pl.visitapp.database.callbacks.ProfileCallback;
+import wat.edu.pl.visitapp.database.request.ProfileRequest;
 
 public class ProfileConnection {
     private ProfileCallback callback;

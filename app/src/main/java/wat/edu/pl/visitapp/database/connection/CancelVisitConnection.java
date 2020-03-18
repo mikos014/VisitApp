@@ -3,8 +3,8 @@ package wat.edu.pl.visitapp.database.connection;
 import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
-import wat.edu.pl.visitapp.interfaces.callbacks.CancelVisitCallback;
-import wat.edu.pl.visitapp.request.CancelVisitRequest;
+import wat.edu.pl.visitapp.database.callbacks.CancelVisitCallback;
+import wat.edu.pl.visitapp.database.request.CancelVisitRequest;
 
 public class CancelVisitConnection {
     private CancelVisitCallback callback;

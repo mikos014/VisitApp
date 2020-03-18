@@ -5,8 +5,9 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.BrowseCallback;
-import wat.edu.pl.visitapp.request.BrowseVisitRequest;
+import wat.edu.pl.visitapp.database.callbacks.BrowseCallback;
+import wat.edu.pl.visitapp.database.request.BrowseVisitRequest;
+import wat.edu.pl.visitapp.database.request.RightToBookRequest;
 
 public class BrowseConnection {
     private BrowseCallback callback;
@@ -21,12 +22,12 @@ public class BrowseConnection {
         try {
             visits = new BrowseVisitRequest(url).execute(query).get();
         } catch (ExecutionException | InterruptedException e) {
-            callback.onFailure("Błąd połączenia");
+            callback.onFailureSetVisitByQuery("Błąd połączenia");
         }
 
         if (visits != null)
             callback.onSuccessSetVisitByQuery(visits);
         else
-            callback.onFailure("Bład serwera");
+            callback.onFailureSetVisitByQuery("Bład serwera");
     }
 }

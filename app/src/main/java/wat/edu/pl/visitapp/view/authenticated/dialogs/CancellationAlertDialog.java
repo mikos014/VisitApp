@@ -14,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.CancelVisitConnection;
-import wat.edu.pl.visitapp.interfaces.callbacks.CancelVisitCallback;
+import wat.edu.pl.visitapp.database.callbacks.CancelVisitCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 

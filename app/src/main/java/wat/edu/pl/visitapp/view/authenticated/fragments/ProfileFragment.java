@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.ProfileConnection;
 import wat.edu.pl.visitapp.database.entity.User;
-import wat.edu.pl.visitapp.interfaces.callbacks.ProfileCallback;
+import wat.edu.pl.visitapp.database.callbacks.ProfileCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 

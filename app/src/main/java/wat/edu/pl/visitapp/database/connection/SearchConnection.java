@@ -5,9 +5,9 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.Visit;
-import wat.edu.pl.visitapp.interfaces.callbacks.SearchCallback;
-import wat.edu.pl.visitapp.request.DoctorSpecRequest;
-import wat.edu.pl.visitapp.request.VisitRequest;
+import wat.edu.pl.visitapp.database.callbacks.SearchCallback;
+import wat.edu.pl.visitapp.database.request.DoctorSpecRequest;
+import wat.edu.pl.visitapp.database.request.VisitRequest;
 
 public class SearchConnection {
     private SearchCallback callback;

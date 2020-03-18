@@ -16,7 +16,7 @@ import androidx.fragment.app.DialogFragment;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.connection.OpinionConnection;
-import wat.edu.pl.visitapp.interfaces.callbacks.OpinionCallback;
+import wat.edu.pl.visitapp.database.callbacks.OpinionCallback;
 import wat.edu.pl.visitapp.utils.ToastUtil;
 import wat.edu.pl.visitapp.view.authenticated.MainActivity;
 

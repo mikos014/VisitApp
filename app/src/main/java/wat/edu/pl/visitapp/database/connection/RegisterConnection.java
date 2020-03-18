@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
 import wat.edu.pl.visitapp.database.entity.UserCreds;
-import wat.edu.pl.visitapp.interfaces.callbacks.RegisterCallback;
-import wat.edu.pl.visitapp.request.RegisterRequest;
+import wat.edu.pl.visitapp.database.callbacks.RegisterCallback;
+import wat.edu.pl.visitapp.database.request.RegisterRequest;
 
 public class RegisterConnection {
     private RegisterCallback callback;

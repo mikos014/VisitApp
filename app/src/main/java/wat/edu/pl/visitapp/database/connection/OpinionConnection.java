@@ -3,8 +3,8 @@ package wat.edu.pl.visitapp.database.connection;
 import java.util.concurrent.ExecutionException;
 
 import wat.edu.pl.visitapp.R;
-import wat.edu.pl.visitapp.interfaces.callbacks.OpinionCallback;
-import wat.edu.pl.visitapp.request.OpinionRequest;
+import wat.edu.pl.visitapp.database.callbacks.OpinionCallback;
+import wat.edu.pl.visitapp.database.request.OpinionRequest;
 
 public class OpinionConnection {
     private OpinionCallback callback;
